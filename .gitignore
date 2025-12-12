@@ -1,0 +1,165 @@
+# ============================================================================
+# PYTHON
+# ============================================================================
+
+# Virtual Environment
+venv/
+.venv/
+env/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# ============================================================================
+# IDE / EDITOR
+# ============================================================================
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+*.ipr
+.idea_modules/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+.vim/
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# ============================================================================
+# OS
+# ============================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+.directory
+
+# ============================================================================
+# SENSITIVE DATA
+# ============================================================================
+
+# API Keys, passwords, credentials
+.env
+.env.local
+.env.*.local
+secrets.json
+config.json
+credentials.json
+private_key.pem
+*.key
+
+# ============================================================================
+# PROJECT SPECIFIC
+# ============================================================================
+
+# Logs
+*.log
+logs/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Build outputs
+dist/
+build/
+
+# ============================================================================
+# NODE (pokud budeš mít frontend)
+# ============================================================================
+
+node_modules/
+package-lock.json
+yarn.lock
