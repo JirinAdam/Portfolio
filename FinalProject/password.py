@@ -1,3 +1,4 @@
+"""Functional version for separated use only"""
 import secrets
 import string
 import math
