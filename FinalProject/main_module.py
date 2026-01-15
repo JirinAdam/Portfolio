@@ -6,7 +6,7 @@ Import from generators/classes
 
 import math
 from FinalProject.generators import PasswordGenerator
-from FinalProject.generators import DicewareGenerator
+from FinalProject.generators import DicewareGenerato
 
 
 
