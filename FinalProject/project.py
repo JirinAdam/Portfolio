@@ -6,7 +6,7 @@ Import from generators/classes
 
 import math
 from FinalProject.generators import PasswordGenerator
-from FinalProject.generators import DicewareGenerato
+from FinalProject.generators import DicewareGenerator
 
 
 
@@ -77,7 +77,7 @@ def rate_strength(entropy: float) -> dict:
     if entropy < 32:
         return {
             'rating': 'CRITICAL',
-            'emoji': '🔴',
+            'emoji': '⚠️',
             'description': f'Crackable by GPU farms {time_desc}',
             'warning': '🚨 CRITICAL: This password offers NO protection against modern attacks!',
             'recommendation': 'CHANGE IMMEDIATELY - Completely unsafe',
@@ -87,7 +87,7 @@ def rate_strength(entropy: float) -> dict:
     elif entropy < 40:
         return {
             'rating': 'VERY WEAK',
-            'emoji': '🟠',
+            'emoji': '🚨',
             'description': f'Crackable by GPU farms {time_desc}',
             'warning': '⚠️  WARNING: Trivially crackable by automated tools',
             'recommendation': 'Not safe for any real use',
@@ -100,7 +100,7 @@ def rate_strength(entropy: float) -> dict:
     elif entropy < 50:
         return {
             'rating': 'WEAK',
-            'emoji': '🟡',
+            'emoji': '⏰',
             'description': f'Crackable by GPU farms {time_desc}',
             'warning': '⚠️  Vulnerable to professional attackers with GPU resources',
             'recommendation': 'Use only for low-value, non-sensitive accounts',
@@ -113,7 +113,7 @@ def rate_strength(entropy: float) -> dict:
     elif entropy < 63:
         return {
             'rating': 'MODERATE',
-            'emoji': '🟢',
+            'emoji': '✓',
             'description': f'Crackable by GPU farms {time_desc}',
             'warning': '💡 Minimal protection - meets basic standards only',
             'recommendation': 'Consider increasing password length or character types',
@@ -127,7 +127,7 @@ def rate_strength(entropy: float) -> dict:
         # GOOD/STRONG range - internal granularity
         if entropy < 70:
             rating_level = 'GOOD'
-            emoji = '🔵'
+            emoji = '✅'
             standards = [
                 '✓ NIST SP 800-63B AAL2 (recommended)',
                 '✓ OWASP ASVS Level 2 (compliant)'
@@ -249,9 +249,9 @@ def _print_strength_table(entropy: float, credential_type: str = "password") -> 
     quantum_time = calculate_crack_time(entropy / 2, gpu_farm_rate)  # Grover's effect
 
     # Table header
-    print("\n" + "=" * 117)
-    print("⚠️  SECURITY ANALYSIS - Crack Time Estimates (50% probability)")
-    print("=" * 117)
+    print("\n" + "=" * 90)
+    print("            ⚠️  SECURITY ANALYSIS - Crack Time Estimates (50% probability)")
+    print("=" * 90)
     print(f"{'Strength':<20} {'Online Attack':<25} {'GPU Farm Attack':<25} {'Quantum (Future)':<25}")
     print(f"{'(Rating)':<20} {'(Rate: 7.2k/day)':<25} {'(1 PetaFLOPS)':<25} {'(Grover\'s Algo.)':<25}")
     print("-" * 117)
@@ -441,9 +441,12 @@ def _run_passphrase_generator() -> None:
 
 def _run_password_checker() -> None:
     """Run password security analysis mode."""
-    print("\n" + "=" * 50)
-    print("PASSWORD SECURITY CHECKER")
-    print("=" * 50 + "\n")
+    # ✅ IMPORTUJ AŽ TADY (v runtime, nikoliv na startu)
+    from FinalProject.generators import PasswordChecker
+
+    print("\n" + "🛡️" * 20)
+    print("          PASSWORD SECURITY CHECKER")
+    print("🛡️" * 20 + "\n")
 
     try:
         checker = PasswordChecker()
@@ -471,9 +474,9 @@ def _run_password_checker() -> None:
 
 
 def main() -> None:
-
-    # Main orchestrator function - displays menu and handles user choices.
-    
+    """
+    Main orchestrator function - displays menu and handles user choices.
+    """
     print("=" * 50)
     print("🔐 PASSWORD SECURITY TOOLKIT")
     print("=" * 50)
@@ -482,24 +485,28 @@ def main() -> None:
         print("\nSelect mode:")
         print("  1. Generate Random Password")
         print("  2. Generate Diceware Passphrase")
-        print("  3. Exit")
+        print("  3. Check Password Security")
+        print("  4. Exit")
 
-        choice = input("\nEnter choice (1-3): ").strip()
+        choice = input("\nEnter choice (1-4): ").strip()
 
         if choice == '1':
             _run_password_generator()
         elif choice == '2':
             _run_passphrase_generator()
         elif choice == '3':
+            _run_password_checker()
+        elif choice == '4':
             print("\nGoodbye!")
             break
         else:
-            print("❌ Invalid choice. Please enter 1, 2, or 3.")
+            print("❌ Invalid choice. Please enter 1, 2, 3, or 4.")
 
-        again = input("\nShall we return to the main menu? (y/n): ").lower()
+        again = input("\nContinue? (y/n): ").lower()
         if again != 'y':
             print("Goodbye!")
             break
+
 
 if __name__ == "__main__":
     main()
