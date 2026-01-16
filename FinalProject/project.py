@@ -77,7 +77,7 @@ def rate_strength(entropy: float) -> dict:
     if entropy < 32:
         return {
             'rating': 'CRITICAL',
-            'emoji': '⚠️',
+            'emoji': '🔓',
             'description': f'Crackable by GPU farms {time_desc}',
             'warning': '🚨 CRITICAL: This password offers NO protection against modern attacks!',
             'recommendation': 'CHANGE IMMEDIATELY - Completely unsafe',
@@ -87,7 +87,7 @@ def rate_strength(entropy: float) -> dict:
     elif entropy < 40:
         return {
             'rating': 'VERY WEAK',
-            'emoji': '🚨',
+            'emoji': '⏰',
             'description': f'Crackable by GPU farms {time_desc}',
             'warning': '⚠️  WARNING: Trivially crackable by automated tools',
             'recommendation': 'Not safe for any real use',
@@ -100,7 +100,7 @@ def rate_strength(entropy: float) -> dict:
     elif entropy < 50:
         return {
             'rating': 'WEAK',
-            'emoji': '⏰',
+            'emoji': '🔐',
             'description': f'Crackable by GPU farms {time_desc}',
             'warning': '⚠️  Vulnerable to professional attackers with GPU resources',
             'recommendation': 'Use only for low-value, non-sensitive accounts',
@@ -134,7 +134,7 @@ def rate_strength(entropy: float) -> dict:
             ]
         else:
             rating_level = 'STRONG'
-            emoji = '💙'
+            emoji = '🔒'
             standards = [
                 '✓ NIST SP 800-63B AAL2 (exceeds)',
                 '✓ OWASP ASVS Level 2 (exceeds)',
@@ -153,7 +153,7 @@ def rate_strength(entropy: float) -> dict:
     elif entropy < 100:
         return {
             'rating': 'VERY STRONG',
-            'emoji': '🟣',
+            'emoji': '⚜️',
             'description': f'Resistant to GPU farms for {time_desc.replace("in ", "")}',
             'warning': '✓ Excellent protection - enterprise grade security',
             'recommendation': 'Excellent for sensitive/critical data',
@@ -167,7 +167,7 @@ def rate_strength(entropy: float) -> dict:
     elif entropy < 128:
         return {
             'rating': 'EXCEPTIONAL',
-            'emoji': '💜',
+            'emoji': '🏆',
             'description': f'Resistant to GPU farms for {time_desc.replace("in ", "")}',
             'warning': '✓ Maximum practical security for current threats',
             'recommendation': 'Exceeds all current standards',
@@ -182,7 +182,7 @@ def rate_strength(entropy: float) -> dict:
     else:
         return {
             'rating': 'MAXIMUM',
-            'emoji': '⭐',
+            'emoji': '💎',
             'description': f'Resistant to GPU farms for {time_desc.replace("in ", "")}',
             'warning': '✓ Quantum-resistant level - future-proof security',
             'recommendation': 'Ultimate security level',
@@ -456,7 +456,7 @@ def _run_password_checker() -> None:
         # Summary statistics
         total = len(results)
         breached_count = sum(1 for r in results if r['hibp_breached'] is True)
-
+        """
         print(f"\n📊 SUMMARY:")
         print(f"  Total passwords analyzed: {total}")
         print(f"  Breached passwords found: {breached_count}")
@@ -466,7 +466,7 @@ def _run_password_checker() -> None:
             print(f"   Recommend: Change these passwords immediately!")
         else:
             print(f"\n✓ Good news: No passwords found in known breaches (as of last check)")
-
+        """
     except FileNotFoundError as e:
         print(f"❌ {e}")
     except Exception as e:
