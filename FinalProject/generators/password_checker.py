@@ -13,8 +13,6 @@ import hashlib
 import requests
 import time
 
-from FinalProject.project import evaluate_entropy, rate_strength, calculate_crack_time
-
 
 class PasswordChecker:
     """
@@ -79,6 +77,10 @@ class PasswordChecker:
 
     def _analyze_password(self, password: str) -> dict:
         """Use project.py functions to analyze password."""
+
+        #Lazy import to avoid circular import error
+        from FinalProject.project import evaluate_entropy, rate_strength, calculate_crack_time
+
         charset_size = self._get_charset_size(password)
         length = len(password)
 
@@ -164,7 +166,7 @@ class PasswordChecker:
                 'hibp_error': hibp.get('error')
             })
 
-            print(f"  [{idx}/{len(self.passwords)}] {analysis['emoji']} {analysis['rating']:<12} | {password}")
+            print(f"  [{idx}/{len(self.passwords)}] {service} {analysis['emoji']} {analysis['rating']:<12} | {password}")
 
             if hibp.get('status') == 'rate_limited':
                 retry_after = int(hibp.get('retry_after', 900))
@@ -186,6 +188,10 @@ class PasswordChecker:
 
     def print_analysis(self, results: list) -> None:
         """Print organized analysis grouped by rating with security warnings."""
+
+        #Lazy import to avoid circular import error
+        from FinalProject.project import calculate_crack_time
+
         grouped = defaultdict(list)
         for result in results:
             grouped[result['rating']].append(result)
@@ -193,10 +199,10 @@ class PasswordChecker:
         rating_order = ['CRITICAL', 'VERY WEAK', 'WEAK', 'MODERATE', 'GOOD', 'STRONG', 'VERY STRONG', 'EXCEPTIONAL', 'MAXIMUM']
 
         print("\n" + "=" * 160)
-        print("PASSWORD SECURITY ANALYSIS - GROUPED BY STRENGTH")
-        print("=" * 160)
-        print(f"{'Strength':<20} {'Online Attack':<25} {'GPU Farm Attack':<25} {'Crack Time':<25} {'HIBP Status':<20}")
-        print(f"{'(Rating)':<20} {'(Rate: 7.2k/day)':<25} {'(1 PetaFLOPS)':<25} {'(Average)':<25} {'(Breach DB)':<20}")
+        print(f"\n{' ':<60}PASSWORD SECURITY ANALYSIS - GROUPED BY STRENGTH")
+        print("\n" + "=" * 160)
+        print(f"{'Strength':<23} {'Online Attack':<25} {'GPU Farm Attack':<26} {'Entropy':<25} {'HIBP Status':<20}")
+        print(f"{'(Rating)':<23} {'(Rate: 7.2k/day)':<25} {'(1 PetaFLOPS)':<26} {' ':<25} {'(Breach DB)':<20}")
         print("=" * 160 + "\n")
 
         for rating in rating_order:
@@ -232,7 +238,7 @@ class PasswordChecker:
                 online_time = calculate_crack_time(entropy, online_rate)
                 gpu_time = calculate_crack_time(entropy, gpu_farm_rate)
 
-                print(f"  • {pwd_data['password']:<20} {online_time:<25} {gpu_time:<25} {pwd_data['crack_time']:<25} {hibp_display:<20}")
+                print(f"  • {pwd_data['service']:<20} {online_time:<25} {gpu_time:<25} {pwd_data['entropy']:.2f} bits {'':<15} {hibp_display:<20}")
 
                 if pwd_data.get('hibp_error'):
                     print(f"     └─ ℹ️  {pwd_data['hibp_error']}")
@@ -251,11 +257,11 @@ class PasswordChecker:
         breached = [r for r in results if r['hibp_breached'] is True]
 
         # GPU crackable: entropy < 50 bits (crackable in seconds by GPU farm)
-        gpu_crackable = [r for r in results if r['entropy'] < 50]
+        gpu_crackable = [r for r in results if r['entropy'] < 68]
 
         if breached or gpu_crackable:
             print("\n" + "🚨" * 40)
-            print("SECURITY ALERTS")
+            print(f"{' ':<40}SECURITY ALERTS")
             print("🚨" * 40 + "\n")
 
         # Breached passwords warning
@@ -270,7 +276,7 @@ class PasswordChecker:
         if gpu_crackable:
             gpu_count = len(gpu_crackable)
             affected_services = [r['service'] for r in gpu_crackable]
-            print(f"⚠️  CRITICAL: {gpu_count} password(s) can be cracked in SECONDS by modern GPU farms!")
+            print(f"⚠️  CRITICAL: {gpu_count} password(s) can be cracked within HOURS by modern GPU farms!")
             print(f"   - If your database leaks, attackers will break them instantly")
             print(f"   - Minimum recommendation: Increase length or character types")
             print(f"   - Affected accounts: {', '.join(affected_services)}\n")
