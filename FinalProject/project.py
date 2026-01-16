@@ -354,7 +354,7 @@ def _get_num_words() -> int:
 def _run_password_generator() -> None:
     """Run random password generation mode."""
     print("\n" + "🔑" * 20)
-    print("          PASSWORD GENERATOR")
+    print(f"{" ":<10}PASSWORD GENERATOR")
     print("🔑" * 20 + "\n")
 
     # Get user input
@@ -403,7 +403,7 @@ def _run_password_generator() -> None:
 def _run_passphrase_generator() -> None:
     """Run Diceware passphrase generation mode."""
     print("\n" + "📖"  * 20)
-    print("          PASSPHRASE GENERATOR")
+    print(f"{" ":<10}PASSPHRASE GENERATOR")
     print("📖" * 20 + "\n")
 
     # Get user input
@@ -445,7 +445,7 @@ def _run_password_checker() -> None:
     from FinalProject.generators import PasswordChecker
 
     print("\n" + "🛡️" * 20)
-    print("          PASSWORD SECURITY CHECKER")
+    print(f"{" ":<10}PASSWORD SECURITY CHECKER")
     print("🛡️" * 20 + "\n")
 
     try:
