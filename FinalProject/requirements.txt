@@ -8,14 +8,14 @@
 # --------------------------------------------
 
 # HTTP library for HIBP API integration
-requests>=2.28.0
+requests
 
 # --------------------------------------------
 # TESTING DEPENDENCIES
 # --------------------------------------------
 
 # Testing framework
-pytest>=9.0.2
+pytest
 
 # Path Handling
 pathlib
