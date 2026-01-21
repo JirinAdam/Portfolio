@@ -13,6 +13,7 @@ class PasswordGenerator:
     """
 
     CHARSET_TYPES = ('uppercase', 'lowercase', 'digits', 'special')
+    SPECIAL_CHARS = '^*%$!&@#'
 
     def __init__(self):
         """Initialize with standard character set sizes."""
@@ -20,7 +21,7 @@ class PasswordGenerator:
             'uppercase': len(string.ascii_uppercase),  # 26
             'lowercase': len(string.ascii_lowercase),  # 26
             'digits': len(string.digits),  # 10
-            'special': len(string.punctuation)  # 32
+            'special': len(self.SPECIAL_CHARS)  # 8
         }
 
     def get_charset_size(self, use_uppercase: bool = True,
@@ -30,14 +31,6 @@ class PasswordGenerator:
         """
         Calculate total character set size based on selections.
 
-        Args:
-            use_uppercase: Include uppercase letters (A-Z)
-            use_lowercase: Include lowercase letters (a-z)
-            use_digits: Include digits (0-9)
-            use_special: Include special characters (!@#$...)
-
-        Returns:
-            Total number of available characters
         """
         size = 0
         if use_uppercase:
@@ -66,7 +59,7 @@ class PasswordGenerator:
         if use_digits:
             charset += string.digits
         if use_special:
-            charset += string.punctuation
+            charset += self.SPECIAL_CHARS
         return charset
 
     def generate(self, length: int = 12, use_uppercase: bool = True,
@@ -74,19 +67,8 @@ class PasswordGenerator:
                  use_special: bool = True) -> str:
         """
         Generate random password based on specified criteria.
-
-        Args:
-            length: Password length (default: 12)
-            use_uppercase: Include uppercase letters (default: True)
-            use_lowercase: Include lowercase letters (default: True)
-            use_digits: Include digits (default: True)
-            use_special: Include special characters (default: True)
-
         """
         charset = self._build_charset(use_uppercase, use_lowercase,
                                       use_digits, use_special)
-
-        if not charset:
-            raise ValueError("At least one character type must be selected")
-
-        return "".join(secrets.choice(charset) for _ in range(length))
+        password = ''.join(secrets.choice(charset) for _ in range(length))
+        return password

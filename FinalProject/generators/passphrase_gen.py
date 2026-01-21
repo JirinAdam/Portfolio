@@ -61,8 +61,6 @@ class DicewareGenerator:
     def _roll_dice(self, num_dice: int = 5) -> str:
         """
         Simulate multiple dice rolls (1-6). Default 5
-
-
         """
         return "".join(str(secrets.randbelow(6) + 1) for _ in range(num_dice))
 
