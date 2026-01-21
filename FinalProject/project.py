@@ -10,22 +10,10 @@ from FinalProject.generators import DicewareGenerator
 
 
 
-def evaluate_entropy(length: int, charset_size: int) -> float:
+def evaluate_entropy(length: int, charset_size: int) :
     """
-    Calculate theoretical entropy for password/passphrase.
-
-    Entropy formula: length × log₂(charset_size)
-
-    Args:
-        length: Password length OR number of words in passphrase
-        charset_size: Number of available characters OR 7776 (for Diceware)
-
+    Calculates theoretical entropy for password/passphrase.
     """
-    if length < 1:
-        raise ValueError("Length must be at least 1")
-    if charset_size < 2:
-        raise ValueError("Charset size must be at least 2")
-
     entropy = length * math.log2(charset_size)
     return entropy
 
@@ -33,17 +21,13 @@ def evaluate_entropy(length: int, charset_size: int) -> float:
 def rate_strength(entropy: float) -> dict:
     """
     Rate password/passphrase strength based on entropy.
-
-    Classification based on NIST/OWASP standards with emphasis on GPU farm attacks.
-
-    Args:
-        entropy: Password entropy in bits (float)
+    Emphasis on GPU farm attacks.
 
     """
 
     # Helper function for time description
     def _get_time_description(seconds: float) -> str:
-        """Convert seconds to human-readable time description."""
+        """Convert seconds to readable time description."""
         if seconds < 1:
             return "instantly (< 1 second)"
         elif seconds < 60:
@@ -197,16 +181,10 @@ def rate_strength(entropy: float) -> dict:
 
 def calculate_crack_time(entropy: float, attempts_per_second: float = 1e15) -> str:
     """
-    Calculate human-readable time required to crack password via brute force.
-
+    Calculate time required to crack password via brute force.
     Uses average case (50% of combinations need to be tried).
-    Default GPU farm rate: 1 PetaFLOPS (1×10^15 attempts/sec)
-
-    Args:
-        entropy: Password entropy in bits (float)
-        attempts_per_second: Cracking speed in attempts per second (default: 1e15 for GPU farm)
-
-
+    Default GPU farm rate: 1 PetaFLOPS (1×10^15 attempts/sec) (Futureproof rate calculation.
+    Nowadays only state actors do operate such high computing power : ~5000 RTX 5090)
     """
     total_combinations = 2 ** entropy
     # On average, password found in half the attempts
@@ -230,27 +208,62 @@ def calculate_crack_time(entropy: float, attempts_per_second: float = 1e15) -> s
         return "NEVER (>1M years)"
 
 
+def calculate_quantum_crack_time(entropy: float, quantum_speed: float = 1e7) -> str:
+    """
+    Calculate time to crack password using quantum computer with Grover's algorithm.
+
+    Formula: T = 2^(E/2) / S
+    Uses existing calculate_crack_time() for formatting with Grover's algorithm applied.
+    """
+    # Apply Grover's algorithm: entropy is halved (2^(E/2) instead of 2^E)
+    # Then use existing formatting function
+
+    seconds = (2 ** (entropy / 2)) / quantum_speed
+
+    if seconds < 1:
+        return "< 1 sec"
+    elif seconds < 60:
+        return f"{seconds:.1f} sec"
+    elif seconds < 3600:
+        return f"{seconds / 60:.1f} min"
+    elif seconds < 86400:
+        return f"{seconds / 3600:.1f} hours"
+    elif seconds < 31536000:
+        return f"{seconds / 86400:.1f} days"
+    elif seconds < 31536000 * 1000:
+        return f"{seconds / 31536000:.1f} years"
+    elif seconds < 31536000 * 1000000:
+        return f"{seconds / (31536000 * 1000):.1f}k years"
+    else:
+        return "NEVER (>1M years)"
+
+
+
 def _print_strength_table(entropy: float, credential_type: str = "password") -> None:
     """
     Print security analysis table (internal helper function).
-
-    Args:
-        entropy: Credential entropy in bits
-        credential_type: "password" or "passphrase" (for display)
+    Quantum crack time calculation
+        Formula: T = 2^(E/2) / S
+    where:
+        T = time in seconds
+        E = entropy in bits
+        S = speed in operations/second (1e7 = 10 million ops/sec for 2030)
     """
+
     strength = rate_strength(entropy)
 
     # Calculate times for different scenarios
     online_rate = 7200 / 86400  # 7.2k attempts per day converted to per second
     gpu_farm_rate = 1e15  # 1 PetaFLOPS
+    quantum_speed = 1e7
 
     online_time = calculate_crack_time(entropy, online_rate)
     gpu_time = calculate_crack_time(entropy, gpu_farm_rate)
-    quantum_time = calculate_crack_time(entropy / 2, gpu_farm_rate)  # Grover's effect
+    quantum_time = calculate_crack_time(entropy / 2, quantum_speed)
 
     # Table header
     print("\n" + "=" * 90)
-    print("            ⚠️  SECURITY ANALYSIS - Crack Time Estimates (50% probability)")
+    print(f"{" ":<12} ⚠️  SECURITY ANALYSIS - Crack Time Estimates (50% probability)")
     print("=" * 90)
     print(f"{'Strength':<20} {'Online Attack':<25} {'GPU Farm Attack':<25} {'Quantum (Future)':<25}")
     print(f"{'(Rating)':<20} {'(Rate: 7.2k/day)':<25} {'(1 PetaFLOPS)':<25} {'(Grover\'s Algo.)':<25}")
@@ -478,7 +491,8 @@ def main() -> None:
     Main orchestrator function - displays menu and handles user choices.
     """
     print("=" * 50)
-    print("🔐 PASSWORD SECURITY TOOLKIT")
+    print (f"🔐{' ':<18} \033[1m{'PASSMAN'}\033[0m")
+    print(f"🔐 {' ':<10} PASSWORD SECURITY TOOLKIT")
     print("=" * 50)
 
     while True:
