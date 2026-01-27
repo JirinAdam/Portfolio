@@ -1,6 +1,6 @@
 # 🔐 Password & Passphrase Security Toolkit
 
-#### Video Demo: <URL_HERE>
+#### Video Demo: <https://youtu.be/X8-mPKOeXGY>
 
 #### Description:
 
