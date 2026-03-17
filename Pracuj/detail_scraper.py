@@ -4,12 +4,11 @@ import json
 import time
 from pathlib import Path
 import re
+import random
 
 
 class JobDetailsScraper:
-    """
-    Complete job scraper for pracuj.pl using __NEXT_DATA__
-    """
+    """Complete job scraper for pracuj.pl"""
 
     def __init__(self, db_path='job_database.db'):
         self.scraper = cloudscraper.create_scraper()
@@ -23,57 +22,32 @@ class JobDetailsScraper:
         cursor = conn.cursor()
 
         cursor.execute('''
-                       CREATE TABLE IF NOT EXISTS job_offers
-                       (
-                           partition_id
-                           TEXT
-                           PRIMARY
-                           KEY,
-                           url
-                           TEXT
-                           UNIQUE
-                           NOT
-                           NULL,
-                           title
-                           TEXT,
-                           company
-                           TEXT,
-                           description
-                           TEXT,
-                           industry
-                           TEXT,
-                           employment_type
-                           TEXT,
-                           salary_min
-                           INTEGER,
-                           salary_max
-                           INTEGER,
-                           salary_currency
-                           TEXT,
-                           city
-                           TEXT,
-                           region
-                           TEXT,
-                           postal_code
-                           TEXT,
-                           position_levels
-                           TEXT,
-                           work_schedules
-                           TEXT,
-                           work_modes
-                           TEXT,
-                           technologies_os
-                           TEXT,
-                           responsibilities
-                           TEXT,
-                           requirements_expected
-                           TEXT,
-                           date_posted
-                           DATE,
-                           valid_through
-                           DATE
-                       )
-                       ''')
+            CREATE TABLE IF NOT EXISTS job_offers (
+                partition_id TEXT PRIMARY KEY,
+                url TEXT UNIQUE NOT NULL,
+                industry TEXT,
+                company TEXT,
+                title TEXT,
+                description TEXT,
+                employment_type TEXT,
+                salary_min INTEGER,
+                salary_max INTEGER,
+                salary_currency TEXT,
+                city TEXT,
+                region TEXT,
+                postal_code TEXT,
+                position_levels TEXT,
+                work_schedules TEXT,
+                work_modes TEXT,
+                technologies_os TEXT,
+                technologies_optional TEXT,
+                requirements_expected TEXT,
+                we_offer TEXT,
+                benefits TEXT,
+                date_posted DATE,
+                valid_through DATE
+            )
+        ''')
 
         cursor.execute('CREATE INDEX IF NOT EXISTS idx_company ON job_offers(company)')
         cursor.execute('CREATE INDEX IF NOT EXISTS idx_city ON job_offers(city)')
@@ -85,142 +59,299 @@ class JobDetailsScraper:
         print(f"✅ Database initialized: {self.db_path}\n")
 
     def extract_next_data(self, html):
-        """Extract __NEXT_DATA__ JSON from HTML"""
+        """Extract __NEXT_DATA__ JSON"""
         try:
             match = re.search(
-                r'<script id="__NEXT_DATA__" type="application/json">({.*?})</script>',
-                html,
-                re.DOTALL
+                r'<script id="__NEXT_DATA__"[^>]*type="application/json"[^>]*>',
+                html
             )
+            if not match:
+                return None
+
+            start_idx = match.end()
+            json_start = html.find('{', start_idx)
+
+            if json_start == -1:
+                return None
+
+            brace_count = 0
+            json_end = json_start
+
+            for i in range(json_start, len(html)):
+                if html[i] == '{':
+                    brace_count += 1
+                elif html[i] == '}':
+                    brace_count -= 1
+                    if brace_count == 0:
+                        json_end = i + 1
+                        break
+
+            if brace_count != 0:
+                return None
+
+            json_str = html[json_start:json_end]
+            full_data = json.loads(json_str)
+
+            try:
+                dehydrated = full_data.get('props', {}).get('pageProps', {}).get('dehydratedState', {})
+                queries = dehydrated.get('queries', [])
+
+                if queries and len(queries) > 0:
+                    data = queries[0].get('state', {}).get('data', {})
+                    return data
+
+                return full_data.get('props', {}).get('pageProps', {})
+
+            except (KeyError, IndexError, TypeError):
+                return None
+
+        except (json.JSONDecodeError, AttributeError, ValueError):
+            pass
+
+        return None
+
+    def extract_ld_json(self, html):
+        """Extract LD+JSON from HTML"""
+        try:
+            pattern = r'<script[^>]*type="application/ld\+json"[^>]*>'
+            match = re.search(pattern, html)
 
             if not match:
                 return None
 
-            json_str = match.group(1)
-            next_data = json.loads(json_str)
+            start_idx = match.end()
+            json_start = html.find('{', start_idx)
 
-            return next_data
+            if json_start == -1:
+                return None
 
-        except (json.JSONDecodeError, AttributeError):
-            return None
+            brace_count = 0
+            json_end = json_start
+
+            for i in range(json_start, len(html)):
+                if html[i] == '{':
+                    brace_count += 1
+                elif html[i] == '}':
+                    brace_count -= 1
+                    if brace_count == 0:
+                        json_end = i + 1
+                        break
+
+            if brace_count != 0:
+                return None
+
+            json_str = html[json_start:json_end]
+            return json.loads(json_str)
+
+        except (json.JSONDecodeError, AttributeError, ValueError):
+            pass
+
+        return None
 
     def extract_job_data(self, html, url):
-        """Extract job data from __NEXT_DATA__"""
+        """Extract job data from LD+JSON (priority) and __NEXT_DATA__ (fallback)"""
         try:
             next_data = self.extract_next_data(html)
+            ld_json = self.extract_ld_json(html)
 
-            if not next_data:
+            if not next_data and not ld_json:
                 return None
 
             job_data = {}
+            data = next_data
 
-            # Navigate to data
-            try:
-                data = next_data['props']['pageProps']['dehydratedState']['queries'][0]['state']['data']
-            except (KeyError, IndexError, TypeError):
-                return None
+            if ld_json:
+                job_data['title'] = ld_json.get('title')
+                job_data['company'] = ld_json.get('hiringOrganization')
+                job_data['description'] = ld_json.get('responsibilities')
 
-            # --- BASIC INFO ---
-            attributes = data.get('attributes', {})
+                industry = ld_json.get('industry')
+                job_data['industry'] = industry if isinstance(industry, str) else None
 
-            job_data['title'] = attributes.get('jobTitle')
-            job_data['company'] = attributes.get('displayEmployerName')
-            job_data['description'] = attributes.get('description')
+                job_data['employment_type'] = ld_json.get('employmentType')
+                job_data['requirements_expected'] = ld_json.get('experienceRequirements')
+                job_data['benefits'] = ld_json.get('jobBenefits')
 
-            # --- CATEGORIES (INDUSTRY) ---
-            categories = attributes.get('categories', [])
-            job_data['industry'] = json.dumps(
-                [cat.get('name') for cat in categories if cat.get('name')]
-            ) if categories else None
+                city = None
+                region = None
+                postal_code = None
 
-            # --- EMPLOYMENT DATA ---
-            employment = attributes.get('employment', {})
+                job_location = ld_json.get('jobLocation', {})
+                if isinstance(job_location, dict):
+                    city = job_location.get('name')
+                    address = job_location.get('address', {})
+                    if isinstance(address, dict):
+                        region = address.get('addressRegion')
+                        postal_code = address.get('postalCode')
+                        if not city:
+                            city = address.get('addressLocality')
 
-            # Position Levels
-            position_levels = employment.get('positionLevels', [])
-            job_data['position_levels'] = json.dumps(
-                [pl.get('name') for pl in position_levels if pl.get('name')]
-            ) if position_levels else None
+                job_data['city'] = city
+                job_data['region'] = region
+                job_data['postal_code'] = postal_code
 
-            # Work Schedules
-            work_schedules = employment.get('workSchedules', [])
-            job_data['work_schedules'] = json.dumps(
-                [ws.get('name') for ws in work_schedules if ws.get('name')]
-            ) if work_schedules else None
+                date_posted = ld_json.get('datePosted')
+                job_data['date_posted'] = date_posted if isinstance(date_posted, str) else None
 
-            # Work Modes
-            work_modes = employment.get('workModes', [])
-            job_data['work_modes'] = json.dumps(
-                [wm.get('name') for wm in work_modes if wm.get('name')]
-            ) if work_modes else None
+                valid_through = ld_json.get('validThrough')
+                job_data['valid_through'] = valid_through if isinstance(valid_through, str) else None
 
-            # Contract Type & Salary
-            types_of_contracts = employment.get('typesOfContracts', [])
-            if types_of_contracts:
-                contract = types_of_contracts[0]
-                job_data['employment_type'] = contract.get('name')
+                salary_min = None
+                salary_max = None
+                salary_currency = None
 
-                # SALARY - FIX: Handle None and dict
-                salary = contract.get('salary')
+                if ld_json:
+                    try:
+                        base_salary = ld_json.get('baseSalary', {})
 
-                if isinstance(salary, dict):
-                    job_data['salary_min'] = salary.get('minValue')
-                    job_data['salary_max'] = salary.get('maxValue')
+                        if isinstance(base_salary, dict):
+                            salary_min = base_salary.get('minValue')
+                            salary_max = base_salary.get('maxValue')
+                            salary_currency = base_salary.get('currency')
 
-                    salary_currency = salary.get('currency')
-                    job_data['salary_currency'] = salary_currency if isinstance(salary_currency, str) else 'PLN'
-                else:
-                    # Salary is None or other type
-                    job_data['salary_min'] = None
-                    job_data['salary_max'] = None
-                    job_data['salary_currency'] = 'PLN'
+                            if salary_min is not None and not isinstance(salary_min, (int, float)):
+                                salary_min = None
+                            if salary_max is not None and not isinstance(salary_max, (int, float)):
+                                salary_max = None
 
-            # --- TEXT SECTIONS ---
-            text_sections = data.get('textSections', [])
+                    except Exception:
+                        pass
 
-            for section in text_sections:
-                section_type = section.get('sectionType')
-                text_elements = section.get('textElements', [])
+                if salary_min is None or salary_max is None:
+                    if data:
+                        try:
+                            attributes = data.get('attributes', {})
+                            employment = attributes.get('employment', {})
+                            types_of_contracts = employment.get('typesOfContracts', [])
 
-                if section_type == 'technologies-os':
-                    job_data['technologies_os'] = json.dumps(text_elements) if text_elements else None
+                            if types_of_contracts and isinstance(types_of_contracts, list):
+                                for contract in types_of_contracts:
+                                    salary = contract.get('salary')
+                                    if salary:
+                                        salary_min = salary.get('from')
+                                        salary_max = salary.get('to')
+                                        currency_obj = salary.get('currency', {})
+                                        if isinstance(currency_obj, dict):
+                                            salary_currency = currency_obj.get('code', 'PLN')
+                                        break
 
-                elif section_type == 'responsibilities':
-                    job_data['responsibilities'] = json.dumps(text_elements) if text_elements else None
+                            if not salary_min and not salary_max:
+                                if 'salary' in employment:
+                                    salary = employment.get('salary')
+                                    if isinstance(salary, dict):
+                                        salary_min = salary.get('from')
+                                        salary_max = salary.get('to')
+                                        currency_obj = salary.get('currency', {})
+                                        if isinstance(currency_obj, dict):
+                                            salary_currency = currency_obj.get('code', 'PLN')
 
-                elif section_type == 'requirements-expected':
-                    job_data['requirements_expected'] = json.dumps(text_elements) if text_elements else None
+                        except Exception:
+                            pass
 
-            # --- LOCATION - FIX: Use inlandLocation for city/region ---
-            workplaces = attributes.get('workplaces', [])
-            if workplaces:
-                workplace = workplaces[0]
+                job_data['salary_min'] = salary_min
+                job_data['salary_max'] = salary_max
+                job_data['salary_currency'] = salary_currency if isinstance(salary_currency, str) else 'PLN'
 
-                # Try to get city from inlandLocation
-                inland_location = workplace.get('inlandLocation', {})
-                if isinstance(inland_location, dict):
-                    job_data['city'] = inland_location.get('city')
-                    job_data['region'] = inland_location.get('voivodeship')
-                    job_data['postal_code'] = inland_location.get('postalCode')
-                else:
-                    # Fallback na displayAddress
-                    display_address = workplace.get('displayAddress', '')
-                    job_data['city'] = display_address if display_address else None
-                    job_data['region'] = None
-                    job_data['postal_code'] = None
+            if data:
+                attributes = data.get('attributes', {})
+                employment = attributes.get('employment', {})
 
-            # --- DATES ---
-            pub_details = data.get('publicationDetails', {})
-            job_data['date_posted'] = pub_details.get('dateOfInitialPublicationUtc')
-            job_data['valid_through'] = pub_details.get('expirationDateUtc')
+                position_levels = employment.get('positionLevels', [])
+                job_data['position_levels'] = json.dumps(
+                    [pl.get('name') for pl in position_levels if pl.get('name')]
+                ) if position_levels else None
 
-            # --- PARTITION ID ---
+                work_schedules = employment.get('workSchedules', [])
+                job_data['work_schedules'] = json.dumps(
+                    [ws.get('name') for ws in work_schedules if ws.get('name')]
+                ) if work_schedules else None
+
+                work_modes = employment.get('workModes', [])
+                job_data['work_modes'] = json.dumps(
+                    [wm.get('name') for wm in work_modes if wm.get('name')]
+                ) if work_modes else None
+
+            technologies_required = []
+            technologies_optional = []
+
+            if data:
+                try:
+                    sections = data.get('sections', [])
+
+                    if isinstance(sections, list):
+                        for section in sections:
+                            if not isinstance(section, dict):
+                                continue
+
+                            sub_sections = section.get('subSections')
+
+                            if not isinstance(sub_sections, list):
+                                continue
+
+                            for sub_section in sub_sections:
+                                if not isinstance(sub_section, dict):
+                                    continue
+
+                                section_type = sub_section.get('sectionType')
+
+                                if section_type == 'technologies-expected':
+                                    model = sub_section.get('model', {})
+                                    if isinstance(model, dict):
+                                        custom_items = model.get('customItems', [])
+                                        if isinstance(custom_items, list):
+                                            technologies_required = [
+                                                item.get('name') for item in custom_items
+                                                if isinstance(item, dict) and item.get('name') and isinstance(
+                                                    item.get('name'), str)
+                                            ]
+
+                                elif section_type == 'technologies-optional':
+                                    model = sub_section.get('model', {})
+                                    if isinstance(model, dict):
+                                        custom_items = model.get('customItems', [])
+                                        if isinstance(custom_items, list):
+                                            technologies_optional = [
+                                                item.get('name') for item in custom_items
+                                                if isinstance(item, dict) and item.get('name') and isinstance(
+                                                    item.get('name'), str)
+                                            ]
+
+                except Exception:
+                    pass
+
+            job_data['technologies_os'] = json.dumps(technologies_required) if technologies_required else None
+            job_data['technologies_optional'] = json.dumps(technologies_optional) if technologies_optional else None
+
+            # --- OFFERED - PLAIN TEXT FROM textSections ---
+            we_offer = None
+
+            if data:
+                try:
+                    text_sections = data.get('textSections', [])
+
+                    for section in text_sections:
+                        if not isinstance(section, dict):
+                            continue
+
+                        if section.get('sectionType') != 'offered':
+                            continue
+
+                        plain_text = section.get('plainText')
+                        if isinstance(plain_text, str) and plain_text.strip():
+                            we_offer = plain_text.strip()
+                            break
+
+                except Exception:
+                    pass
+
+            job_data['we_offer'] = we_offer if we_offer else None
+
             job_data['partition_id'] = url.split('/')[-1]
             job_data['url'] = url
 
             return job_data
 
-        except Exception as e:
+        except Exception:
             return None
 
     def save_to_database(self, job_data):
@@ -236,11 +367,13 @@ class JobDetailsScraper:
                     salary_min, salary_max, salary_currency,
                     city, region, postal_code,
                     position_levels, work_schedules, work_modes,
-                    technologies_os, responsibilities,
+                    technologies_os, technologies_optional,
                     requirements_expected,
+                    we_offer,
+                    benefits,
                     date_posted, valid_through
                 )
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ''', (
                 job_data.get('partition_id'),
                 job_data.get('url'),
@@ -259,8 +392,10 @@ class JobDetailsScraper:
                 job_data.get('work_schedules'),
                 job_data.get('work_modes'),
                 job_data.get('technologies_os'),
-                job_data.get('responsibilities'),
+                job_data.get('technologies_optional'),
                 job_data.get('requirements_expected'),
+                job_data.get('we_offer'),
+                job_data.get('benefits'),
                 job_data.get('date_posted'),
                 job_data.get('valid_through')
             ))
@@ -269,8 +404,7 @@ class JobDetailsScraper:
             conn.close()
             return True
 
-        except Exception as e:
-            print(f"   ❌ DB error: {str(e)[:50]}")
+        except Exception:
             return False
 
     def scrape_url(self, url, retry_limit=3):
@@ -292,23 +426,26 @@ class JobDetailsScraper:
             except Exception as e:
                 retry_count += 1
                 if retry_count < retry_limit:
-                    print(f"   ⚠️  Retry {retry_count}/{retry_limit}...", end=" ", flush=True)
-                    time.sleep(2)
+                    wait_time = 2 * retry_count
+                    time.sleep(wait_time)
                 else:
                     self.failed_urls.append((url.split('/')[-1][:40], str(e)[:30]))
                     return False
 
         return False
 
-    def scrape_all_urls(self, url_list, batch_size=50):
-        """Scrape all URLs in batches"""
+    def scrape_all_urls(self, url_list, batch_size=100):
+        """Scrape all URLs in batches WITH RANDOM DELAYS"""
         total = len(url_list)
         successful = 0
         failed = 0
+        consecutive_fails = 0
 
         print(f"\n{'=' * 80}")
         print(f"SCRAPING {total} URLs - pracuj.pl")
         print(f"{'=' * 80}\n")
+
+        start_time = time.time()
 
         for i, url in enumerate(url_list, 1):
             url_short = url.split('/')[-1][:45]
@@ -317,24 +454,47 @@ class JobDetailsScraper:
             if self.scrape_url(url):
                 successful += 1
                 print("✅")
+                consecutive_fails = 0
             else:
                 failed += 1
+                consecutive_fails += 1
                 print("❌")
 
-            # Progress report every 50 URLs
+                if consecutive_fails >= 5:
+                    print(f"\n   ⚠️  5x consecutive fails - WAF/IP ban")
+                    print(f"   💤 Čekání 120 sekund...\n")
+                    time.sleep(120)
+                    consecutive_fails = 0
+
+            delay = random.uniform(1.5, 2.2)
+            time.sleep(delay)
+
+            # Progress every 100 URLs
             if i % batch_size == 0:
-                print(f"\n   → Progress: {i}/{total} ({(i / total * 100):.1f}%)\n")
+                print(f"\n   → Progress: {i}/{total} ({(i / total * 100):.1f}%)")
+                batch_delay = random.uniform(2, 5)
+                print(f"   💤 Batch break - {batch_delay:.1f}s...\n")
+                time.sleep(batch_delay)
 
-            time.sleep(0.3)
+        end_time = time.time()
+        elapsed = end_time - start_time
+        elapsed_str = self._format_time(elapsed)
 
-        # Final report
         print(f"\n{'=' * 80}")
         print(f"✅ SUCCESS: {successful}/{total} ({(successful / total * 100):.1f}%)")
         print(f"❌ FAILED: {failed}/{total}")
+        print(f"⏱️  EXECUTION TIME: {elapsed_str}")
         print(f"{'=' * 80}\n")
 
         self.print_database_stats()
         self.print_sample_data()
+
+    def _format_time(self, seconds):
+        """Format seconds to HH:MM:SS"""
+        hours = int(seconds // 3600)
+        minutes = int((seconds % 3600) // 60)
+        secs = int(seconds % 60)
+        return f"{hours}h {minutes}m {secs}s"
 
     def print_database_stats(self):
         """Print database statistics"""
@@ -351,14 +511,14 @@ class JobDetailsScraper:
             cursor.execute('SELECT COUNT(*) FROM job_offers WHERE title IS NOT NULL')
             with_title = cursor.fetchone()[0]
 
-            cursor.execute('SELECT COUNT(*) FROM job_offers WHERE responsibilities IS NOT NULL')
-            with_resp = cursor.fetchone()[0]
-
             cursor.execute('SELECT COUNT(*) FROM job_offers WHERE city IS NOT NULL')
             with_city = cursor.fetchone()[0]
 
             cursor.execute('SELECT COUNT(*) FROM job_offers WHERE region IS NOT NULL')
             with_region = cursor.fetchone()[0]
+
+            cursor.execute('SELECT COUNT(*) FROM job_offers WHERE technologies_os IS NOT NULL')
+            with_tech = cursor.fetchone()[0]
 
             cursor.execute(
                 'SELECT AVG(salary_max - salary_min) FROM job_offers WHERE salary_min IS NOT NULL AND salary_max IS NOT NULL')
@@ -372,7 +532,7 @@ class JobDetailsScraper:
             print(f"   With salary: {with_salary}")
             print(f"   With city: {with_city}")
             print(f"   With region: {with_region}")
-            print(f"   With responsibilities: {with_resp}")
+            print(f"   With technologies: {with_tech}")
             if avg_range:
                 print(f"   Avg salary range: {int(avg_range):,}\n")
             else:
@@ -388,11 +548,12 @@ class JobDetailsScraper:
             conn.row_factory = sqlite3.Row
             cursor = conn.cursor()
 
-            # With salary
             cursor.execute('SELECT * FROM job_offers WHERE salary_min IS NOT NULL ORDER BY rowid DESC LIMIT 1')
             row_with_salary = cursor.fetchone()
 
-            # Random
+            cursor.execute('SELECT * FROM job_offers WHERE technologies_os IS NOT NULL ORDER BY rowid DESC LIMIT 1')
+            row_with_tech = cursor.fetchone()
+
             cursor.execute('SELECT * FROM job_offers ORDER BY RANDOM() LIMIT 1')
             row_random = cursor.fetchone()
 
@@ -417,11 +578,23 @@ class JobDetailsScraper:
                     modes = json.loads(row_with_salary['work_modes'])
                     print(f"   🌐 Work Mode: {', '.join(modes)}")
 
-                if row_with_salary['requirements_expected']:
-                    reqs = json.loads(row_with_salary['requirements_expected'])
-                    print(f"   📚 Requirements: {len(reqs)} items")
-                    for req in reqs[:2]:
-                        print(f"      • {req[:70]}")
+            if row_with_tech:
+                print(f"\n{'─' * 80}")
+                print(f"🔹 WITH TECHNOLOGIES:")
+                print(f"   Title: {row_with_tech['title']}")
+                print(f"   Company: {row_with_tech['company']}")
+
+                if row_with_tech['technologies_os']:
+                    techs = json.loads(row_with_tech['technologies_os'])
+                    print(f"   🔧 Required technologies: {', '.join(techs[:5])}")
+                    if len(techs) > 5:
+                        print(f"      ... and {len(techs) - 5} more")
+
+                if row_with_tech['technologies_optional']:
+                    opt_techs = json.loads(row_with_tech['technologies_optional'])
+                    print(f"   ⭐ Optional technologies: {', '.join(opt_techs[:5])}")
+                    if len(opt_techs) > 5:
+                        print(f"      ... and {len(opt_techs) - 5} more")
 
             if row_random:
                 print(f"\n{'─' * 80}")
@@ -462,5 +635,4 @@ if __name__ == "__main__":
 
     scraper = JobDetailsScraper(db_path='job_database.db')
 
-    # Scrape all URLs
     scraper.scrape_all_urls(urls)

@@ -1,0 +1,34 @@
+import streamlit as st
+from data.loader import load_all_jobs, get_salary_per_kw_title
+from components.charts import make_salary_bar
+
+st.set_page_config(
+    page_title="Salary by Job Role",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
+
+st.title("Salary by Job Role")
+
+df = load_all_jobs()
+
+# Toggle Median / Mean / Oba
+view = st.radio("Display", ["Median", "Mean", "Both"], index=2, horizontal=True)
+
+salary_df = get_salary_per_kw_title(df)
+
+show_median = view in ("Median", "Both")
+show_mean = view in ("Mean", "Both")
+
+fig = make_salary_bar(
+    salary_df,
+    x_col="kw_title",
+    title="Monthly Max Salary by Job Role (PLN)",
+    show_median=show_median,
+    show_mean=show_mean,
+)
+st.plotly_chart(fig, use_container_width=True)
+
+# Počet záznamů se salary daty
+salary_count = len(df[df["monthly_max_salary"].notna() & (df["monthly_max_salary"] > 0)])
+st.caption(f"Based on **{salary_count:,}** job postings with salary data")

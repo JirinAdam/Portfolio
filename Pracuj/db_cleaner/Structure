@@ -1,0 +1,12 @@
+db_cleaner/
+├── __init__.py
+├── base_mapper.py        # Abstract base class
+├── mappers/
+│   ├── __init__.py
+│   ├── region_mapper.py
+│   ├── salary_mapper.py
+│   ├── work_modes_mapper.py
+│   ├── employment_type_mapper.py
+│   ├── position_levels_mapper.py
+│   └── industry_mapper.py
+└── database_cleaner.py   # Main orchestrator

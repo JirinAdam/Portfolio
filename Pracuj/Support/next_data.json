@@ -1,0 +1,940 @@
+{
+  "appGip": true,
+  "assetPrefix": "https://offerpage.gpcdn.pl/393616",
+  "buildId": "393616",
+  "gssp": true,
+  "isExperimentalCompile": false,
+  "isFallback": false,
+  "page": "/offerview",
+  "props": {
+    "__N_SSP": true,
+    "pageProps": {
+      "_sentryBaggage": "sentry-environment=production,sentry-release=offer-page%400.0.1845,sentry-public_key=8e1d4735487941d89a632bb4ab22e0af,sentry-trace_id=a8e39c5396281fdca0195f3d26219c20,sentry-org_id=77844",
+      "_sentryTraceData": "a8e39c5396281fdca0195f3d26219c20-4c80c3c02013c037",
+      "businessVariables": {
+        "LINK_ABOUT": "https://grupapracuj.pl/firma/",
+        "LINK_ABSENCE": "https://www.absence.io/",
+        "LINK_ACCOUNT": "https://www.pracuj.pl/konto",
+        "LINK_ADD_OFFER": "https://dlafirm.pracuj.pl/?prlc=b2c_stopka&prnm=sekcja_b2c",
+        "LINK_ADS": "https://reklama.pracuj.pl/",
+        "LINK_ADVICE_FOR_EMPLOYERS": "https://dlafirm.pracuj.pl/blog",
+        "LINK_APPSTORE_APP": "https://itunes.apple.com/pl/app/id386774884",
+        "LINK_BELL_NOTIFICATIONS": "https://www.pracuj.pl/konto/powiadomienia",
+        "LINK_BUSINESS_TRIP_CALCULATOR": "https://zarobki.pracuj.pl/kalkulator-krajowej-podrozy-sluzbowej",
+        "LINK_COOKIES_DATA_COLLECTION_POLICY": "https://grupapracuj.pl/prywatnosc/polityka-plikow-cookie#6",
+        "LINK_COOKIES_PARTNERS": "https://grupapracuj.pl/prywatnosc/partnerzy-cookies/",
+        "LINK_COOKIES_POLICY": "https://grupapracuj.pl/prywatnosc/polityka-plikow-cookie",
+        "LINK_CV_CREATOR": "https://cv.pracuj.pl/",
+        "LINK_DIGITAL_SERVICES_ACT": "https://pomoc.pracuj.pl/hc/pl/articles/10876356951964-Informacje-dla-aktu-o-us%C5%82ugach-cyfrowych",
+        "LINK_DOCS": "https://www.pracuj.pl/konto/dokumenty",
+        "LINK_EMPLOYERS": "https://pracodawcy.pracuj.pl/",
+        "LINK_EMPLOYERS_PROFILES": "https://pracodawcy.pracuj.pl",
+        "LINK_EMPLOYER_COST_CALCULATOR": "https://dlafirm.pracuj.pl/kalkulator-kosztow-pracodawcy",
+        "LINK_EMPLOYER_HELP": "https://dlafirm.pracuj.pl/pomoc",
+        "LINK_EMPLOYER_PROFILE": "https://dlafirm.pracuj.pl/sklep/",
+        "LINK_E_RECRUITER": "https://go.erecruiter.pl/umow-sie-na-prezentacje-pr",
+        "LINK_E_RECRUITER_BLOG": "https://erecruiter.pl/blog/",
+        "LINK_FACEBOOK": "https://www.facebook.com/pracuj",
+        "LINK_FIRST_JOB": "https://www.pracuj.pl/praca?et=3%2c1",
+        "LINK_FOR_EMPLOYERS": "https://dlafirm.pracuj.pl/",
+        "LINK_GOOGLE_PLAY_APP": "https://play.google.com/store/apps/details?id=pl.pracuj.android.jobsearcher&referrer=utm_source%3Dpracuj%26utm_medium%3Dbutton%26utm_campaign%3Dstopka",
+        "LINK_GRUPA_PRACUJ": "https://grupapracuj.pl",
+        "LINK_HELP": "https://pomoc.pracuj.pl/hc/pl",
+        "LINK_HIRE": "https://www.pracujwgp.pl/",
+        "LINK_HOMEPAGE": "https://www.pracuj.pl/",
+        "LINK_HOURLY_PAYCHECK_CALCULATOR": "https://zarobki.pracuj.pl/kalkulator-godzinowy",
+        "LINK_HR_CHALLENGES": "https://wyzwaniahr.pracuj.pl",
+        "LINK_HR_GLOSSARY": "https://dlafirm.pracuj.pl/blog/slownik-biznesowy-HR",
+        "LINK_INSTAGRAM": "https://www.instagram.com/pracuj.pl/",
+        "LINK_IT_GLOSSARY": "https://blog.theprotocol.it/slownik-it",
+        "LINK_JOBICON": "https://jobicon.pracuj.pl/",
+        "LINK_JOB_ALERTS": "https://www.pracuj.pl/konto/zapisane/wyszukiwania",
+        "LINK_JOB_OFFERS": "https://www.pracuj.pl/praca",
+        "LINK_JOB_OFFERS_BLUE": "https://pracafizyczna.pracuj.pl/praca",
+        "LINK_JOB_OFFERS_IT": "https://it.pracuj.pl/praca",
+        "LINK_JOB_OFFERS_SALES": "https://sprzedaz.pracuj.pl/praca",
+        "LINK_JOB_OFFERS_TECH": "https://inzynieria.pracuj.pl/praca",
+        "LINK_JOB_OFFERS_UA": "https://robota.pracuj.pl/",
+        "LINK_JOB_SUPEROFFERS": "https://www.pracuj.pl/praca/true;so",
+        "LINK_LABOR_OFFICES": "https://urzedy-pracy.pracuj.pl/",
+        "LINK_LEAVE_COMPENSATION_CALCULATOR": "https://dlafirm.pracuj.pl/kalkulator-ekwiwalentu-za-urlop",
+        "LINK_LOGIN": "https://login.pracuj.pl/",
+        "LINK_LOGOUT": "https://login.pracuj.pl/wylogowanie",
+        "LINK_MATERNITY_LEAVE_CALCULATOR": "https://zarobki.pracuj.pl/kalkulator-urlopu-macierzynskiego-i-rodzicielskiego",
+        "LINK_MULTI_APPLYING": "https://pracuj.pl/aplikowanie/multiaplikowanie/",
+        "LINK_MY_SEND_JOB_REQUESTS": "https://www.pracuj.pl/konto/moje-aplikacje",
+        "LINK_OFFERS_ARCHIVE": "https://archiwum.pracuj.pl/",
+        "LINK_PARTNERS": "https://porady.pracuj.pl/partnerzy/",
+        "LINK_PRESS": "https://media.pracuj.pl/",
+        "LINK_PRIVACY_POLICY": "https://grupapracuj.pl/prywatnosc/polityka-prywatnosci",
+        "LINK_PRIVACY_SETTINGS": "https://www.pracuj.pl/konto/ustawienia",
+        "LINK_PROFILE": "https://profil.pracuj.pl/",
+        "LINK_RECOMMENDED_OFFERS": "https://www.pracuj.pl/konto/rekomendacje",
+        "LINK_REGISTER": "https://login.pracuj.pl/zaloz-konto",
+        "LINK_REGULATIONS": "https://grupapracuj.pl/prywatnosc/regulamin",
+        "LINK_ROBOTA": "https://robota.ua/",
+        "LINK_SALARIES": "https://zarobki.pracuj.pl/",
+        "LINK_SALARIES_CALCULATOR": "https://zarobki.pracuj.pl/kalkulator-wynagrodzen",
+        "LINK_SALARIES_CALCULATORS": "https://zarobki.pracuj.pl/#calculator",
+        "LINK_SAVED_OFFERS": "https://www.pracuj.pl/konto/zapisane",
+        "LINK_SETTINGS": "https://www.pracuj.pl/konto/ustawienia",
+        "LINK_SOFT_GARDEN": "https://softgarden.com/de/",
+        "LINK_THE_NETWORK": "https://grupapracuj.pl/pracodawca-partnerzy-network",
+        "LINK_THE_PROTOCOL": "https://theprotocol.it/",
+        "LINK_THE_PROTOCOL_BLOG": "https://blog.theprotocol.it/",
+        "LINK_TIKTOK": "https://www.tiktok.com/@pracuj.pl",
+        "LINK_TIPS": "https://porady.pracuj.pl/",
+        "LINK_VAT_CALCULATOR": "https://dlafirm.pracuj.pl/kalkulator-vat-brutto-netto",
+        "LINK_YOUTUBE": "https://www.youtube.com/user/pracuj"
+      },
+      "dehydratedState": {
+        "mutations": [],
+        "queries": [
+          {
+            "queryHash": "[\"jobOffer\",\"1004628779\",\"pl\"]",
+            "queryKey": [
+              "jobOffer",
+              "1004628779",
+              "pl"
+            ],
+            "state": {
+              "data": {
+                "aiSummary": "<ul><li>Masz ponad 3 lata doświadczenia w pracy z <b>danymi głosowymi lub tekstowymi (NLP/Speech Analytics)</b>.</li><li>Posiadasz znajomość <b>Python, SQL oraz narzędzi chmurowych (preferowany Azure)</b>.</li><li>Potrafisz analizować i poprawiać jakość transkrypcji oraz tworzyć reguły ekstrakcji danych z rozmów.</li><li>Chcesz współpracować z zespołami technicznymi przy integracji i monitorowaniu jakości danych audio i tekstowych.</li><li>Cenisz <b>pracę hybrydową w Warszawie</b> i wymagana jest <b>płynna znajomość języka polskiego</b>.</li><li>Masz doświadczenie w wizualizacji danych i raportowaniu, np. w <b>Power BI</b>.</li></ul>",
+                "appType": 2,
+                "attributes": {
+                  "applying": {
+                    "applyProxy": {
+                      "applyUrl": "https://www.pracuj.pl/aplikuj/analityk-analityczka-ai-branza-bankowa-f-m-x-warszawa-aleja-niepodleglosci-69,oferta,1004628779",
+                      "multiApplying": [],
+                      "multiApplyingEnabled": false
+                    },
+                    "applyUrl": "https://www.pracuj.pl/aplikuj/analityk-analityczka-ai-branza-bankowa-f-m-x-warszawa-aleja-niepodleglosci-69,oferta,1004628779",
+                    "ats": {
+                      "formMode": "single",
+                      "formUrl": "https://sii.pl/oferty-pracy/id/36002?sii_source=0&utm_source=pracuj.pl&utm_medium=referral&utm_campaign=JobSiistem&location=PL_WARSAW#apply-contact-form",
+                      "multiApplying": [],
+                      "optionalCv": false
+                    },
+                    "contactPhone": null,
+                    "eRecruiter": null,
+                    "formBranding": {
+                      "banner": null,
+                      "enabled": false,
+                      "logo": null
+                    },
+                    "letter": null,
+                    "oneClickApply": false,
+                    "referenceNumber": "",
+                    "remoteRecruitment": false,
+                    "strefa": null
+                  },
+                  "categories": [
+                    {
+                      "id": 5016001,
+                      "name": "Analiza biznesowa i systemowa",
+                      "parent": {
+                        "id": 5016,
+                        "name": "IT - Rozwój oprogramowania"
+                      }
+                    }
+                  ],
+                  "description": "Twój zakres obowiązków, Analiza jakości transkrypcji i współpraca przy usprawnianiu modeli Speech-to-Text, Przygotowywanie reguł i logiki do ekstrakcji informacji z rozmów, Porządkowanie, standaryzacja i monitorowanie jakości danych audio i...",
+                  "displayEmployerName": "Sii Sp. z o.o.",
+                  "employment": {
+                    "entirelyRemoteWork": false,
+                    "positionLevels": [
+                      {
+                        "id": 4,
+                        "name": "specjalista (Mid / Regular)",
+                        "pracujPlName": "specjalista (Mid / Regular)"
+                      }
+                    ],
+                    "typesOfContracts": [
+                      {
+                        "id": 0,
+                        "name": "umowa o pracę",
+                        "pracujPlName": "umowa o pracę",
+                        "salary": null
+                      },
+                      {
+                        "id": 3,
+                        "name": "kontrakt B2B",
+                        "pracujPlName": "kontrakt B2B",
+                        "salary": null
+                      }
+                    ],
+                    "workModes": [
+                      {
+                        "code": "full-office",
+                        "description": "",
+                        "name": "praca stacjonarna",
+                        "pracujPlName": "praca stacjonarna"
+                      },
+                      {
+                        "code": "hybrid",
+                        "description": "",
+                        "name": "praca hybrydowa",
+                        "pracujPlName": "praca hybrydowa"
+                      }
+                    ],
+                    "workSchedules": [
+                      {
+                        "id": 0,
+                        "name": "pełny etat",
+                        "pracujPlName": "pełny etat"
+                      }
+                    ]
+                  },
+                  "informationClause": {
+                    "longText": "",
+                    "shortText": ""
+                  },
+                  "isArchive": false,
+                  "isWithdrawn": false,
+                  "jobTitle": "Analityk / Analityczka AI – branża bankowa (f/m/x)",
+                  "leadingCategory": {
+                    "id": 5016001,
+                    "name": "Analiza biznesowa i systemowa",
+                    "parent": {
+                      "id": 5016,
+                      "name": "IT - Rozwój oprogramowania"
+                    }
+                  },
+                  "offerAbsoluteUrl": "https://www.pracuj.pl/praca/analityk-analityczka-ai-branza-bankowa-f-m-x-warszawa-aleja-niepodleglosci-69,oferta,1004628779",
+                  "workplaces": [
+                    {
+                      "abroadAddress": null,
+                      "country": {
+                        "id": 1,
+                        "name": "Polska",
+                        "pracujPlName": "Polska"
+                      },
+                      "displayAddress": "Aleja Niepodległości 69, Mokotów, Warszawa",
+                      "inlandLocation": {
+                        "address": {
+                          "additionalInfo": "",
+                          "buildingNumber": "69",
+                          "coordinates": {
+                            "latitude": 52.19050598144531,
+                            "longitude": 21.015926361083984
+                          },
+                          "district": "Mokotów",
+                          "flatNumber": "",
+                          "street": "Aleja Niepodległości",
+                          "zipCode": "02-626"
+                        },
+                        "location": {
+                          "id": 739,
+                          "name": "Warszawa"
+                        }
+                      },
+                      "isAbroad": false,
+                      "region": {
+                        "id": 7,
+                        "name": "mazowieckie",
+                        "pracujPlName": "mazowieckie"
+                      }
+                    }
+                  ]
+                },
+                "employerId": 20000761,
+                "groupId": "a0290000-56be-0050-95fa-08de64bee4cb",
+                "isDirectlyFromEmployer": true,
+                "jobOfferLanguage": {
+                  "isoCode": "pl"
+                },
+                "jobOfferWebId": 1004628779,
+                "offerURLName": "analityk-analityczka-ai-branza-bankowa-f-m-x-warszawa-aleja-niepodleglosci-69,oferta,1004628779",
+                "partitionKey": "1-7-739-6d28473229ac46ca286d047f69283798",
+                "primaryAttributes": [],
+                "productAddons": {
+                  "desktopListingBanner": {
+                    "banner": {
+                      "pracujPlBasicSizeUrl": ""
+                    },
+                    "enabled": false
+                  },
+                  "listingLogo": {
+                    "enabled": true,
+                    "logo": {
+                      "pracujPlBasicSizeUrl": "https://logos.gpcdn.pl/loga-firm/20000761/03000000-bb2f-3863-1665-08d6dec4c54d_280x280.jpeg"
+                    }
+                  },
+                  "mobileListingBanner": {
+                    "banner": {
+                      "mobileBasicSizeUrl": ""
+                    },
+                    "enabled": false
+                  },
+                  "rwdListingBanner": {
+                    "banner": {
+                      "pracujPlBasicSizeUrl": ""
+                    },
+                    "enabled": false
+                  },
+                  "searchingInWholePoland": {
+                    "enabled": false
+                  },
+                  "superOption": {
+                    "enabled": true
+                  }
+                },
+                "publicationDetails": {
+                  "dateOfInitialPublicationUtc": "2026-02-05T14:29:14.367Z",
+                  "expirationDateTimeUtc": "2026-03-07T22:59:59Z",
+                  "expirationDateUtc": "2026-03-07T22:59:59Z",
+                  "isActive": true,
+                  "jobOfferUrlSegment": "analityk-analityczka-ai-branza-bankowa-f-m-x-warszawa-aleja-niepodleglosci-69,oferta,1004628779",
+                  "jobOfferVersion": "ac090000-56be-0050-9fe2-08de64c2efad",
+                  "lastPublishedUtc": "2026-02-05T14:29:14.367Z"
+                },
+                "secondaryAttributes": [
+                  {
+                    "code": "it-specializations",
+                    "label": {
+                      "pracujPlText": "Specjalizacje",
+                      "primaryTargetSiteText": "Specjalizacje",
+                      "text": "Specjalizacje"
+                    },
+                    "model": {
+                      "customItems": [],
+                      "dictionaryName": "ItSpecializations",
+                      "items": [
+                        {
+                          "code": "ai-ml",
+                          "name": "AI/ML",
+                          "pracujPlName": "AI/ML",
+                          "primaryTargetSiteName": "AI/ML"
+                        },
+                        {
+                          "code": "data-analytics-and-bi",
+                          "name": "Data analytics & BI",
+                          "pracujPlName": "Data analytics & BI",
+                          "primaryTargetSiteName": "Data analytics & BI"
+                        }
+                      ],
+                      "modelType": "open-dictionary"
+                    }
+                  },
+                  {
+                    "code": "it-technologies-highlighted",
+                    "label": {
+                      "pracujPlText": "Technologie",
+                      "primaryTargetSiteText": "Technologie",
+                      "text": "Technologie"
+                    },
+                    "model": {
+                      "customItems": [],
+                      "dictionaryName": "ItTechnologies",
+                      "items": [
+                        {
+                          "code": "36",
+                          "name": "SQL",
+                          "pracujPlName": "SQL",
+                          "primaryTargetSiteName": "SQL"
+                        },
+                        {
+                          "code": "37",
+                          "name": "Python",
+                          "pracujPlName": "Python",
+                          "primaryTargetSiteName": "Python"
+                        },
+                        {
+                          "code": "272",
+                          "name": "Microsoft Power BI",
+                          "pracujPlName": "Microsoft Power BI",
+                          "primaryTargetSiteName": "Microsoft Power BI"
+                        }
+                      ],
+                      "modelType": "open-dictionary"
+                    }
+                  }
+                ],
+                "sections": [
+                  {
+                    "header": null,
+                    "id": {
+                      "number": 1,
+                      "type": "technologies"
+                    },
+                    "model": null,
+                    "number": 0,
+                    "sectionType": "technologies",
+                    "subSections": [
+                      {
+                        "header": null,
+                        "id": {
+                          "number": 1,
+                          "type": "technologies-expected"
+                        },
+                        "model": {
+                          "customItems": [
+                            {
+                              "name": "Azure Speech Services"
+                            },
+                            {
+                              "name": "Python"
+                            },
+                            {
+                              "name": "Azure Blob Storage"
+                            },
+                            {
+                              "name": "GitHub Actions"
+                            },
+                            {
+                              "name": "API"
+                            },
+                            {
+                              "name": "LLP"
+                            },
+                            {
+                              "name": "RAG"
+                            },
+                            {
+                              "name": "VoIP"
+                            },
+                            {
+                              "name": "SIP"
+                            },
+                            {
+                              "name": "SQL"
+                            },
+                            {
+                              "name": "Microsoft Power BI"
+                            }
+                          ],
+                          "dictionaryName": "ItTechnologies",
+                          "items": [],
+                          "modelType": "open-dictionary"
+                        },
+                        "number": 0,
+                        "sectionType": "technologies-expected",
+                        "subSections": null,
+                        "title": "Wymagane"
+                      },
+                      {
+                        "header": null,
+                        "id": {
+                          "number": 1,
+                          "type": "technologies-optional"
+                        },
+                        "model": {
+                          "customItems": [
+                            {
+                              "name": "Microsoft Azure"
+                            }
+                          ],
+                          "dictionaryName": "ItTechnologies",
+                          "items": [],
+                          "modelType": "open-dictionary"
+                        },
+                        "number": 0,
+                        "sectionType": "technologies-optional",
+                        "subSections": null,
+                        "title": "Mile widziane"
+                      }
+                    ],
+                    "title": "Technologie, których używamy"
+                  },
+                  {
+                    "header": null,
+                    "id": {
+                      "number": 1,
+                      "type": "about-project"
+                    },
+                    "model": {
+                      "modelType": "multi-paragraph",
+                      "paragraphs": [
+                        "Poszukujemy osoby na stanowisko Analityka/Analityczki AI, która dołączy do zespołu pracującego nad rozwiązaniami z obszaru Voice AI oraz Speech-to-Text. Rola koncentruje się na analizie danych głosowych, poprawie jakości transkrypcji oraz przekształcaniu rozmów audio w informacje wspierające procesy biznesowe i obsługę klienta.",
+                        "",
+                        "Szukamy osoby z analitycznym podejściem, rozumieniem technologii chmurowych oraz doświadczeniem w pracy z danymi głosowymi."
+                      ]
+                    },
+                    "number": 0,
+                    "sectionType": "about-project",
+                    "subSections": null,
+                    "title": "O projekcie"
+                  },
+                  {
+                    "header": null,
+                    "id": {
+                      "number": 1,
+                      "type": "responsibilities"
+                    },
+                    "model": {
+                      "bullets": [
+                        "Analiza jakości transkrypcji i współpraca przy usprawnianiu modeli Speech-to-Text",
+                        "Przygotowywanie reguł i logiki do ekstrakcji informacji z rozmów",
+                        "Porządkowanie, standaryzacja i monitorowanie jakości danych audio i tekstowych",
+                        "Przekładanie wymagań biznesowych na parametry techniczne silników Speech AI",
+                        "Współpraca z zespołami technicznymi przy integracjach i przepływach danych",
+                        "Przygotowywanie raportów i analiz wspierających rozwój rozwiązań Voice AI"
+                      ],
+                      "modelType": "bullets"
+                    },
+                    "number": 0,
+                    "sectionType": "responsibilities",
+                    "subSections": null,
+                    "title": "Twój zakres obowiązków"
+                  },
+                  {
+                    "header": null,
+                    "id": {
+                      "number": 1,
+                      "type": "requirements"
+                    },
+                    "model": null,
+                    "number": 0,
+                    "sectionType": "requirements",
+                    "subSections": [
+                      {
+                        "header": null,
+                        "id": {
+                          "number": 1,
+                          "type": "requirements-expected"
+                        },
+                        "model": {
+                          "bullets": [
+                            "Minimum 3 lata doświadczenia na podobnym stanowisku",
+                            "Doświadczenie w pracy z danymi tekstowymi lub mową (NLP/Speech Analytics)",
+                            "Znajomość Python i SQL w kontekście analizy danych",
+                            "Doświadczenie z rozwiązaniami chmurowymi (preferowany Azure)",
+                            "Umiejętność wizualizacji danych i budowania raportów w Power BI",
+                            "Otwartość na pracę hybrydową w Warszawie (1-2 dni w tygodniu)",
+                            "Wymagane przebywanie na terenie Polski oraz płynna znajomość języka polskiego"
+                          ],
+                          "modelType": "bullets"
+                        },
+                        "number": 0,
+                        "sectionType": "requirements-expected",
+                        "subSections": null,
+                        "title": ""
+                      },
+                      {
+                        "header": null,
+                        "id": {
+                          "number": 1,
+                          "type": "requirements-optional"
+                        },
+                        "model": {
+                          "bullets": [
+                            "Doświadczenie z LLM/RAG, znajomość technologii VoIP/SIP"
+                          ],
+                          "modelType": "bullets"
+                        },
+                        "number": 0,
+                        "sectionType": "requirements-optional",
+                        "subSections": null,
+                        "title": "Mile widziane"
+                      }
+                    ],
+                    "title": "Nasze wymagania"
+                  },
+                  {
+                    "header": null,
+                    "id": {
+                      "number": 1,
+                      "type": "offered"
+                    },
+                    "model": {
+                      "bullets": [
+                        "Tytuł Great Place to Work od 2015 roku - to dzięki opiniom pracowników otrzymujemy tytuł i wdrażamy nowe pomysły",
+                        "Stabilność zatrudnienia – 2,1 MLD PLN przychodu, brak długów, od 2006 roku na rynku",
+                        "Dzielimy się zyskiem z pracownikami - od 2022 roku przeznaczyliśmy na ten cel już ponad 76 milionów PLN",
+                        "Bogaty pakiet benefitów - prywatna opieka zdrowotna, platforma kafeteryjna, zniżki na samochody i więcej",
+                        "Komfortowe miejsce pracy - pracuj w naszych biurach klasy A lub zdalnie",
+                        "Dziesiątki fascynujących projektów dla prestiżowych marek z całego świata – możesz je zmieniać dzięki aplikacji Job Changer",
+                        "1 000 000 PLN rocznie na Twoje pomysły - taką kwotą wspieramy pasje i akcje wolontariackie naszych pracowników",
+                        "Stawiamy na Twój rozwój - meetupy, webinary, platforma szkoleniowa i blog technologiczny – Ty wybierasz",
+                        "Fantastyczna atmosfera stworzona przez wszystkich Sii Power People"
+                      ],
+                      "modelType": "bullets"
+                    },
+                    "number": 0,
+                    "sectionType": "offered",
+                    "subSections": null,
+                    "title": "To oferujemy"
+                  },
+                  {
+                    "header": null,
+                    "id": {
+                      "number": 1,
+                      "type": "recruitment-stages"
+                    },
+                    "model": {
+                      "bullets": [
+                        "Wyślij do nas swoje CV",
+                        "Weź udział w rozmowie rekrutacyjnej ",
+                        "Poznaj projekty dopasowane do Twoich potrzeb",
+                        "Podejmij decyzję i zacznij swoją przygodę z Sii!"
+                      ],
+                      "modelType": "bullets"
+                    },
+                    "number": 0,
+                    "sectionType": "recruitment-stages",
+                    "subSections": null,
+                    "title": "Etapy rekrutacji"
+                  },
+                  {
+                    "header": null,
+                    "id": {
+                      "number": 1,
+                      "type": "about-us-extended"
+                    },
+                    "model": null,
+                    "number": 0,
+                    "sectionType": "about-us-extended",
+                    "subSections": [
+                      {
+                        "header": null,
+                        "id": {
+                          "number": 1,
+                          "type": "about-us-description"
+                        },
+                        "model": {
+                          "modelType": "multi-paragraph",
+                          "paragraphs": [
+                            "Sii to czołowy dostawca doradztwa technologicznego, transformacji cyfrowej oraz usług inżynieryjnych i biznesowych w Polsce. Zatrudniamy już ponad 7 300 specjalistów i realizujemy projekty z różnorodnych branż dla klientów z wielu krajów na całym świecie. Tytuł Great Place to Work zdobyty 11 razy z rzędu to dowód na to, że w Sii tworzymy przyjazne środowisko pracy.",
+                            "",
+                            "Sii zapewnia, że wszystkie decyzje związane z zatrudnieniem są podejmowane wyłącznie na podstawie kwalifikacji oraz kompetencji. Zobowiązujemy się do równego i sprawiedliwego traktowania wszystkich, niezależnie od cech prawnie chronionych. W Sii promujemy także różnorodne i inkluzywne środowisko pracy w pełnej zgodności z obowiązującymi przepisami antydyskryminacyjnymi."
+                          ]
+                        },
+                        "number": 0,
+                        "sectionType": "about-us-description",
+                        "subSections": null,
+                        "title": "Sii Sp. z o.o."
+                      },
+                      {
+                        "header": null,
+                        "id": {
+                          "number": 1,
+                          "type": "about-us-gallery"
+                        },
+                        "model": {
+                          "items": [
+                            {
+                              "grubberId": null,
+                              "mediaType": "picture",
+                              "thumbnailUrl": "https://grubber.gpcdn.pl/companies/20000761/gallery-images/68120000-56be-0050-6db5-08de07f7c73a.jpg",
+                              "url": "https://grubber.gpcdn.pl/companies/20000761/gallery-images/68120000-56be-0050-6db5-08de07f7c73a.jpg"
+                            },
+                            {
+                              "grubberId": null,
+                              "mediaType": "picture",
+                              "thumbnailUrl": "https://grubber.gpcdn.pl/companies/20000761/gallery-images/44350000-56be-0050-6775-08de07fa8ecc.jpg",
+                              "url": "https://grubber.gpcdn.pl/companies/20000761/gallery-images/44350000-56be-0050-6775-08de07fa8ecc.jpg"
+                            },
+                            {
+                              "grubberId": null,
+                              "mediaType": "picture",
+                              "thumbnailUrl": "https://grubber.gpcdn.pl/companies/20000761/gallery-images/44350000-56be-0050-1a86-08de07fa8f20.jpg",
+                              "url": "https://grubber.gpcdn.pl/companies/20000761/gallery-images/44350000-56be-0050-1a86-08de07fa8f20.jpg"
+                            },
+                            {
+                              "grubberId": null,
+                              "mediaType": "picture",
+                              "thumbnailUrl": "https://grubber.gpcdn.pl/companies/20000761/gallery-images/68120000-56be-0050-6e56-08de07f7c712.jpg",
+                              "url": "https://grubber.gpcdn.pl/companies/20000761/gallery-images/68120000-56be-0050-6e56-08de07f7c712.jpg"
+                            },
+                            {
+                              "grubberId": null,
+                              "mediaType": "picture",
+                              "thumbnailUrl": "https://grubber.gpcdn.pl/companies/20000761/gallery-images/68120000-56be-0050-755f-08de07f7c6cb.jpg",
+                              "url": "https://grubber.gpcdn.pl/companies/20000761/gallery-images/68120000-56be-0050-755f-08de07f7c6cb.jpg"
+                            },
+                            {
+                              "grubberId": null,
+                              "mediaType": "video-youtube",
+                              "thumbnailUrl": "https://i.ytimg.com/vi/0EA5TYDAxBU/hqdefault.jpg",
+                              "url": "https://www.youtube.com/embed/0EA5TYDAxBU?feature=oembed"
+                            }
+                          ],
+                          "modelType": "gallery"
+                        },
+                        "number": 0,
+                        "sectionType": "about-us-gallery",
+                        "subSections": null,
+                        "title": "Tak się u nas pracuje"
+                      }
+                    ],
+                    "title": ""
+                  }
+                ],
+                "style": {
+                  "backgroundImages": [
+                    {
+                      "pracujPlBasicSizeUrl": "https://grubber.gpcdn.pl/companies/20000761/background-images/68120000-56be-0050-40c2-08de07f77cc1.jpg"
+                    }
+                  ],
+                  "fontColor": {
+                    "hex": "#ffffff"
+                  },
+                  "offerViewLogo": {
+                    "pracujPlBasicSizeUrl": "https://logos.gpcdn.pl/loga-firm/20000761/03000000-bb2f-3863-1665-08d6dec4c54d_280x280.jpeg"
+                  },
+                  "sectionsBackground": {
+                    "image": {
+                      "pracujPlBasicSizeUrl": "https://grubber.gpcdn.pl/companies/20000761/background-images/68120000-56be-0050-40c2-08de07f77cc1.jpg"
+                    },
+                    "useThemeColor": false
+                  },
+                  "themeColor": {
+                    "hex": "#0e6ee0"
+                  }
+                },
+                "textSections": [
+                  {
+                    "plainText": "Wymagane, Azure Speech Services, Python, Azure Blob Storage, GitHub Actions, API, LLP, RAG, VoIP, SIP, SQL, Microsoft Power BI",
+                    "sectionType": "technologies-expected",
+                    "textElements": [
+                      "Azure Speech Services",
+                      "Python",
+                      "Azure Blob Storage",
+                      "GitHub Actions",
+                      "API",
+                      "LLP",
+                      "RAG",
+                      "VoIP",
+                      "SIP",
+                      "SQL",
+                      "Microsoft Power BI"
+                    ]
+                  },
+                  {
+                    "plainText": "Mile widziane, Microsoft Azure",
+                    "sectionType": "technologies-optional",
+                    "textElements": [
+                      "Microsoft Azure"
+                    ]
+                  },
+                  {
+                    "plainText": "O projekcie, Poszukujemy osoby na stanowisko Analityka/Analityczki AI, która dołączy do zespołu pracującego nad rozwiązaniami z obszaru Voice AI oraz Speech-to-Text. Rola koncentruje się na analizie danych głosowych, poprawie jakości transkrypcji oraz przekształcaniu rozmów audio w informacje wspierające procesy biznesowe i obsługę klienta., , Szukamy osoby z analitycznym podejściem, rozumieniem technologii chmurowych oraz doświadczeniem w pracy z danymi głosowymi.",
+                    "sectionType": "about-project",
+                    "textElements": [
+                      "Poszukujemy osoby na stanowisko Analityka/Analityczki AI, która dołączy do zespołu pracującego nad rozwiązaniami z obszaru Voice AI oraz Speech-to-Text. Rola koncentruje się na analizie danych głosowych, poprawie jakości transkrypcji oraz przekształcaniu rozmów audio w informacje wspierające procesy biznesowe i obsługę klienta.",
+                      "",
+                      "Szukamy osoby z analitycznym podejściem, rozumieniem technologii chmurowych oraz doświadczeniem w pracy z danymi głosowymi."
+                    ]
+                  },
+                  {
+                    "plainText": "Twój zakres obowiązków, Analiza jakości transkrypcji i współpraca przy usprawnianiu modeli Speech-to-Text, Przygotowywanie reguł i logiki do ekstrakcji informacji z rozmów, Porządkowanie, standaryzacja i monitorowanie jakości danych audio i tekstowych, Przekładanie wymagań biznesowych na parametry techniczne silników Speech AI, Współpraca z zespołami technicznymi przy integracjach i przepływach danych, Przygotowywanie raportów i analiz wspierających rozwój rozwiązań Voice AI",
+                    "sectionType": "responsibilities",
+                    "textElements": [
+                      "Analiza jakości transkrypcji i współpraca przy usprawnianiu modeli Speech-to-Text",
+                      "Przygotowywanie reguł i logiki do ekstrakcji informacji z rozmów",
+                      "Porządkowanie, standaryzacja i monitorowanie jakości danych audio i tekstowych",
+                      "Przekładanie wymagań biznesowych na parametry techniczne silników Speech AI",
+                      "Współpraca z zespołami technicznymi przy integracjach i przepływach danych",
+                      "Przygotowywanie raportów i analiz wspierających rozwój rozwiązań Voice AI"
+                    ]
+                  },
+                  {
+                    "plainText": "Minimum 3 lata doświadczenia na podobnym stanowisku, Doświadczenie w pracy z danymi tekstowymi lub mową (NLP/Speech Analytics), Znajomość Python i SQL w kontekście analizy danych, Doświadczenie z rozwiązaniami chmurowymi (preferowany Azure), Umiejętność wizualizacji danych i budowania raportów w Power BI, Otwartość na pracę hybrydową w Warszawie (1-2 dni w tygodniu), Wymagane przebywanie na terenie Polski oraz płynna znajomość języka polskiego",
+                    "sectionType": "requirements-expected",
+                    "textElements": [
+                      "Minimum 3 lata doświadczenia na podobnym stanowisku",
+                      "Doświadczenie w pracy z danymi tekstowymi lub mową (NLP/Speech Analytics)",
+                      "Znajomość Python i SQL w kontekście analizy danych",
+                      "Doświadczenie z rozwiązaniami chmurowymi (preferowany Azure)",
+                      "Umiejętność wizualizacji danych i budowania raportów w Power BI",
+                      "Otwartość na pracę hybrydową w Warszawie (1-2 dni w tygodniu)",
+                      "Wymagane przebywanie na terenie Polski oraz płynna znajomość języka polskiego"
+                    ]
+                  },
+                  {
+                    "plainText": "Mile widziane, Doświadczenie z LLM/RAG, znajomość technologii VoIP/SIP",
+                    "sectionType": "requirements-optional",
+                    "textElements": [
+                      "Doświadczenie z LLM/RAG, znajomość technologii VoIP/SIP"
+                    ]
+                  },
+                  {
+                    "plainText": "To oferujemy, Tytuł Great Place to Work od 2015 roku - to dzięki opiniom pracowników otrzymujemy tytuł i wdrażamy nowe pomysły, Stabilność zatrudnienia – 2,1 MLD PLN przychodu, brak długów, od 2006 roku na rynku, Dzielimy się zyskiem z pracownikami - od 2022 roku przeznaczyliśmy na ten cel już ponad 76 milionów PLN, Bogaty pakiet benefitów - prywatna opieka zdrowotna, platforma kafeteryjna, zniżki na samochody i więcej, Komfortowe miejsce pracy - pracuj w naszych biurach klasy A lub zdalnie, Dziesiątki fascynujących projektów dla prestiżowych marek z całego świata – możesz je zmieniać dzięki aplikacji Job Changer, 1 000 000 PLN rocznie na Twoje pomysły - taką kwotą wspieramy pasje i akcje wolontariackie naszych pracowników, Stawiamy na Twój rozwój - meetupy, webinary, platforma szkoleniowa i blog technologiczny – Ty wybierasz, Fantastyczna atmosfera stworzona przez wszystkich Sii Power People",
+                    "sectionType": "offered",
+                    "textElements": [
+                      "Tytuł Great Place to Work od 2015 roku - to dzięki opiniom pracowników otrzymujemy tytuł i wdrażamy nowe pomysły",
+                      "Stabilność zatrudnienia – 2,1 MLD PLN przychodu, brak długów, od 2006 roku na rynku",
+                      "Dzielimy się zyskiem z pracownikami - od 2022 roku przeznaczyliśmy na ten cel już ponad 76 milionów PLN",
+                      "Bogaty pakiet benefitów - prywatna opieka zdrowotna, platforma kafeteryjna, zniżki na samochody i więcej",
+                      "Komfortowe miejsce pracy - pracuj w naszych biurach klasy A lub zdalnie",
+                      "Dziesiątki fascynujących projektów dla prestiżowych marek z całego świata – możesz je zmieniać dzięki aplikacji Job Changer",
+                      "1 000 000 PLN rocznie na Twoje pomysły - taką kwotą wspieramy pasje i akcje wolontariackie naszych pracowników",
+                      "Stawiamy na Twój rozwój - meetupy, webinary, platforma szkoleniowa i blog technologiczny – Ty wybierasz",
+                      "Fantastyczna atmosfera stworzona przez wszystkich Sii Power People"
+                    ]
+                  },
+                  {
+                    "plainText": "Etapy rekrutacji, Wyślij do nas swoje CV, Weź udział w rozmowie rekrutacyjnej , Poznaj projekty dopasowane do Twoich potrzeb, Podejmij decyzję i zacznij swoją przygodę z Sii!",
+                    "sectionType": "recruitment-stages",
+                    "textElements": [
+                      "Wyślij do nas swoje CV",
+                      "Weź udział w rozmowie rekrutacyjnej ",
+                      "Poznaj projekty dopasowane do Twoich potrzeb",
+                      "Podejmij decyzję i zacznij swoją przygodę z Sii!"
+                    ]
+                  },
+                  {
+                    "plainText": "Sii Sp. z o.o., Sii to czołowy dostawca doradztwa technologicznego, transformacji cyfrowej oraz usług inżynieryjnych i biznesowych w Polsce. Zatrudniamy już ponad 7 300 specjalistów i realizujemy projekty z różnorodnych branż dla klientów z wielu krajów na całym świecie. Tytuł Great Place to Work zdobyty 11 razy z rzędu to dowód na to, że w Sii tworzymy przyjazne środowisko pracy., , Sii zapewnia, że wszystkie decyzje związane z zatrudnieniem są podejmowane wyłącznie na podstawie kwalifikacji oraz kompetencji. Zobowiązujemy się do równego i sprawiedliwego traktowania wszystkich, niezależnie od cech prawnie chronionych. W Sii promujemy także różnorodne i inkluzywne środowisko pracy w pełnej zgodności z obowiązującymi przepisami antydyskryminacyjnymi.",
+                    "sectionType": "about-us-description",
+                    "textElements": [
+                      "Sii to czołowy dostawca doradztwa technologicznego, transformacji cyfrowej oraz usług inżynieryjnych i biznesowych w Polsce. Zatrudniamy już ponad 7 300 specjalistów i realizujemy projekty z różnorodnych branż dla klientów z wielu krajów na całym świecie. Tytuł Great Place to Work zdobyty 11 razy z rzędu to dowód na to, że w Sii tworzymy przyjazne środowisko pracy.",
+                      "",
+                      "Sii zapewnia, że wszystkie decyzje związane z zatrudnieniem są podejmowane wyłącznie na podstawie kwalifikacji oraz kompetencji. Zobowiązujemy się do równego i sprawiedliwego traktowania wszystkich, niezależnie od cech prawnie chronionych. W Sii promujemy także różnorodne i inkluzywne środowisko pracy w pełnej zgodności z obowiązującymi przepisami antydyskryminacyjnymi."
+                    ]
+                  },
+                  {
+                    "plainText": "Tak się u nas pracuje, ",
+                    "sectionType": "about-us-gallery",
+                    "textElements": []
+                  }
+                ]
+              },
+              "dataUpdateCount": 1,
+              "dataUpdatedAt": 1770412136175,
+              "error": null,
+              "errorUpdateCount": 0,
+              "errorUpdatedAt": 0,
+              "fetchFailureCount": 0,
+              "fetchMeta": null,
+              "fetchStatus": "idle",
+              "isInvalidated": false,
+              "status": "success"
+            }
+          },
+          {
+            "queryHash": "[\"seoContent\",\"1004628779\",\"pl\"]",
+            "queryKey": [
+              "seoContent",
+              "1004628779",
+              "pl"
+            ],
+            "state": {
+              "data": {
+                "breadcrumbs": [
+                  {
+                    "absoluteUrl": "https://www.pracuj.pl/praca",
+                    "children": null,
+                    "label": "Praca",
+                    "relativeUrl": "/praca"
+                  },
+                  {
+                    "absoluteUrl": "https://www.pracuj.pl/praca/warszawa;wp",
+                    "children": [
+                      {
+                        "absoluteUrl": "https://www.pracuj.pl/praca/radom;wp",
+                        "label": "Radom",
+                        "relativeUrl": "/praca/radom;wp"
+                      },
+                      {
+                        "absoluteUrl": "https://www.pracuj.pl/praca/plock;wp",
+                        "label": "Płock",
+                        "relativeUrl": "/praca/plock;wp"
+                      },
+                      {
+                        "absoluteUrl": "https://www.pracuj.pl/praca/siedlce;wp",
+                        "label": "Siedlce",
+                        "relativeUrl": "/praca/siedlce;wp"
+                      },
+                      {
+                        "absoluteUrl": "https://www.pracuj.pl/praca/pruszkow;wp",
+                        "label": "Pruszków",
+                        "relativeUrl": "/praca/pruszkow;wp"
+                      },
+                      {
+                        "absoluteUrl": "https://www.pracuj.pl/praca/ostroleka;wp",
+                        "label": "Ostrołęka",
+                        "relativeUrl": "/praca/ostroleka;wp"
+                      },
+                      {
+                        "absoluteUrl": "https://www.pracuj.pl/praca/krakow;wp",
+                        "label": "Kraków",
+                        "relativeUrl": "/praca/krakow;wp"
+                      },
+                      {
+                        "absoluteUrl": "https://www.pracuj.pl/praca/lodz;wp",
+                        "label": "Łódź",
+                        "relativeUrl": "/praca/lodz;wp"
+                      },
+                      {
+                        "absoluteUrl": "https://www.pracuj.pl/praca/wroclaw;wp",
+                        "label": "Wrocław",
+                        "relativeUrl": "/praca/wroclaw;wp"
+                      }
+                    ],
+                    "label": "Warszawa",
+                    "relativeUrl": "/praca/warszawa;wp"
+                  },
+                  {
+                    "absoluteUrl": "https://www.pracuj.pl/praca/it%20-%20rozw%c3%b3j%20oprogramowania;cc,5016",
+                    "children": null,
+                    "label": "IT - Rozwój oprogramowania",
+                    "relativeUrl": "/praca/it%20-%20rozw%c3%b3j%20oprogramowania;cc,5016"
+                  },
+                  {
+                    "absoluteUrl": "https://www.pracuj.pl/praca/it%20-%20rozw%c3%b3j%20oprogramowania;cc,5016/analiza%20biznesowa%20i%20systemowa;cc,5016001",
+                    "children": null,
+                    "label": "Analiza biznesowa i systemowa",
+                    "relativeUrl": "/praca/it%20-%20rozw%c3%b3j%20oprogramowania;cc,5016/analiza%20biznesowa%20i%20systemowa;cc,5016001"
+                  }
+                ],
+                "canonicalUrl": "https://www.pracuj.pl/praca/analityk-analityczka-ai-branza-bankowa-f-m-x-warszawa-aleja-niepodleglosci-69,oferta,1004628779",
+                "description": "Praca Analityk / Analityczka AI – branża bankowa (f/m/x), Sii Sp. z o.o., Warszawa",
+                "shouldBeIndexed": true,
+                "title": "Oferta pracy Analityk / Analityczka AI – branża bankowa (f/m/x), Sii Sp. z o.o., Warszawa"
+              },
+              "dataUpdateCount": 1,
+              "dataUpdatedAt": 1770412136175,
+              "error": null,
+              "errorUpdateCount": 0,
+              "errorUpdatedAt": 0,
+              "fetchFailureCount": 0,
+              "fetchMeta": null,
+              "fetchStatus": "idle",
+              "isInvalidated": false,
+              "status": "success"
+            }
+          }
+        ]
+      },
+      "languageCode": "pl",
+      "offerId": "1004628779",
+      "refererSubserviceType": null,
+      "user": null,
+      "userAbTestsCookieString": "",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+      "userAgreements": {
+        "gpc_ad": "0",
+        "gpc_analytic": "0",
+        "gpc_audience": "0",
+        "gpc_func": "0",
+        "gpc_social": "0",
+        "gpc_v": "0"
+      },
+      "userIdentifier": null,
+      "userPermissions": null
+    }
+  },
+  "query": {},
+  "runtimeConfig": {
+    "ADS_ENABLED": true,
+    "API_ALABAMA_GATEWAY": "https://alabama.pracuj.pl",
+    "API_CLIENT_GATEWAY": "https://massachusetts.pracuj.pl",
+    "API_INTERNAL_TRANSLATE": "https://babel-api.pracuj.pl",
+    "APP_NAME": "pracujowapatrycja-offerpage",
+    "APP_VERSION": "0.0.1845",
+    "CDN_PATH": "https://offerpage.gpcdn.pl/393616",
+    "CDN_ROOT_PATH": "https://offerpage.gpcdn.pl",
+    "ENVIRONMENT": "production",
+    "GOOGLE_MAPS_API_KEY": "AIzaSyC-6T8efVtZS9uoX-UVRh2thUwazZ6uhEg",
+    "GTM_CONTAINER_ID": "GTM-5GST6XZ",
+    "GTM_ENABLED": true,
+    "LINK_OFFER_OG_THUMBNAIL": "https://massachusetts.pracuj.pl/offers/{offerId}/thumbnail",
+    "QUESTIONNAIRE_PAGE_URL": "https://kwestionariusz.pracuj.pl",
+    "SENTRY_DSN": "https://8e1d4735487941d89a632bb4ab22e0af@o77844.ingest.sentry.io/4504933396381696",
+    "SENTRY_ENABLED": true,
+    "SENTRY_RELEASE_NAME": "offer-page",
+    "SENTRY_RELEASE_VERSION": "0.0.1845",
+    "SUPPORTED_BROWSERS": "Edge?\\/(109|1[1-9]\\d|[2-9]\\d{2}|\\d{4,})\\.\\d+(\\.\\d+|)|Firefox\\/(1{2}[5-9]|1[2-9]\\d|[2-9]\\d{2}|\\d{4,})\\.\\d+(\\.\\d+|)|Chrom(ium|e)\\/(10[2-9]|1[1-9]\\d|[2-9]\\d{2}|\\d{4,})\\.\\d+(\\.\\d+|)|(Maci|X1{2}).+ Version\\/(16\\.\\d+|(1[7-9]|[2-9]\\d|\\d{3,})\\.\\d+)([,.]\\d+|)( \\(\\w+\\)|)( Mobile\\/\\w+|) Safari\\/|Chrome.+OPR\\/(9[2-9]|\\d{3,})\\.\\d+\\.\\d+|(CPU[ +]OS|iPhone[ +]OS|CPU[ +]iPhone|CPU IPhone OS|CPU iPad OS)[ +]+(16[._]\\d+|(1[7-9]|[2-9]\\d|\\d{3,})[._]\\d+)([._]\\d+|)|Android:?[ /-](14[3-9]|1[5-9]\\d|[2-9]\\d{2}|\\d{4,})(\\.\\d+|)(\\.\\d+|)|Mobile Safari.+OPR\\/([89]\\d|\\d{3,})\\.\\d+\\.\\d+|Android.+Firefox\\/(14[6-9]|1[5-9]\\d|[2-9]\\d{2}|\\d{4,})\\.\\d+(\\.\\d+|)|Android.+Chrom(ium|e)\\/(14[3-9]|1[5-9]\\d|[2-9]\\d{2}|\\d{4,})\\.\\d+(\\.\\d+|)|Android.+(UC? ?Browser|UCWEB|U3)[ /]?(15\\.([5-9]|\\d{2,})|(1[6-9]|[2-9]\\d|\\d{3,})\\.\\d+)\\.\\d+|SamsungBrowser\\/(2[1-9]|[3-9]\\d|\\d{3,})\\.\\d+|Android.+MQ{2}Browser\\/(14(\\.(9|\\d{2,})|)|(1[5-9]|[2-9]\\d|\\d{3,})(\\.\\d+|))(\\.\\d+|)"
+  },
+  "scriptLoader": []
+}

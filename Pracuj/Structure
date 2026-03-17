@@ -1,0 +1,22 @@
+Pracuj/
+|—__init__.py
+|— url_list_search.py
+|—detail_scraper.py
+|—nerd_databse.py 		# Filters  Data related jobs to separated database
+|—job_database.db
+|—nerd_jobs.db
+|—Nerd_mapped.csv 		# mapping base for nerd_database.py
+|—db_cleaner/
+	|── __init__.py
+    ├── base_mapper.py        # Abstract base class
+    ├── mappers/
+      │   ├── __init__.py
+      │   ├── region_mapper.py
+      │   ├── salary_mapper.py
+      │   ├── work_modes_mapper.py
+      │   ├── employment_type_mapper.py
+      │   ├── position_levels_mapper.py
+      │   |——— industry_mapper.py
+	  |	  |———language_mapper.py
+	  |.  └──work_schedules_mapper.py
+      └── database_cleaner.py   # Main orchestrator

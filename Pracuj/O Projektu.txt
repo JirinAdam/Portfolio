@@ -1,0 +1,46 @@
+
+  ---
+  O projektu
+
+  Scraper pracuj.pl — pipeline pro sběr a analýzu pracovních nabídek:
+
+  1. url_list_search2.0.py  →  job_urls_complete.json  (seznam URL)
+  2. detail_scraper.py      →  job_database.db          (detaily nabídek)
+  3. db_cleaner/            →  job_database.db          (čištění dat)
+  4. nerds_database.py      →  nerd_jobs.db             (filtr IT nabídek)
+
+  DB schéma (job_offers): partition_id, url, title, company, description, industry, employment_type,
+  salary_min/max/currency, city, region, postal_code, position_levels, work_schedules, work_modes,
+  technologies_os/optional, requirements_expected, we_offer, benefits, date_posted, valid_through
+
+  db_cleaner čistí data přes 8 mapperů (salary, region, work_modes, work_schedules, employment_type, position_levels,     
+  industry, language) — architektura Template Method s BaseMapper jako abstraktní bází.
+
+  ---
+  url_list_search2.0.py vs url_scraper.py
+
+  Jsou identické. Stejný kód, stejná funkce get_all_job_urls_complete(). Pravděpodobně jde o duplicitu — jeden je původní,
+   druhý přejmenovaná/zkopírovaná verze.
+
+  ---
+  nerds_db_filter.py vs nerds_database.py
+
+  ┌──────────────────────────────┬────────────────────────────────────┬─────────────────────┐
+  │                              │         nerds_db_filter.py         │  nerds_database.py  │
+  ├──────────────────────────────┼────────────────────────────────────┼─────────────────────┤
+  │ Přidané sloupce              │ kw_title + monthly_max_salary      │ jen kw_title        │
+  ├──────────────────────────────┼────────────────────────────────────┼─────────────────────┤
+  │ compute_monthly_max_salary() │ ANO (řádky 123–156)                │ NE                  │
+  ├──────────────────────────────┼────────────────────────────────────┼─────────────────────┤
+  │ Salary countery v logu       │ ANO (hourly/monthly/fallback/null) │ NE                  │
+  ├──────────────────────────────┼────────────────────────────────────┼─────────────────────┤
+  │ Validace vstupního DB        │ title, salary_max, salary_currency │ jen title           │
+  ├──────────────────────────────┼────────────────────────────────────┼─────────────────────┤
+  │ Docstring říká               │ "nerds_database.py" (matoucí!)     │ "nerds_database.py" │
+  ├──────────────────────────────┼────────────────────────────────────┼─────────────────────┤
+  │ Verze                        │ novější, rozšířená                 │ starší, jednodušší  │
+  └──────────────────────────────┴────────────────────────────────────┴─────────────────────┘
+
+  Závěr: nerds_db_filter.py je aktuální/novější verze s kompletní salary logikou. nerds_database.py je starší verze bez   
+  přepočtu na měsíční plat. Název souboru nerds_db_filter.py je matoucí, protože jeho vlastní docstring uvnitř říká       
+  nerds_database.py.

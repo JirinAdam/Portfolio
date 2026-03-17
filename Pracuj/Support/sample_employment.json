@@ -1,0 +1,56 @@
+{
+  "positionLevels": [
+    {
+      "id": 18,
+      "name": "starszy specjalista (Senior)",
+      "pracujPlName": "starszy specjalista (Senior)"
+    }
+  ],
+  "entirelyRemoteWork": false,
+  "workSchedules": [
+    {
+      "id": 0,
+      "name": "pełny etat",
+      "pracujPlName": "pełny etat"
+    }
+  ],
+  "typesOfContracts": [
+    {
+      "id": 3,
+      "name": "kontrakt B2B",
+      "pracujPlName": "kontrakt B2B",
+      "salary": {
+        "from": 130,
+        "to": 155,
+        "currency": {
+          "code": "PLN",
+          "symbol": "zł"
+        },
+        "timeUnit": {
+          "id": 1,
+          "shortForm": {
+            "name": "godz.",
+            "pracujPlName": "godz."
+          },
+          "longForm": {
+            "name": "godzinowo",
+            "pracujPlName": "godzinowo"
+          }
+        },
+        "salaryKind": {
+          "code": "net-plus-vat",
+          "name": "netto (+ VAT)",
+          "pracujPlName": "netto (+ VAT)"
+        }
+      }
+    }
+  ],
+  "workModes": [
+    {
+      "description": "",
+      "code": "hybrid",
+      "name": "praca hybrydowa",
+      "pracujPlName": "praca hybrydowa"
+    }
+  ]
+}

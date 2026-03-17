@@ -1,0 +1,3224 @@
+keyword,count,group
+SQL,1871,Programming Languages
+Python,1444,Programming Languages
+Java,983,Programming Languages
+Azure,972,Cloud & Managed Services
+Microsoft,969,Tools & Collaboration
+JIRA,786,Tools & Collaboration
+Docker,759,Tools & Collaboration
+C,704,Programming Languages
+AWS,691,Cloud & Managed Services
+Kubernetes,675,Frameworks & Platforms
+Git,673,Tools & Collaboration
+JavaScript,592,Programming Languages
+Cloud,570,Cloud & Managed Services
+SAP,546,Databases & Data Stores
+Microsoft Azure,463,Cloud & Managed Services
+Confluence,450,Tools & Collaboration
+Server,437,Frameworks & Platforms
+Kafka,422,Tools & Collaboration
+TypeScript,422,Programming Languages
+PostgreSQL,416,Databases & Data Stores
+JS,414,Programming Languages
+Oracle,410,Databases & Data Stores
+Linux,398,Frameworks & Platforms
+C#,374,Programming Languages
+Google Cloud,357,Cloud & Managed Services
+Windows,349,Frameworks & Platforms
+C++,347,Programming Languages
+Google Cloud Platform,344,Cloud & Managed Services
+Spring,344,Frameworks & Platforms
+REST,343,Methodologies & Concepts
+React,340,Frameworks & Platforms
+Terraform,333,Tools & Collaboration
+Angular,329,Frameworks & Platforms
+DevOps,294,Methodologies & Concepts
+BPMN,293,Methodologies & Concepts
+PowerShell,293,Programming Languages
+UML,293,Methodologies & Concepts
+Apache,288,Tools & Collaboration
+HTML,286,Programming Languages
+Jenkins,281,Tools & Collaboration
+Bash,278,Programming Languages
+Windows Server,261,Frameworks & Platforms
+React.js,257,Frameworks & Platforms
+.NET,252,Frameworks & Platforms
+GitLab,252,Tools & Collaboration
+CSS,246,Programming Languages
+Azure DevOps,240,Cloud & Managed Services
+Spark,222,Frameworks & Platforms
+Spring Boot,218,Frameworks & Platforms
+BI,212,Databases & Data Stores
+Power BI,207,Databases & Data Stores
+CI,206,Methodologies & Concepts
+Grafana,203,Tools & Collaboration
+API,201,Methodologies & Concepts
+Framework,201,Unmapped
+AI,200,Methodologies & Concepts
+SQL Server,188,Databases & Data Stores
+Enterprise Architect,186,Tools & Collaboration
+GitHub,185,Tools & Collaboration
+Active Directory,178,Frameworks & Platforms
+Ansible,172,Tools & Collaboration
+CI/CD,172,Methodologies & Concepts
+HANA,168,Databases & Data Stores
+MySQL,168,Databases & Data Stores
+Node.js,167,Frameworks & Platforms
+ServiceNow,166,Frameworks & Platforms
+Excel,165,Tools & Collaboration
+PL/SQL,164,Programming Languages
+SAP HANA,161,Databases & Data Stores
+Kotlin,157,Programming Languages
+LLM,156,Methodologies & Concepts
+Microsoft Power BI,155,Tools & Collaboration
+Prometheus,149,Tools & Collaboration
+AirFlow,146,Frameworks & Platforms
+Microsoft SQL Server,145,Databases & Data Stores
+DataBricks,141,Cloud & Managed Services
+Hibernate,138,Frameworks & Platforms
+Maven,137,Tools & Collaboration
+VMware,137,Frameworks & Platforms
+Postman,129,Tools & Collaboration
+PHP,128,Programming Languages
+Spring Framework,128,Frameworks & Platforms
+REST API,125,Methodologies & Concepts
+Microsoft Excel,120,Tools & Collaboration
+Zabbix,120,Tools & Collaboration
+RabbitMQ,118,Tools & Collaboration
+Scala,118,Programming Languages
+Machine Learning,116,Methodologies & Concepts
+Go,114,Programming Languages
+Android,111,Frameworks & Platforms
+Apache Spark,111,Frameworks & Platforms
+ABAP,110,Programming Languages
+MongoDB,109,Databases & Data Stores
+Selenium,108,Libraries
+Figma,93,Tools & Collaboration
+SOAP,92,Methodologies & Concepts
+Apache Kafka,91,Tools & Collaboration
+T-SQL,91,Programming Languages
+Vue,91,Frameworks & Platforms
+management,90,Other / Unclassified
+SAP ABAP,89,Databases & Data Stores
+Salesforce,89,Other / Unclassified
+JUnit,87,Libraries
+Analytics,85,Databases & Data Stores
+Playwright,85,Other / Unclassified
+Helm,81,Tools & Collaboration
+ERP,77,Other / Unclassified
+Microsoft Dynamics,77,Other / Unclassified
+ElasticSearch,76,Databases & Data Stores
+GCP,76,Cloud & Managed Services
+MLOps,75,Other / Unclassified
+Vue.js,75,Frameworks & Platforms
+Office,73,Tools & Collaboration
+SoapUI,73,Tools & Collaboration
+Tableau,73,Tools & Collaboration
+Snowflake,72,Databases & Data Stores
+TensorFlow,71,Libraries
+Adobe,70,Tools & Collaboration
+MariaDB,70,Databases & Data Stores
+GenAI,69,Other / Unclassified
+ITIL,68,Other / Unclassified
+ETL,66,Methodologies & Concepts
+SHell,65,Programming Languages
+Core,64,Other / Unclassified
+JSON,64,Other / Unclassified
+Microsoft 365,64,Other / Unclassified
+PySpark,64,Frameworks & Platforms
+Redis,63,Databases & Data Stores
+PyTorch,62,Libraries
+XML,62,Other / Unclassified
+Bitbucket,61,Tools & Collaboration
+Swagger,61,Tools & Collaboration
+IP,60,Other / Unclassified
+GraphQL,59,Libraries
+MS SQL,59,Databases & Data Stores
+UiPath,59,Other / Unclassified
+Pandas,58,Libraries
+SCRUM,58,Methodologies & Concepts
+Agile,57,Methodologies & Concepts
+RAG,57,Other / Unclassified
+Backend,55,Other / Unclassified
+BigQuery,55,Databases & Data Stores
+Github Actions,54,Tools & Collaboration
+OpenShift,54,Other / Unclassified
+IBM,53,Other / Unclassified
+Dynatrace,52,Other / Unclassified
+ML,52,Other / Unclassified
+SharePoint,52,Other / Unclassified
+Architecture,51,Other / Unclassified
+Cisco,51,Other / Unclassified
+GenerativeAI,51,Other / Unclassified
+TCP/IP,51,Other / Unclassified
+IOS,50,Frameworks & Platforms
+JMeter,50,Tools & Collaboration
+JBoss,49,Other / Unclassified
+Copilot,48,Other / Unclassified
+Frontend,48,Other / Unclassified
+NiFi,48,Other / Unclassified
+RxJS,48,Libraries
+Splunk,48,Tools & Collaboration
+network,48,Other / Unclassified
+ASP.NET,47,Frameworks & Platforms
+Gradle,47,Tools & Collaboration
+Cloudera,46,Cloud & Managed Services
+Comarch,46,Other / Unclassified
+Testing,46,Other / Unclassified
+.NET Core,45,Frameworks & Platforms
+Iceberg,45,Other / Unclassified
+React Native,45,Frameworks & Platforms
+Entra,44,Other / Unclassified
+FICO,44,Other / Unclassified
+Hadoop,44,Frameworks & Platforms
+Microsoft Office,44,Other / Unclassified
+Next,44,Other / Unclassified
+Tomcat,44,Other / Unclassified
+Network Administration,43,Other / Unclassified
+SAP FICO,43,Other / Unclassified
+DB2,42,Databases & Data Stores
+Event,42,Other / Unclassified
+Hudi,42,Other / Unclassified
+NumPy,42,Libraries
+PCIe,42,Other / Unclassified
+Trino,42,Other / Unclassified
+Azure Data,41,Cloud & Managed Services
+FI,41,Other / Unclassified
+Nest.js,41,Other / Unclassified
+PyTest,41,Libraries
+GitLab CI,40,Tools & Collaboration
+ArgoCD,39,Other / Unclassified
+Cypress,39,Libraries
+LoadRunner,39,Other / Unclassified
+Microservices,39,Methodologies & Concepts
+R,39,Programming Languages
+Visual Studio,39,Other / Unclassified
+SAP Analytics Cloud,38,Cloud & Managed Services
+scikit-learn,38,Libraries
+NoSQL,37,Other / Unclassified
+Photoshop,37,Other / Unclassified
+SIEM,37,Other / Unclassified
+Express,36,Frameworks & Platforms
+FastAPI,36,Frameworks & Platforms
+Gatling,36,Other / Unclassified
+MES,36,Other / Unclassified
+Networking,36,Other / Unclassified
+Unix,36,Other / Unclassified
+Citrix,35,Other / Unclassified
+ITOM,35,Other / Unclassified
+SAP FI,35,Other / Unclassified
+Apache Airflow,34,Frameworks & Platforms
+Appium,34,Other / Unclassified
+Data Science,34,Other / Unclassified
+GitHub Copilot,34,Tools & Collaboration
+IAM,34,Cloud & Managed Services
+IFS,34,Other / Unclassified
+LLMs,34,Other / Unclassified
+Robot,34,Other / Unclassified
+Security,34,Other / Unclassified
+Adobe Photoshop,33,Other / Unclassified
+Bamboo,33,Tools & Collaboration
+Groovy,33,Programming Languages
+JPA,33,Other / Unclassified
+Power Automate,33,Other / Unclassified
+S/4HANA,33,Other / Unclassified
+CMDB,32,Other / Unclassified
+Entra ID,32,Other / Unclassified
+Kibana,32,Tools & Collaboration
+Robot Framework,32,Other / Unclassified
+SOLID,32,Other / Unclassified
+Symfony,32,Frameworks & Platforms
+Cucumber,31,Other / Unclassified
+Hyper-V,31,Other / Unclassified
+IFS App/Cloud,31,Cloud & Managed Services
+INFOR,31,Other / Unclassified
+Red Hat,31,Other / Unclassified
+IPv4,30,Other / Unclassified
+IPv6,30,Other / Unclassified
+JQuery,30,Other / Unclassified
+NeoLoad,30,Other / Unclassified
+Power Platform,30,Other / Unclassified
+SonarQube,30,Tools & Collaboration
+Veeam,30,Other / Unclassified
+CPU,29,Other / Unclassified
+CSS3,29,Cloud & Managed Services
+Dagster,29,Other / Unclassified
+Data Factory,29,Other / Unclassified
+Ethernet,29,Other / Unclassified
+Event Hub,29,Other / Unclassified
+Integration,29,Other / Unclassified
+Locust,29,Other / Unclassified
+Mockito,29,Other / Unclassified
+SOLID Principles,29,Other / Unclassified
+Action Center,28,Other / Unclassified
+Camunda,28,Other / Unclassified
+DMA,28,Other / Unclassified
+DPDK,28,Other / Unclassified
+Document Understanding,28,Other / Unclassified
+Illustrator,28,Other / Unclassified
+Industry,28,Other / Unclassified
+Kantar Xtel,28,Other / Unclassified
+Networking skills,28,Other / Unclassified
+Next.js,28,Frameworks & Platforms
+Visualfabriq,28,Other / Unclassified
+compose,28,Other / Unclassified
+switches,28,Other / Unclassified
+Jetpack,27,Other / Unclassified
+Laravel,27,Frameworks & Platforms
+M365,27,Other / Unclassified
+Nexus,27,Other / Unclassified
+PowerBI,27,Other / Unclassified
+AI Agents,26,Other / Unclassified
+Data Lake,26,Other / Unclassified
+MacOS,26,Other / Unclassified
+OpenStack,26,Other / Unclassified
+SAP BW,26,Other / Unclassified
+APEX,25,Programming Languages
+Django,25,Frameworks & Platforms
+Intune,25,Other / Unclassified
+MVC,25,Other / Unclassified
+RPA,25,Other / Unclassified
+WEBCON,25,Other / Unclassified
+Adobe Illustrator,24,Other / Unclassified
+Azure Event Hub,24,Cloud & Managed Services
+CRM,24,Other / Unclassified
+Datadog,24,Tools & Collaboration
+Rust,24,Programming Languages
+SAPUI5,24,Other / Unclassified
+SOAR,24,Other / Unclassified
+Swift,24,Programming Languages
+Atlassian,23,Other / Unclassified
+Azure Data Factory,23,Cloud & Managed Services
+Entity Framework,23,Other / Unclassified
+Fabric,23,Other / Unclassified
+Fiori,23,Other / Unclassified
+Flask,23,Frameworks & Platforms
+MLflow,23,Other / Unclassified
+Qt,23,Other / Unclassified
+SAFe,23,Other / Unclassified
+SaaS,23,Other / Unclassified
+Storage,23,Other / Unclassified
+TestNG,23,Other / Unclassified
+WordPress,23,Other / Unclassified
+Azure Cloud,22,Cloud & Managed Services
+Claude,22,Other / Unclassified
+Datasphere,22,Other / Unclassified
+Keras,22,Libraries
+MQ,22,Other / Unclassified
+MSSQL,22,Databases & Data Stores
+SVN,22,Other / Unclassified
+Ubuntu,22,Other / Unclassified
+Golang,21,Programming Languages
+Google Analytics,21,Other / Unclassified
+JetPack Compose,21,Other / Unclassified
+Miro,21,Other / Unclassified
+RxJava,21,Other / Unclassified
+SAP PO,21,Other / Unclassified
+TOGAF,21,Other / Unclassified
+WebLogic,21,Other / Unclassified
+Windchill,21,Other / Unclassified
+low-code,21,Other / Unclassified
+ArchiMate,20,Other / Unclassified
+Aruba,20,Other / Unclassified
+Chef,20,Tools & Collaboration
+DBT,20,Frameworks & Platforms
+Gerrit,20,Other / Unclassified
+LAN,20,Other / Unclassified
+Microsoft Fabric,20,Other / Unclassified
+Pub,20,Other / Unclassified
+Puppet,20,Tools & Collaboration
+SOC,20,Other / Unclassified
+Scripting,20,Other / Unclassified
+Snowflake Data Cloud,20,Databases & Data Stores
+WCAG,20,Other / Unclassified
+Yocto,20,Other / Unclassified
+qTest,20,Other / Unclassified
+Azure SQL,19,Cloud & Managed Services
+Databases,19,Other / Unclassified
+IoT,19,Other / Unclassified
+Looker,19,Other / Unclassified
+Power Query,19,Other / Unclassified
+Pub/Sub,19,Cloud & Managed Services
+Redux,19,Libraries
+SAP ERP,19,Other / Unclassified
+enova365,19,Other / Unclassified
+Apache JMeter,18,Tools & Collaboration
+Azure Data Lake,18,Cloud & Managed Services
+CPI,18,Other / Unclassified
+DNS,18,Other / Unclassified
+Exchange,18,Other / Unclassified
+HRSD,18,Other / Unclassified
+InDesign,18,Other / Unclassified
+Lambda,18,Cloud & Managed Services
+NPM,18,Tools & Collaboration
+Ruby,18,Programming Languages
+SCADA,18,Other / Unclassified
+Tosca,18,Other / Unclassified
+k6,18,Other / Unclassified
+Adobe InDesign,17,Other / Unclassified
+Azure Virtual Desktop,17,Cloud & Managed Services
+Boost,17,Other / Unclassified
+CSPM,17,Other / Unclassified
+Cucumber.js,17,Other / Unclassified
+Data Governance,17,Other / Unclassified
+ELK,17,Tools & Collaboration
+Flutter,17,Frameworks & Platforms
+IIS,17,Other / Unclassified
+Jelly,17,Other / Unclassified
+Kotlin Multiplatform,17,Other / Unclassified
+Liquibase,17,Other / Unclassified
+MS Office,17,Other / Unclassified
+NGINX,17,Tools & Collaboration
+Nagios,17,Frameworks & Platforms
+OpenCV,17,Libraries
+Risk Management,17,Other / Unclassified
+SAP Fiori,17,Other / Unclassified
+SCCM,17,Other / Unclassified
+SOA,17,Methodologies & Concepts
+STL,17,Other / Unclassified
+Shell scripting,17,Other / Unclassified
+Spark/PySpark,17,Frameworks & Platforms
+Transformers,17,Other / Unclassified
+YAML,17,Other / Unclassified
+AI tools,16,Other / Unclassified
+Android SDK,16,Frameworks & Platforms
+Angular.js,16,Frameworks & Platforms
+Claude Code,16,Other / Unclassified
+Cloud Computing,16,Cloud & Managed Services
+Delphi,16,Other / Unclassified
+Firebase,16,Other / Unclassified
+Firewall,16,Other / Unclassified
+Gosu,16,Other / Unclassified
+Hugging Face,16,Other / Unclassified
+ITBM,16,Other / Unclassified
+InfluxDB,16,Databases & Data Stores
+Natural,16,Other / Unclassified
+OSS,16,Other / Unclassified
+Oracle Application Express,16,Databases & Data Stores
+Oracle Data Integrator,16,Databases & Data Stores
+RDMA,16,Other / Unclassified
+SAML,16,Other / Unclassified
+SAP S/4HANA,16,Other / Unclassified
+SPI,16,Other / Unclassified
+Service Catalog,16,Other / Unclassified
+Tokens Studio,16,Other / Unclassified
+WAN,16,Other / Unclassified
+AMQP,15,Other / Unclassified
+APM,15,Other / Unclassified
+AWS/Azure,15,Cloud & Managed Services
+Atlassian Confluence,15,Tools & Collaboration
+BADI,15,Other / Unclassified
+Bash Shell,15,Other / Unclassified
+Buildroot,15,Other / Unclassified
+CSDM,15,Other / Unclassified
+CSV,15,Other / Unclassified
+Clean Architecture,15,Other / Unclassified
+Computer Vision,15,Other / Unclassified
+Control-M,15,Other / Unclassified
+Data Architecture,15,Other / Unclassified
+Discovery,15,Other / Unclassified
+I2C,15,Other / Unclassified
+Insights,15,Other / Unclassified
+Java 17+,15,Other / Unclassified
+LIMS,15,Other / Unclassified
+Microsoft Power Automate,15,Other / Unclassified
+Monorepo,15,Other / Unclassified
+NX,15,Other / Unclassified
+Natural Language Processing,15,Other / Unclassified
+NetScaler,15,Other / Unclassified
+OSPF,15,Other / Unclassified
+Orchestrator,15,Other / Unclassified
+SailPoint,15,Other / Unclassified
+Success Factors,15,Other / Unclassified
+Tailwind,15,Other / Unclassified
+UART,15,Other / Unclassified
+UI,15,Other / Unclassified
+UiPath Studio,15,Other / Unclassified
+Windows PowerShell,15,Other / Unclassified
+Xray,15,Other / Unclassified
+21 CFR 11,14,Other / Unclassified
+AI Center,14,Other / Unclassified
+AWS/Azure/GCP,14,Cloud & Managed Services
+Autosys,14,Other / Unclassified
+Azure Machine Learning,14,Cloud & Managed Services
+BGP,14,Other / Unclassified
+BIB,14,Other / Unclassified
+Bazel,14,Other / Unclassified
+Bicep,14,Other / Unclassified
+C++ 11/14,14,Other / Unclassified
+Cloud Integration,14,Cloud & Managed Services
+DAPR,14,Other / Unclassified
+DAX,14,Other / Unclassified
+Data Valut,14,Other / Unclassified
+Dynamics CRM,14,Other / Unclassified
+ETM.next,14,Other / Unclassified
+EU Annex 11 compiance,14,Other / Unclassified
+FOSSA,14,Other / Unclassified
+Fluentd,14,Other / Unclassified
+Fullstack,14,Other / Unclassified
+GMP,14,Other / Unclassified
+Gigabit Ethernet,14,Other / Unclassified
+GitHub Copilot/AI tools,14,Tools & Collaboration
+GxP,14,Other / Unclassified
+ISO/IEC standards,14,Cloud & Managed Services
+IT/OT,14,Other / Unclassified
+ITSM,14,Other / Unclassified
+Ignition Platform,14,Other / Unclassified
+IntelliJ,14,Other / Unclassified
+JSF,14,Other / Unclassified
+Jest,14,Libraries
+LLVM,14,Other / Unclassified
+MS Project,14,Other / Unclassified
+Microsoft Azure Cloud,14,Cloud & Managed Services
+Model-driven Apps,14,Other / Unclassified
+NgRx,14,Other / Unclassified
+OSS Licenses,14,Other / Unclassified
+OT Systems,14,Other / Unclassified
+Ocr,14,Other / Unclassified
+OpenText Micro Focus ecosystem,14,Other / Unclassified
+OpenText SMAX,14,Other / Unclassified
+Oracle Database,14,Databases & Data Stores
+Performance Tests,14,Other / Unclassified
+Performance testing tools,14,Other / Unclassified
+QT/Boost,14,Other / Unclassified
+Quarkus,14,Frameworks & Platforms
+REST / GraphQL,14,Libraries
+Remedy,14,Other / Unclassified
+SABSA,14,Other / Unclassified
+SAP BPC,14,Other / Unclassified
+SAP ECCS,14,Other / Unclassified
+SAP MDM,14,Other / Unclassified
+SAP OTC,14,Other / Unclassified
+SAP Risk Management,14,Other / Unclassified
+SAP Treasury,14,Other / Unclassified
+SBOM,14,Other / Unclassified
+SCSS,14,Other / Unclassified
+ServiceNow HRSD,14,Other / Unclassified
+Shiny,14,Other / Unclassified
+Software Asset Management,14,Other / Unclassified
+Software Testing,14,Other / Unclassified
+Spirng Boot,14,Other / Unclassified
+SuiteBuilder,14,Other / Unclassified
+SuiteScript,14,Other / Unclassified
+SuiteTalk,14,Other / Unclassified
+SuiteTalk SOAP & REST,14,Other / Unclassified
+Suiteflow,14,Other / Unclassified
+SystemC,14,Other / Unclassified
+TPM Platforms,14,Other / Unclassified
+Tricentis NeoLoad,14,Other / Unclassified
+UI5,14,Other / Unclassified
+UiPath Orchestrator,14,Other / Unclassified
+VPN,14,Other / Unclassified
+Warehouse Management Systems,14,Other / Unclassified
+Web Services,14,Other / Unclassified
+Workflows,14,Other / Unclassified
+kubernates,14,Other / Unclassified
+nx monorepo,14,Other / Unclassified
+spdk,14,Other / Unclassified
+ASP.NET Core,13,Frameworks & Platforms
+Adobe XD,13,Other / Unclassified
+AppDynamics,13,Other / Unclassified
+DHCP,13,Other / Unclassified
+Dataproc,13,Other / Unclassified
+DevSecOps,13,Other / Unclassified
+GitOps,13,Tools & Collaboration
+HTML5,13,Other / Unclassified
+JUnit 5,13,Libraries
+KVM,13,Other / Unclassified
+LangChain,13,Libraries
+MS SQL Server,13,Databases & Data Stores
+Mendix,13,Other / Unclassified
+NestJS,13,Frameworks & Platforms
+Oracle APEX,13,Databases & Data Stores
+Pipelines,13,Tools & Collaboration
+Qlik,13,Other / Unclassified
+RESTful,13,Other / Unclassified
+SpringBoot,13,Frameworks & Platforms
+TestRail,13,Other / Unclassified
+VBA,13,Other / Unclassified
+BMC Remedy,12,Other / Unclassified
+Blazor,12,Other / Unclassified
+CO,12,Other / Unclassified
+Cloud Storage,12,Cloud & Managed Services
+Composer,12,Other / Unclassified
+Cosmos DB,12,Databases & Data Stores
+ESB,12,Other / Unclassified
+Express.js,12,Frameworks & Platforms
+ISTQB,12,Other / Unclassified
+MS Excel,12,Tools & Collaboration
+Perl,12,Programming Languages
+SD,12,Other / Unclassified
+Xcode,12,Other / Unclassified
+Android Studio,11,Frameworks & Platforms
+AngularJS,11,Frameworks & Platforms
+Apache Beam,11,Tools & Collaboration
+CentOS,11,Other / Unclassified
+Comarch ERP,11,Other / Unclassified
+DLP,11,Other / Unclassified
+DWH,11,Other / Unclassified
+Debian,11,Other / Unclassified
+Flink,11,Other / Unclassified
+Flow,11,Other / Unclassified
+GRC,11,Other / Unclassified
+Google Workspace,11,Other / Unclassified
+HP,11,Other / Unclassified
+Java EE,11,Other / Unclassified
+Low Code,11,Other / Unclassified
+Microsoft Entra,11,Other / Unclassified
+NLP,11,Other / Unclassified
+Power Apps,11,Other / Unclassified
+PrimeFaces,11,Other / Unclassified
+Rabbit MQ,11,Other / Unclassified
+Rails,11,Frameworks & Platforms
+SysTrack,11,Other / Unclassified
+Teams,11,Other / Unclassified
+Terragrunt,11,Other / Unclassified
+VTOM,11,Other / Unclassified
+WebDriver,11,Other / Unclassified
+AJAX,10,Other / Unclassified
+APIs,10,Other / Unclassified
+Angular 8+,10,Frameworks & Platforms
+Bitbacket,10,Other / Unclassified
+CMS,10,Other / Unclassified
+COBOL,10,Programming Languages
+Cassandra,10,Databases & Data Stores
+CyberArk,10,Other / Unclassified
+Delta,10,Other / Unclassified
+Fortinet,10,Other / Unclassified
+Hive,10,Other / Unclassified
+Informatica,10,Other / Unclassified
+JSF 2,10,Other / Unclassified
+Kanban,10,Methodologies & Concepts
+LDAP,10,Other / Unclassified
+Microsoft Entra ID,10,Other / Unclassified
+OData,10,Other / Unclassified
+Objective-C,10,Programming Languages
+Office 365,10,Other / Unclassified
+OpenAPI,10,Tools & Collaboration
+Oracle Analytics Server,10,Databases & Data Stores
+PLM,10,Other / Unclassified
+Purview,10,Other / Unclassified
+Python - Pandas,10,Libraries
+Ruby on Rails,10,Frameworks & Platforms
+SAM,10,Other / Unclassified
+SAS,10,Other / Unclassified
+SQLite,10,Databases & Data Stores
+SSIS,10,Other / Unclassified
+Slack,10,Other / Unclassified
+Sparx Enterprise Architect,10,Other / Unclassified
+Spock,10,Other / Unclassified
+Spring/SpringBoot,10,Frameworks & Platforms
+TeamCity,10,Tools & Collaboration
+Unity,10,Other / Unclassified
+VB,10,Other / Unclassified
+WCF,10,Other / Unclassified
+WebSphere,10,Other / Unclassified
+draw.io,10,Other / Unclassified
+ABAP OO,9,Other / Unclassified
+Artifactory,9,Other / Unclassified
+Athena,9,Cloud & Managed Services
+Azure AD,9,Cloud & Managed Services
+Azure Cosmos DB,9,Databases & Data Stores
+Bootstrap,9,Other / Unclassified
+Delta Lake,9,Other / Unclassified
+Dynamics 365,9,Other / Unclassified
+ERP XL,9,Other / Unclassified
+Gateway,9,Other / Unclassified
+Glue,9,Cloud & Managed Services
+HR,9,Other / Unclassified
+IaC,9,Other / Unclassified
+MATLAB,9,Programming Languages
+Magento,9,Other / Unclassified
+Microsoft IIS,9,Other / Unclassified
+Neo4j,9,Databases & Data Stores
+Orchestration,9,Other / Unclassified
+Proxmox,9,Other / Unclassified
+Relational Databases,9,Other / Unclassified
+SAP Business Objects,9,Other / Unclassified
+SSL,9,Other / Unclassified
+SSO,9,Other / Unclassified
+Tailwind CSS,9,Other / Unclassified
+Virtualization,9,Other / Unclassified
+Visio,9,Other / Unclassified
+Vite,9,Other / Unclassified
+Windows 10,9,Other / Unclassified
+ASP.NET MVC,8,Frameworks & Platforms
+Azure Databricks,8,Cloud & Managed Services
+Blazent,8,Other / Unclassified
+Centreon,8,Other / Unclassified
+ChatGPT,8,Other / Unclassified
+Citrix Cloud,8,Cloud & Managed Services
+Citrix Cloud Certified (CC-VAD-CC,8,Cloud & Managed Services
+Citrix security analytics,8,Other / Unclassified
+Cloud Composer,8,Cloud & Managed Services
+Cloud SQL,8,Cloud & Managed Services
+CloudFormation,8,Cloud & Managed Services
+Comarch ERP XL,8,Other / Unclassified
+Commvault,8,Other / Unclassified
+Dataflow,8,Other / Unclassified
+EF,8,Other / Unclassified
+FTPS,8,Other / Unclassified
+Flow Designer,8,Other / Unclassified
+Fortigate,8,Other / Unclassified
+GPO,8,Other / Unclassified
+GitLab CI/CD,8,Tools & Collaboration
+HP 3par,8,Other / Unclassified
+Helix,8,Other / Unclassified
+Hitachi,8,Other / Unclassified
+JDBC,8,Other / Unclassified
+JEE,8,Other / Unclassified
+JWT,8,Libraries
+Jira Software,8,Tools & Collaboration
+K8s,8,Other / Unclassified
+Load Balancer,8,Other / Unclassified
+LookML,8,Other / Unclassified
+Molecule,8,Other / Unclassified
+NetApp,8,Other / Unclassified
+OAuth,8,Libraries
+OAuth2,8,Libraries
+ODBC,8,Other / Unclassified
+OpenAI,8,Other / Unclassified
+Oracle Business Intelligence,8,Databases & Data Stores
+PRINCE2,8,Other / Unclassified
+PingID,8,Other / Unclassified
+Project Management,8,Other / Unclassified
+Redshift,8,Databases & Data Stores
+SAN configuration,8,Other / Unclassified
+SAP CO,8,Other / Unclassified
+SAP Datasphere,8,Other / Unclassified
+SAP QM,8,Other / Unclassified
+SAP SD,8,Other / Unclassified
+SCP,8,Other / Unclassified
+SELF-SERVICE,8,Other / Unclassified
+SPL,8,Other / Unclassified
+Service Mapping,8,Other / Unclassified
+Service Portal,8,Other / Unclassified
+Splunk ITSI,8,Tools & Collaboration
+SwiftUI,8,Other / Unclassified
+SysTrack suite,8,Other / Unclassified
+UX,8,Other / Unclassified
+Visual Studio Code,8,Other / Unclassified
+VoIP,8,Other / Unclassified
+Windows 365,8,Other / Unclassified
+Windows Desktop,8,Other / Unclassified
+Workday,8,Other / Unclassified
+webpack,8,Other / Unclassified
+AI Solutions,7,Other / Unclassified
+Amplitude,7,Other / Unclassified
+Azure Pipelines,7,Cloud & Managed Services
+BPM,7,Other / Unclassified
+BTP,7,Other / Unclassified
+CAD,7,Other / Unclassified
+CCTV,7,Other / Unclassified
+CMake,7,Other / Unclassified
+Citrix NetScaler,7,Other / Unclassified
+Cloudflare,7,Cloud & Managed Services
+Dart,7,Programming Languages
+Deep Learning,7,Other / Unclassified
+DynamoDB,7,Databases & Data Stores
+EDR,7,Other / Unclassified
+EZD,7,Other / Unclassified
+Flux,7,Other / Unclassified
+GA4,7,Other / Unclassified
+GKE,7,Cloud & Managed Services
+HL7,7,Other / Unclassified
+Hitachi HNAS,7,Other / Unclassified
+IBM SAN Volume Controller,7,Other / Unclassified
+IBM SCCD,7,Other / Unclassified
+IDoc,7,Other / Unclassified
+Informatica PowerCenter,7,Other / Unclassified
+JBoss Application Ser,7,Other / Unclassified
+Jira Service Management,7,Tools & Collaboration
+LAN/WAN,7,Other / Unclassified
+LangGraph,7,Other / Unclassified
+MQTT,7,Other / Unclassified
+Micro services,7,Other / Unclassified
+MikroTik,7,Other / Unclassified
+Mikroserwisy,7,Other / Unclassified
+Mixpanel,7,Other / Unclassified
+NetApp ONTAP,7,Other / Unclassified
+OWASP,7,Other / Unclassified
+PEGA,7,Other / Unclassified
+RESTful API,7,Other / Unclassified
+RFC,7,Other / Unclassified
+Rest Assured,7,Other / Unclassified
+S3,7,Cloud & Managed Services
+SAP BW/4HANA,7,Other / Unclassified
+SAP SAC,7,Other / Unclassified
+SNIP,7,Other / Unclassified
+SQS,7,Cloud & Managed Services
+SSMS,7,Other / Unclassified
+Sentry,7,Other / Unclassified
+SharePoint Online,7,Other / Unclassified
+Sonar,7,Other / Unclassified
+Spring Cloud,7,Cloud & Managed Services
+Testcontainers,7,Other / Unclassified
+WLAN,7,Other / Unclassified
+Zero Trust,7,Other / Unclassified
+bazy danych,7,Other / Unclassified
+gRPC,7,Libraries
+mCAD,7,Other / Unclassified
+.NET Framework,6,Frameworks & Platforms
+AKS,6,Cloud & Managed Services
+ActiveMQ,6,Other / Unclassified
+Apache Hadoop,6,Frameworks & Platforms
+App-V,6,Other / Unclassified
+ArcGIS,6,Other / Unclassified
+BDD,6,Methodologies & Concepts
+BMC Helix,6,Other / Unclassified
+Big Data,6,Other / Unclassified
+BigPicture,6,Other / Unclassified
+CQRS,6,Other / Unclassified
+Coroutines,6,Other / Unclassified
+Creo,6,Other / Unclassified
+Cursor,6,Other / Unclassified
+DDD,6,Methodologies & Concepts
+Exchange Online,6,Other / Unclassified
+Fastify,6,Other / Unclassified
+Ferryt,6,Other / Unclassified
+Flyway,6,Other / Unclassified
+GIS,6,Other / Unclassified
+Google Kubernetes Engine,6,Frameworks & Platforms
+Graph API,6,Other / Unclassified
+Heap,6,Other / Unclassified
+Hilt,6,Other / Unclassified
+IBM MQ,6,Other / Unclassified
+Istio,6,Other / Unclassified
+JQL,6,Other / Unclassified
+Jira Services,6,Tools & Collaboration
+Kinesis,6,Cloud & Managed Services
+MM,6,Other / Unclassified
+MSIX,6,Other / Unclassified
+MVVM,6,Other / Unclassified
+MuleSoft,6,Other / Unclassified
+O365,6,Other / Unclassified
+OneDrive,6,Other / Unclassified
+OpenSearch,6,Databases & Data Stores
+OpenTelemetry,6,Other / Unclassified
+PI,6,Other / Unclassified
+Palo Alto,6,Other / Unclassified
+Pendo,6,Other / Unclassified
+Podman,6,Other / Unclassified
+PostGIS,6,Other / Unclassified
+Provisioning,6,Other / Unclassified
+Pulsar,6,Other / Unclassified
+QGIS,6,Other / Unclassified
+RACF,6,Other / Unclassified
+RedHat,6,Other / Unclassified
+RestAssured,6,Other / Unclassified
+SAP CPQ,6,Other / Unclassified
+SAP ECC,6,Other / Unclassified
+SAP GRC,6,Other / Unclassified
+SQLAlchemy,6,Other / Unclassified
+SSRS,6,Other / Unclassified
+UIKit,6,Other / Unclassified
+VLAN,6,Other / Unclassified
+Vault,6,Other / Unclassified
+Waterfall,6,Other / Unclassified
+WebAPI,6,Other / Unclassified
+Windows Operating System,6,Other / Unclassified
+eazyBI,6,Other / Unclassified
+hapi,6,Other / Unclassified
+koa,6,Other / Unclassified
+.NET 8,5,Frameworks & Platforms
+AML,5,Other / Unclassified
+API Management,5,Other / Unclassified
+ARM,5,Other / Unclassified
+ASP.NET Core MVC,5,Frameworks & Platforms
+Access,5,Other / Unclassified
+Adobe Lightroom,5,Other / Unclassified
+Ansible Automation Platform,5,Tools & Collaboration
+Apache Hadoop ecosystem,5,Frameworks & Platforms
+Azure Active Directory,5,Cloud & Managed Services
+Azure DWH,5,Cloud & Managed Services
+Azure Function,5,Cloud & Managed Services
+Azure Monitor,5,Cloud & Managed Services
+Batch,5,Other / Unclassified
+Big Query,5,Other / Unclassified
+Blender,5,Other / Unclassified
+Brocade,5,Other / Unclassified
+CASE,5,Other / Unclassified
+CDS,5,Other / Unclassified
+CISSP,5,Other / Unclassified
+CYBERSECURITY,5,Other / Unclassified
+Camunda BPM,5,Other / Unclassified
+Canva,5,Other / Unclassified
+Celery,5,Other / Unclassified
+Citrix DaaS,5,Other / Unclassified
+Citrix Director,5,Other / Unclassified
+Citrix Studio,5,Other / Unclassified
+Citrix Virtual Apps and Desktops,5,Other / Unclassified
+Citrix WEM,5,Other / Unclassified
+Citrix policies,5,Other / Unclassified
+Cloud Dataflow,5,Cloud & Managed Services
+Cloud Dataproc,5,Cloud & Managed Services
+Cloud KMS,5,Cloud & Managed Services
+Data Lake Gen2,5,Other / Unclassified
+Dell,5,Other / Unclassified
+EDB,5,Other / Unclassified
+EF Core,5,Other / Unclassified
+ELK Stack,5,Tools & Collaboration
+Elastic,5,Other / Unclassified
+FSLogix,5,Other / Unclassified
+FX,5,Other / Unclassified
+Forms,5,Other / Unclassified
+GPT,5,Other / Unclassified
+Google BigQuery,5,Databases & Data Stores
+Google Tag Manager,5,Other / Unclassified
+HDFS,5,Other / Unclassified
+Harbor,5,Other / Unclassified
+Hotjar,5,Other / Unclassified
+IPS,5,Other / Unclassified
+Juniper,5,Other / Unclassified
+Kubeflow,5,Other / Unclassified
+MCS,5,Other / Unclassified
+Manual provisioning,5,Other / Unclassified
+Meraki,5,Other / Unclassified
+Microsoft Defender,5,Other / Unclassified
+Microsoft Dynamics 365,5,Other / Unclassified
+NIST,5,Other / Unclassified
+NUnit,5,Other / Unclassified
+Nessus,5,Other / Unclassified
+NightWatch,5,Other / Unclassified
+OpenID,5,Other / Unclassified
+PHPStorm,5,Other / Unclassified
+PVS,5,Other / Unclassified
+PowerPoint,5,Other / Unclassified
+PuTTY,5,Other / Unclassified
+Pulumi,5,Other / Unclassified
+QoS,5,Other / Unclassified
+RDBMS,5,Other / Unclassified
+REST APIs,5,Other / Unclassified
+ReactJS,5,Frameworks & Platforms
+Retrofit,5,Libraries
+Room,5,Other / Unclassified
+SAP EWM,5,Other / Unclassified
+SAP Integration Suite,5,Other / Unclassified
+SAP MM,5,Other / Unclassified
+SIEM/SOAR,5,Other / Unclassified
+SQL Databases,5,Other / Unclassified
+Simulink,5,Other / Unclassified
+Spring Security,5,Frameworks & Platforms
+Teamcenter,5,Other / Unclassified
+TestLink,5,Other / Unclassified
+UPM,5,Other / Unclassified
+UX/UI,5,Other / Unclassified
+Unit,5,Other / Unclassified
+Vim,5,Other / Unclassified
+WMS,5,Other / Unclassified
+WPF,5,Other / Unclassified
+Windows 11,5,Other / Unclassified
+Word,5,Other / Unclassified
+Workflow,5,Other / Unclassified
+XDR,5,Other / Unclassified
+XSD,5,Other / Unclassified
+Zendesk,5,Other / Unclassified
+cloud infrastructure deployments,5,Cloud & Managed Services
+n8n,5,Other / Unclassified
+solution manager,5,Other / Unclassified
+vSphere,5,Other / Unclassified
+AI Search,4,Other / Unclassified
+AIX,4,Other / Unclassified
+APO,4,Other / Unclassified
+AWS Lambda,4,Cloud & Managed Services
+AdobeForms,4,Other / Unclassified
+Alibaba,4,Other / Unclassified
+Allure,4,Other / Unclassified
+Amazon Web Services,4,Cloud & Managed Services
+Analysis,4,Other / Unclassified
+Android Jetpack,4,Frameworks & Platforms
+Angielski,4,Other / Unclassified
+Apache Tomcat,4,Tools & Collaboration
+Apollo,4,Other / Unclassified
+Axure,4,Other / Unclassified
+Azure OpenAI,4,Cloud & Managed Services
+BAPI,4,Other / Unclassified
+BERT,4,Other / Unclassified
+BMC Helix platform,4,Other / Unclassified
+BPMS,4,Other / Unclassified
+Burp Suite,4,Other / Unclassified
+CDC,4,Other / Unclassified
+CDK,4,Other / Unclassified
+CI/CD pipelines,4,Tools & Collaboration
+CISM,4,Other / Unclassified
+CSM,4,Other / Unclassified
+CTRLM,4,Other / Unclassified
+Certyfikaty OpenText / Documentum,4,Other / Unclassified
+Certyfikaty SAP S/4HANA,4,Other / Unclassified
+Container Apps,4,Other / Unclassified
+Crystal Reports,4,Other / Unclassified
+Dagger,4,Other / Unclassified
+EDI,4,Other / Unclassified
+Eclipse,4,Other / Unclassified
+Ekahau,4,Other / Unclassified
+Enterprise Content Management (ECM,4,Other / Unclassified
+Enterprise Technology Register / CMDB-related tools,4,Other / Unclassified
+Extreme Networks,4,Other / Unclassified
+FigJam,4,Other / Unclassified
+FlexNet Manager Suite,4,Other / Unclassified
+Flexera Data Platform,4,Other / Unclassified
+FlexeraOne,4,Other / Unclassified
+GDPR,4,Other / Unclassified
+Geopandas,4,Libraries
+Google Ads,4,Other / Unclassified
+Group Policy,4,Other / Unclassified
+Guidewire,4,Other / Unclassified
+HA/DR,4,Other / Unclassified
+Hive SQL,4,Other / Unclassified
+IDS/IPS,4,Other / Unclassified
+IHE,4,Other / Unclassified
+ITAM,4,Other / Unclassified
+IaaS,4,Other / Unclassified
+Identity Management,4,Other / Unclassified
+In-App Extensibility,4,Other / Unclassified
+J2EE,4,Other / Unclassified
+JMS,4,Other / Unclassified
+Juniper SRX firewall,4,Other / Unclassified
+Keycloak,4,Other / Unclassified
+L2,4,Other / Unclassified
+Logstash,4,Tools & Collaboration
+Loki,4,Other / Unclassified
+MAUI,4,Other / Unclassified
+MEGA HOPEX,4,Other / Unclassified
+MS Visio,4,Other / Unclassified
+Macierz Hitachi,4,Other / Unclassified
+Material UI,4,Other / Unclassified
+Memcached,4,Other / Unclassified
+Meta,4,Other / Unclassified
+Microsoft Exchange,4,Other / Unclassified
+Microsoft Intune,4,Other / Unclassified
+Microsoft Project,4,Other / Unclassified
+Microsoft Purview,4,Other / Unclassified
+Microsoft Windows,4,Other / Unclassified
+Mobile,4,Other / Unclassified
+Mongo DB,4,Databases & Data Stores
+MyBatis,4,Other / Unclassified
+NAC,4,Other / Unclassified
+New Relic,4,Tools & Collaboration
+NodeJS,4,Frameworks & Platforms
+Notion,4,Other / Unclassified
+OIDC,4,Other / Unclassified
+Okta,4,Other / Unclassified
+OpenID Connect,4,Other / Unclassified
+OpenText Documentum,4,Other / Unclassified
+Oracle Applications,4,Databases & Data Stores
+Oracle WebLogic,4,Databases & Data Stores
+PL/pgSQL,4,Other / Unclassified
+Palo Alto firewall,4,Other / Unclassified
+Polarion,4,Other / Unclassified
+Prefect,4,Other / Unclassified
+Qlik Compose,4,Other / Unclassified
+Qlik Replicate,4,Other / Unclassified
+Qlik Sense,4,Other / Unclassified
+Quantexa,4,Other / Unclassified
+RAP,4,Other / Unclassified
+RDS,4,Cloud & Managed Services
+RHEL,4,Other / Unclassified
+RSA Archer,4,Other / Unclassified
+Rancher,4,Other / Unclassified
+React Testing Library,4,Frameworks & Platforms
+RestAPI,4,Other / Unclassified
+Routing,4,Other / Unclassified
+SAN Brocade,4,Other / Unclassified
+SAN Cisco MDS,4,Other / Unclassified
+SAP Authorizations management processes,4,Other / Unclassified
+SAP Business Technology Platform,4,Other / Unclassified
+SAP HCM,4,Other / Unclassified
+SAP LE,4,Other / Unclassified
+SAP S/4HANA (AP,4,Other / Unclassified
+SASS,4,Other / Unclassified
+SNOW,4,Other / Unclassified
+STM32,4,Other / Unclassified
+Sailpoint IIQ,4,Other / Unclassified
+SecOps,4,Other / Unclassified
+SentiOne Automate,4,Other / Unclassified
+ServiceNow CMDB,4,Other / Unclassified
+Specflow,4,Other / Unclassified
+Spring MVC,4,Frameworks & Platforms
+T-SQL/PL-SQL,4,Other / Unclassified
+TDD,4,Methodologies & Concepts
+TalkBack,4,Other / Unclassified
+TanStack,4,Other / Unclassified
+Unity 3D,4,Other / Unclassified
+Unity Catalog,4,Other / Unclassified
+Unreal Engine,4,Other / Unclassified
+VB.NET,4,Frameworks & Platforms
+VoiceOver,4,Other / Unclassified
+WAF,4,Other / Unclassified
+WebSocket,4,Other / Unclassified
+Webcon BPS,4,Other / Unclassified
+Wi-Fi,4,Other / Unclassified
+WinForms,4,Other / Unclassified
+Windows 10/11,4,Other / Unclassified
+X++,4,Other / Unclassified
+XHTML,4,Other / Unclassified
+XSLT,4,Other / Unclassified
+Zeppelin,4,Other / Unclassified
+Zustand,4,Other / Unclassified
+event-driven architecture,4,Other / Unclassified
+matplotlib,4,Libraries
+migration and archiving,4,Other / Unclassified
+yii2,4,Other / Unclassified
+.NET 9,3,Frameworks & Platforms
+ACL,3,Other / Unclassified
+AI/ML,3,Other / Unclassified
+API Gateway,3,Other / Unclassified
+AZ-104,3,Other / Unclassified
+AZ-305,3,Other / Unclassified
+Adobe Experience Manager,3,Other / Unclassified
+AirWatch,3,Other / Unclassified
+Alibaba Cloud,3,Cloud & Managed Services
+AlloyDB,3,Other / Unclassified
+Ant,3,Other / Unclassified
+Apache NiFi,3,Tools & Collaboration
+Apache Spark (PySpark,3,Frameworks & Platforms
+Appian,3,Other / Unclassified
+ArcGIS Pro,3,Other / Unclassified
+ArcGIS Server,3,Other / Unclassified
+ArcPy,3,Other / Unclassified
+Argo,3,Other / Unclassified
+AssertJ,3,Other / Unclassified
+Aurora,3,Other / Unclassified
+AutomateNow,3,Other / Unclassified
+Avamar,3,Other / Unclassified
+Azure AI Foundry,3,Cloud & Managed Services
+Azure Event Hubs,3,Cloud & Managed Services
+Azure Functions,3,Cloud & Managed Services
+Azure IaaS,3,Cloud & Managed Services
+Azure/ AWS,3,Cloud & Managed Services
+Babel,3,Other / Unclassified
+Backup,3,Other / Unclassified
+Blue Yonder ESP,3,Other / Unclassified
+BluePrism,3,Other / Unclassified
+Bonds,3,Other / Unclassified
+Broadcom,3,Other / Unclassified
+C/C++,3,Other / Unclassified
+CDA,3,Other / Unclassified
+CFT,3,Other / Unclassified
+CI/CD Tools,3,Other / Unclassified
+CICS,3,Other / Unclassified
+CLI,3,Other / Unclassified
+CRM platforms,3,Other / Unclassified
+Camel,3,Other / Unclassified
+Campaigns,3,Other / Unclassified
+Ceph,3,Other / Unclassified
+Cisco MDS SAN,3,Other / Unclassified
+Citus,3,Other / Unclassified
+ClickHouse,3,Databases & Data Stores
+ClickUp,3,Other / Unclassified
+CloudWatch,3,Cloud & Managed Services
+Collibra,3,Other / Unclassified
+Compiler,3,Other / Unclassified
+Corel,3,Other / Unclassified
+Coupa,3,Other / Unclassified
+Crashlytics,3,Other / Unclassified
+CrowdStrike,3,Other / Unclassified
+DATA TESTING,3,Other / Unclassified
+DEX Pack,3,Other / Unclassified
+Dataverse,3,Other / Unclassified
+Derivatives,3,Other / Unclassified
+DevTools,3,Other / Unclassified
+Drupal,3,Other / Unclassified
+EDR/XDR,3,Other / Unclassified
+ELT,3,Other / Unclassified
+EMR,3,Cloud & Managed Services
+ES6,3,Other / Unclassified
+ESP32,3,Other / Unclassified
+Elasticache,3,Other / Unclassified
+Elixir,3,Programming Languages
+Embedded Systems,3,Other / Unclassified
+Embedding,3,Other / Unclassified
+Ember,3,Other / Unclassified
+English,3,Other / Unclassified
+Equities,3,Other / Unclassified
+Exchange Server,3,Other / Unclassified
+Eximee,3,Other / Unclassified
+F5,3,Other / Unclassified
+FHIR,3,Other / Unclassified
+FreeRTOS,3,Other / Unclassified
+GDAL,3,Other / Unclassified
+Generative AI,3,Other / Unclassified
+GeoServer,3,Other / Unclassified
+Gherkin,3,Other / Unclassified
+GoldenGate,3,Other / Unclassified
+Google Play,3,Other / Unclassified
+Google Search Console,3,Other / Unclassified
+Graphana,3,Other / Unclassified
+HAProxy,3,Other / Unclassified
+HBase,3,Databases & Data Stores
+HL7/IHE,3,Other / Unclassified
+Hitachi Storage,3,Other / Unclassified
+Hybrid Active Directory,3,Other / Unclassified
+IBM Mainframe,3,Other / Unclassified
+IBM SAN Volume Controller (SVC,3,Other / Unclassified
+IDEA,3,Other / Unclassified
+IDPS,3,Other / Unclassified
+ISO 27001,3,Other / Unclassified
+ITK,3,Other / Unclassified
+JCL,3,Other / Unclassified
+JVM,3,Other / Unclassified
+Jamf,3,Other / Unclassified
+JanusGraph,3,Other / Unclassified
+Jasmine,3,Other / Unclassified
+Jira i Confluence,3,Tools & Collaboration
+JointJS,3,Other / Unclassified
+Jupyter,3,Other / Unclassified
+KDB,3,Other / Unclassified
+Kali Linux,3,Other / Unclassified
+Kerberos,3,Other / Unclassified
+Kong,3,Other / Unclassified
+Kuberentes,3,Other / Unclassified
+Lakehouse,3,Other / Unclassified
+Lean,3,Other / Unclassified
+Less,3,Other / Unclassified
+Llama,3,Other / Unclassified
+Load Balancer configuration,3,Other / Unclassified
+Load Runner,3,Other / Unclassified
+MCP,3,Other / Unclassified
+MSSQL Server,3,Databases & Data Stores
+MassTransit,3,Other / Unclassified
+Material Design,3,Other / Unclassified
+Meta Ads,3,Other / Unclassified
+Metasploit,3,Other / Unclassified
+Microsoft Copilot,3,Other / Unclassified
+Microsoft Power Platform,3,Other / Unclassified
+Microsoft Security Stack,3,Other / Unclassified
+MobX,3,Other / Unclassified
+Mural,3,Other / Unclassified
+NAT,3,Other / Unclassified
+NTLM,3,Other / Unclassified
+NetBackup,3,Other / Unclassified
+NextJS,3,Other / Unclassified
+Nmap,3,Other / Unclassified
+No-code,3,Other / Unclassified
+ODI,3,Other / Unclassified
+ORM,3,Other / Unclassified
+OWASP ZAP,3,Other / Unclassified
+OfBiz,3,Other / Unclassified
+Office365,3,Other / Unclassified
+Open Search,3,Other / Unclassified
+Oracle Cloud,3,Databases & Data Stores
+Oracle Designer,3,Databases & Data Stores
+Oracle Spatial,3,Databases & Data Stores
+OutSystems,3,Other / Unclassified
+PAM,3,Other / Unclassified
+PKI,3,Other / Unclassified
+PMP,3,Other / Unclassified
+PPM,3,Other / Unclassified
+Perforce,3,Other / Unclassified
+PnP PowerShell,3,Other / Unclassified
+PowerApps,3,Other / Unclassified
+PrestaShop,3,Other / Unclassified
+Proactive Hardware Monitoring,3,Other / Unclassified
+Protobuf,3,Other / Unclassified
+PyCharm,3,Other / Unclassified
+PyQGIS,3,Other / Unclassified
+Pydantic,3,Other / Unclassified
+Qlik Compose / dbt / DWH,3,Frameworks & Platforms
+QlikSense,3,Other / Unclassified
+RBAC,3,Other / Unclassified
+RTOS,3,Other / Unclassified
+ReadyAPI,3,Other / Unclassified
+Realm,3,Other / Unclassified
+RedMine,3,Other / Unclassified
+Relacyjne bazy danych,3,Other / Unclassified
+RestSharp,3,Other / Unclassified
+RxBinding,3,Other / Unclassified
+RxSwift/RxCocoa,3,Other / Unclassified
+S/4 HANA,3,Other / Unclassified
+S4Hana,3,Other / Unclassified
+SAP BO,3,Other / Unclassified
+SAP BTP,3,Other / Unclassified
+SDLC,3,Other / Unclassified
+SEMrush,3,Cloud & Managed Services
+SIP,3,Other / Unclassified
+SNIP (Subnet IP,3,Other / Unclassified
+SQL Oracle,3,Databases & Data Stores
+SQL Server Agent,3,Databases & Data Stores
+SQL Server Management Studio,3,Databases & Data Stores
+SSAS,3,Other / Unclassified
+STRAPI,3,Other / Unclassified
+Selenium WebDriver,3,Libraries
+Serverless,3,Other / Unclassified
+Service Cloud,3,Cloud & Managed Services
+SharePoint On-Premises Farm Architecture,3,Other / Unclassified
+Sketch,3,Other / Unclassified
+Solace,3,Other / Unclassified
+Solr,3,Other / Unclassified
+Spark ML,3,Frameworks & Platforms
+Spring Data,3,Frameworks & Platforms
+Storybook,3,Other / Unclassified
+Superset,3,Other / Unclassified
+SwiftUI/UIKit,3,Other / Unclassified
+Symantec,3,Other / Unclassified
+Symfonia,3,Other / Unclassified
+Synapse,3,Cloud & Managed Services
+T-SQL/SSMS,3,Other / Unclassified
+TanStack Query,3,Other / Unclassified
+Temenos Core Banking,3,Other / Unclassified
+Test Automation,3,Other / Unclassified
+Triton,3,Other / Unclassified
+UTM,3,Other / Unclassified
+UniFlow,3,Other / Unclassified
+Unit Testing,3,Other / Unclassified
+Unix/Linux,3,Other / Unclassified
+Veeam/ Sql,3,Other / Unclassified
+Visual Basic,3,Other / Unclassified
+Vitest,3,Other / Unclassified
+WebFlux,3,Other / Unclassified
+Windows 10 / Windows 11,3,Other / Unclassified
+Wireshark,3,Other / Unclassified
+XPath,3,Other / Unclassified
+Zero Trust principles,3,Other / Unclassified
+`certyfikat TOGAF,3,Other / Unclassified
+automotive,3,Other / Unclassified
+data mesh,3,Other / Unclassified
+monitoring tools,3,Other / Unclassified
+o,3,Other / Unclassified
+segmentacja sieci,3,Other / Unclassified
+sieci windows,3,Other / Unclassified
+systemy klasy SIEM/SOAR,3,Other / Unclassified
+.NET 8+,2,Frameworks & Platforms
+.NET 9/10,2,Frameworks & Platforms
+.NET MAUI,2,Frameworks & Platforms
+3GPP,2,Other / Unclassified
+ABAP ADT,2,Other / Unclassified
+AI / LLM,2,Other / Unclassified
+ALM Toolkit,2,Other / Unclassified
+API test automation,2,Other / Unclassified
+AWC,2,Other / Unclassified
+AWS IAM,2,Cloud & Managed Services
+AWS Security Tools,2,Cloud & Managed Services
+Acronis,2,Other / Unclassified
+Adobe Commerce,2,Other / Unclassified
+Adobe Creative Suite,2,Other / Unclassified
+Adobe Experience Manager (AEM,2,Other / Unclassified
+Aerospike,2,Other / Unclassified
+Agentic AI,2,Other / Unclassified
+Agentic Architectures,2,Other / Unclassified
+Agile Methodology,2,Other / Unclassified
+Agile/Scrum,2,Other / Unclassified
+AgilePM,2,Other / Unclassified
+Akeneo,2,Other / Unclassified
+Akka,2,Frameworks & Platforms
+Amazon Bedrock,2,Other / Unclassified
+Amazon SageMaker,2,Other / Unclassified
+Anaplan,2,Other / Unclassified
+Android Auto,2,Frameworks & Platforms
+Android Automotive OS,2,Frameworks & Platforms
+Ansible Automation Platform (AAP,2,Tools & Collaboration
+Ant Design,2,Other / Unclassified
+Apache Camel,2,Tools & Collaboration
+Apache ECharts,2,Tools & Collaboration
+Apache Ignite,2,Tools & Collaboration
+Apache Maven,2,Tools & Collaboration
+Apache Sling,2,Tools & Collaboration
+Apache Superset,2,Tools & Collaboration
+Apigee,2,Other / Unclassified
+App Center,2,Other / Unclassified
+Argo CD,2,Other / Unclassified
+Ariba,2,Other / Unclassified
+Aris,2,Other / Unclassified
+Aruba WIF,2,Other / Unclassified
+Asana,2,Other / Unclassified
+Assembly,2,Other / Unclassified
+AsyncAPI,2,Other / Unclassified
+Atlas,2,Other / Unclassified
+Audyt,2,Other / Unclassified
+Autocad,2,Other / Unclassified
+Automate Now,2,Other / Unclassified
+Azure - Identity & Access Management,2,Cloud & Managed Services
+Azure Container Apps,2,Cloud & Managed Services
+Azure ML,2,Cloud & Managed Services
+Azure Machine Learning Studio,2,Cloud & Managed Services
+Azure PaaS,2,Cloud & Managed Services
+Azure Storage,2,Cloud & Managed Services
+Azure Synapse Analytics,2,Cloud & Managed Services
+BIgData,2,Other / Unclassified
+BLE,2,Other / Unclassified
+BSP,2,Other / Unclassified
+Backstage,2,Other / Unclassified
+Biblioteki ML,2,Other / Unclassified
+Biceps,2,Other / Unclassified
+Bizagi,2,Other / Unclassified
+BlackLine,2,Other / Unclassified
+Blue Yonder SEQ,2,Other / Unclassified
+Boomi,2,Other / Unclassified
+BrowserStack,2,Other / Unclassified
+Bruno,2,Other / Unclassified
+Business Analysis,2,Other / Unclassified
+C#.NET,2,Frameworks & Platforms
+CCNA,2,Other / Unclassified
+CCNP,2,Other / Unclassified
+CEH,2,Other / Unclassified
+CICD,2,Methodologies & Concepts
+CISA,2,Other / Unclassified
+Camunda BPM 7,2,Other / Unclassified
+Capacitor,2,Other / Unclassified
+Celonis,2,Other / Unclassified
+Certyfikat ISTQB,2,Other / Unclassified
+Checkmarx,2,Other / Unclassified
+Chrome DevTools,2,Other / Unclassified
+Cisco Catalyst,2,Other / Unclassified
+Cisco Duo,2,Other / Unclassified
+Cisco ISE,2,Other / Unclassified
+Classification,2,Other / Unclassified
+Cloud Meraki,2,Cloud & Managed Services
+CloudFront,2,Cloud & Managed Services
+CodeceptJS,2,Other / Unclassified
+Cognitive Services,2,Other / Unclassified
+Comarch XL,2,Other / Unclassified
+Combine,2,Other / Unclassified
+Console NPS,2,Other / Unclassified
+Core Connectors,2,Other / Unclassified
+D3,2,Other / Unclassified
+DAX Studio,2,Other / Unclassified
+DOCERK,2,Other / Unclassified
+DVC,2,Other / Unclassified
+Data Center Infrastructure,2,Other / Unclassified
+Data Integration,2,Other / Unclassified
+Data Loss Prevention,2,Other / Unclassified
+Data Modelling,2,Other / Unclassified
+Data and process modeling tools,2,Other / Unclassified
+Debezium,2,Other / Unclassified
+Defender for Endpoint,2,Other / Unclassified
+Detektory,2,Other / Unclassified
+DialofFlow CX,2,Other / Unclassified
+Docker Compose,2,Tools & Collaboration
+Drools,2,Other / Unclassified
+Dynamics 365 FnO,2,Other / Unclassified
+Dynamics AX,2,Other / Unclassified
+Dynamics D365,2,Other / Unclassified
+EC2,2,Cloud & Managed Services
+ECAD,2,Other / Unclassified
+ECS,2,Other / Unclassified
+EKS,2,Cloud & Managed Services
+ESET,2,Other / Unclassified
+ESP32 or STM32 or nRF,2,Other / Unclassified
+ETL/ELT,2,Other / Unclassified
+Elastic Stack,2,Other / Unclassified
+Elastiflow,2,Other / Unclassified
+Enterprise monitoring tools,2,Other / Unclassified
+EntraID,2,Other / Unclassified
+Enzyme,2,Other / Unclassified
+Espresso,2,Other / Unclassified
+Event Storming,2,Other / Unclassified
+Event-Driven Automation,2,Other / Unclassified
+FTP,2,Other / Unclassified
+Fiddler,2,Other / Unclassified
+Field Service,2,Other / Unclassified
+File Systems,2,Other / Unclassified
+Firebase Analytics,2,Other / Unclassified
+Firebird,2,Other / Unclassified
+Firmware,2,Other / Unclassified
+Fivetran HVR,2,Other / Unclassified
+Flux CD,2,Other / Unclassified
+FortiAnalyzer,2,Other / Unclassified
+Fortinet WIF,2,Other / Unclassified
+Freshdesk,2,Other / Unclassified
+GCC,2,Other / Unclassified
+GCP Big Query,2,Cloud & Managed Services
+Gemini,2,Other / Unclassified
+Gen AI,2,Other / Unclassified
+Ghidra,2,Other / Unclassified
+Google Cloud Storage,2,Cloud & Managed Services
+Google Sheets,2,Other / Unclassified
+Grafana Loki,2,Tools & Collaboration
+Grape,2,Other / Unclassified
+Gravitee,2,Other / Unclassified
+H323,2,Other / Unclassified
+HL7 CDA,2,Other / Unclassified
+HMI,2,Other / Unclassified
+HP ALM,2,Other / Unclassified
+Hexagonal Architecture,2,Other / Unclassified
+Hibernate/JPA,2,Frameworks & Platforms
+HuggingFace,2,Other / Unclassified
+IDA,2,Other / Unclassified
+IMAP,2,Other / Unclassified
+IMS,2,Other / Unclassified
+IP networks,2,Other / Unclassified
+IPSec,2,Other / Unclassified
+ITIL processes,2,Other / Unclassified
+Infrastructure Automation,2,Other / Unclassified
+Infrastructure as Code,2,Other / Unclassified
+Instana,2,Other / Unclassified
+JMS API,2,Other / Unclassified
+JS ES6+,2,Other / Unclassified
+Jaeger,2,Other / Unclassified
+Java 21,2,Other / Unclassified
+Java 8/17,2,Other / Unclassified
+JavaServer Pages,2,Other / Unclassified
+Jenkins/Github/Nexus,2,Tools & Collaboration
+Joomla,2,Other / Unclassified
+KD,2,Other / Unclassified
+KNIME,2,Other / Unclassified
+KYP.ai,2,Other / Unclassified
+Karma,2,Other / Unclassified
+Kondor+,2,Other / Unclassified
+Kustomize,2,Other / Unclassified
+LAN/WAN/VPN,2,Other / Unclassified
+LAN/WLAN,2,Other / Unclassified
+LLM/RAG,2,Other / Unclassified
+LVGL,2,Other / Unclassified
+Landing Zone,2,Other / Unclassified
+LangFuse,2,Other / Unclassified
+Laravel Filament 4+,2,Frameworks & Platforms
+LibreNms,2,Other / Unclassified
+Lightning,2,Other / Unclassified
+LinkedIn Ads,2,Other / Unclassified
+Linux/Windows,2,Other / Unclassified
+Livewire,2,Other / Unclassified
+LlamaIndex,2,Other / Unclassified
+LoadRunner Enterprice,2,Other / Unclassified
+Lombok,2,Other / Unclassified
+Lumen,2,Other / Unclassified
+MCSE,2,Other / Unclassified
+MDX,2,Other / Unclassified
+MFT,2,Other / Unclassified
+ML Studio,2,Other / Unclassified
+ML automation,2,Other / Unclassified
+MS Azure,2,Cloud & Managed Services
+MS DYNAMICS,2,Other / Unclassified
+MS Windows,2,Other / Unclassified
+MS Word,2,Other / Unclassified
+MSTest,2,Other / Unclassified
+MUI,2,Other / Unclassified
+MV Visual Studio,2,Other / Unclassified
+MapReduce,2,Other / Unclassified
+McAfee,2,Other / Unclassified
+Metabase,2,Other / Unclassified
+Micrometer,2,Other / Unclassified
+Micronaut,2,Frameworks & Platforms
+Microservices architecture,2,Other / Unclassified
+Microsoft Ads,2,Other / Unclassified
+Microsoft Copilot Studio,2,Other / Unclassified
+Microsoft Dynamics 365 F/SCM,2,Other / Unclassified
+Microsoft Exchance,2,Other / Unclassified
+Microsoft Graph API,2,Other / Unclassified
+Microsoft Hyper-V,2,Other / Unclassified
+Microsoft Office 365,2,Other / Unclassified
+Microsoft Sentinel,2,Other / Unclassified
+Microsoft Teams,2,Other / Unclassified
+Microsoft Windows Server,2,Other / Unclassified
+Microsoft Word,2,Other / Unclassified
+Microsoft365,2,Other / Unclassified
+Mimikatz,2,Other / Unclassified
+MinIO,2,Other / Unclassified
+Mocha,2,Libraries
+Mockserver,2,Other / Unclassified
+Modbus,2,Other / Unclassified
+Modele ML,2,Other / Unclassified
+Mule ESB,2,Other / Unclassified
+MySQL/MariaDB,2,Databases & Data Stores
+NAS,2,Other / Unclassified
+NLU,2,Other / Unclassified
+NVMe,2,Other / Unclassified
+NetFlow,2,Other / Unclassified
+NetSuite,2,Other / Unclassified
+NewRelic,2,Other / Unclassified
+Nomad,2,Other / Unclassified
+Now Assist GenAI,2,Other / Unclassified
+Nuxt,2,Frameworks & Platforms
+Nvidia Jetson,2,Other / Unclassified
+OBIEE,2,Other / Unclassified
+OPC,2,Other / Unclassified
+OSCP,2,Other / Unclassified
+OpenBAO,2,Other / Unclassified
+OpenVAS,2,Other / Unclassified
+Oracle Databases,2,Databases & Data Stores
+Oracle Forms,2,Databases & Data Stores
+Oracle SOA,2,Databases & Data Stores
+Oracle SQL,2,Databases & Data Stores
+OracleDB,2,Databases & Data Stores
+PIM,2,Other / Unclassified
+PL/SQL Developer,2,Other / Unclassified
+POS,2,Other / Unclassified
+PP,2,Other / Unclassified
+PRTG,2,Other / Unclassified
+PSCAD,2,Other / Unclassified
+Parquet,2,Other / Unclassified
+Pega CSA,2,Other / Unclassified
+Pega Deployment Manager,2,Other / Unclassified
+Pega Development,2,Other / Unclassified
+Pega Platform,2,Other / Unclassified
+Pega Predictive Diagnostic Cloud (PDC,2,Cloud & Managed Services
+Pega Testing,2,Other / Unclassified
+Pimcore,2,Other / Unclassified
+Ping,2,Other / Unclassified
+Pivot Tables,2,Other / Unclassified
+Play Store SDK,2,Other / Unclassified
+Poetry,2,Other / Unclassified
+Postgre,2,Other / Unclassified
+Power Pivot,2,Other / Unclassified
+Power Shell,2,Other / Unclassified
+PowerFactory,2,Other / Unclassified
+Proxy,2,Other / Unclassified
+PubSub,2,Cloud & Managed Services
+QML,2,Other / Unclassified
+QlikView,2,Other / Unclassified
+Qualys,2,Other / Unclassified
+Quest,2,Other / Unclassified
+RDP,2,Other / Unclassified
+REST services,2,Other / Unclassified
+RESTful APIs,2,Other / Unclassified
+ROS,2,Other / Unclassified
+RSA Cloud,2,Cloud & Managed Services
+RSA Onprem,2,Other / Unclassified
+Redis. Memcached,2,Databases & Data Stores
+RegEx,2,Other / Unclassified
+Report Builder,2,Other / Unclassified
+Router,2,Other / Unclassified
+Routery,2,Other / Unclassified
+S4 HANA,2,Other / Unclassified
+SAP APO,2,Other / Unclassified
+SAP Central Finance,2,Other / Unclassified
+SAP Cloud ALM,2,Cloud & Managed Services
+SAP DRC,2,Other / Unclassified
+SAP FI/CO,2,Other / Unclassified
+SAP GTS,2,Other / Unclassified
+SAP IBP,2,Other / Unclassified
+SAP TM,2,Other / Unclassified
+SAP WM,2,Other / Unclassified
+SATCOM,2,Other / Unclassified
+SD-WAN,2,Other / Unclassified
+SEE,2,Other / Unclassified
+SFPT,2,Other / Unclassified
+SMTP,2,Other / Unclassified
+SNMP,2,Other / Unclassified
+SOA Suite,2,Other / Unclassified
+SOAP API,2,Other / Unclassified
+SOAP UI,2,Other / Unclassified
+SOQL,2,Other / Unclassified
+SPARQL,2,Other / Unclassified
+SQL Database,2,Other / Unclassified
+SQL/PostgreSQL,2,Databases & Data Stores
+SSH,2,Other / Unclassified
+SSP,2,Other / Unclassified
+SSWiN,2,Other / Unclassified
+SVG,2,Other / Unclassified
+Salto,2,Other / Unclassified
+Scapy,2,Other / Unclassified
+Scriptrunner,2,Other / Unclassified
+Scrum / Agile frameworks,2,Other / Unclassified
+Secure Boot,2,Other / Unclassified
+Selenide,2,Other / Unclassified
+Selenium IDE,2,Libraries
+Semgrep,2,Other / Unclassified
+SentinelOne,2,Other / Unclassified
+Shopify,2,Other / Unclassified
+SignalR,2,Other / Unclassified
+Single Sign-On,2,Other / Unclassified
+Six Sigma,2,Other / Unclassified
+Slurm,2,Other / Unclassified
+Smarty,2,Other / Unclassified
+Sonatype IQ,2,Other / Unclassified
+Sorbnet,2,Other / Unclassified
+Soti,2,Other / Unclassified
+Spock (Groovy,2,Other / Unclassified
+Spring WebFlux,2,Frameworks & Platforms
+StencilJS,2,Other / Unclassified
+Step Functions,2,Cloud & Managed Services
+Story Mapping,2,Other / Unclassified
+Successfactors,2,Other / Unclassified
+SuiteScripts,2,Other / Unclassified
+Support,2,Other / Unclassified
+Svelte,2,Frameworks & Platforms
+Swing,2,Other / Unclassified
+Switch,2,Other / Unclassified
+Switching,2,Other / Unclassified
+Sybase,2,Other / Unclassified
+Sylius,2,Other / Unclassified
+System Control,2,Other / Unclassified
+TIA,2,Other / Unclassified
+TLS,2,Other / Unclassified
+TOAD,2,Other / Unclassified
+Tabular Editor,2,Other / Unclassified
+Talend,2,Other / Unclassified
+TeamViewer,2,Other / Unclassified
+Teradata,2,Databases & Data Stores
+Three.js,2,Other / Unclassified
+TimescaleDB,2,Other / Unclassified
+Transformer architecture,2,Other / Unclassified
+Trello,2,Other / Unclassified
+Triton Inference Server,2,Other / Unclassified
+Twig,2,Other / Unclassified
+UAT,2,Other / Unclassified
+Ubiquiti,2,Other / Unclassified
+VS Code,2,Other / Unclassified
+Vector Database,2,Other / Unclassified
+VirusTotal,2,Other / Unclassified
+WIX,2,Other / Unclassified
+WSUS,2,Other / Unclassified
+Wazuh,2,Other / Unclassified
+Web Service,2,Other / Unclassified
+WebAssembly,2,Other / Unclassified
+WebService,2,Other / Unclassified
+WebServices,2,Other / Unclassified
+WebView,2,Other / Unclassified
+Wirtualizacja,2,Other / Unclassified
+Workday EIB,2,Other / Unclassified
+Workday HCM,2,Other / Unclassified
+Workday Recruiting,2,Cloud & Managed Services
+Workday Studio,2,Other / Unclassified
+Workday Talent & Performance,2,Other / Unclassified
+X-Ray,2,Other / Unclassified
+Xunit,2,Other / Unclassified
+Yii,2,Other / Unclassified
+Zephyr,2,Other / Unclassified
+banking domain,2,Other / Unclassified
+containerization,2,Other / Unclassified
+data modeling,2,Other / Unclassified
+e.g,2,Other / Unclassified
+hurtownia danych,2,Other / Unclassified
+integration testing,2,Other / Unclassified
+monolit,2,Other / Unclassified
+syslog,2,Other / Unclassified
+technologie DNS/DHCP/PKI,2,Other / Unclassified
+vCenter,2,Other / Unclassified
+web applications,2,Other / Unclassified
+yarn,2,Tools & Collaboration
+.NET 10 SDK,1,Frameworks & Platforms
+.NET 6/8,1,Frameworks & Platforms
+.NET API/MVC,1,Frameworks & Platforms
+3GPP LTE/NR protocols,1,Other / Unclassified
+5S,1,Other / Unclassified
+ABAP Objects,1,Other / Unclassified
+ABAP/4,1,Other / Unclassified
+ACA,1,Other / Unclassified
+ACI Field Engineer,1,Other / Unclassified
+ADB,1,Other / Unclassified
+ADLS Gen2,1,Other / Unclassified
+AES,1,Other / Unclassified
+AI Governance,1,Other / Unclassified
+AI technologies for process automation,1,Other / Unclassified
+AI/ML in ERP,1,Other / Unclassified
+ALV,1,Other / Unclassified
+AML / compliance domain,1,Other / Unclassified
+AML/KYC,1,Other / Unclassified
+AMS,1,Other / Unclassified
+AOSP,1,Other / Unclassified
+AP S 4/Hana FI,1,Other / Unclassified
+API (REST/SOAP,1,Other / Unclassified
+API Platform,1,Other / Unclassified
+API REST,1,Other / Unclassified
+API connector security,1,Other / Unclassified
+API testing,1,Other / Unclassified
+APO PP/DS,1,Other / Unclassified
+AQL,1,Other / Unclassified
+ARM/Bicep,1,Other / Unclassified
+AS400,1,Other / Unclassified
+ASP.NET Core Web API,1,Frameworks & Platforms
+ASP.NET Core/MVC,1,Frameworks & Platforms
+ASP.NET Web API,1,Frameworks & Platforms
+ASP.NET Web Forms,1,Frameworks & Platforms
+AUTOSAR,1,Other / Unclassified
+AV,1,Other / Unclassified
+AVRO,1,Other / Unclassified
+AWR,1,Other / Unclassified
+AWS (S3,1,Cloud & Managed Services
+AWS API Gateway,1,Cloud & Managed Services
+AWS CDK,1,Cloud & Managed Services
+AWS EC2,1,Cloud & Managed Services
+AWS EKS,1,Cloud & Managed Services
+AWS MQ,1,Cloud & Managed Services
+AWS SageMaker,1,Cloud & Managed Services
+AWS Serverless,1,Cloud & Managed Services
+AWS Step Functions,1,Cloud & Managed Services
+AWS: Lambda,1,Cloud & Managed Services
+AWT,1,Other / Unclassified
+AZ-400,1,Other / Unclassified
+AZ-700,1,Other / Unclassified
+Ab Initio,1,Other / Unclassified
+Action1,1,Other / Unclassified
+Active Directory (AD,1,Other / Unclassified
+ActiveCollab,1,Other / Unclassified
+AdTech,1,Other / Unclassified
+Adobe Analytics,1,Other / Unclassified
+Adobe CC,1,Other / Unclassified
+Adobe Forms,1,Other / Unclassified
+Adobe Illustrator / Photoshop,1,Other / Unclassified
+Adobe Premiere,1,Other / Unclassified
+Adonis,1,Other / Unclassified
+Adyen,1,Other / Unclassified
+Aeron,1,Other / Unclassified
+Affinity Designer,1,Other / Unclassified
+Affinity Photo,1,Other / Unclassified
+After Effects,1,Other / Unclassified
+Agentforce,1,Other / Unclassified
+Agile (Scrum i SAFe,1,Other / Unclassified
+Aglie,1,Other / Unclassified
+Agno,1,Other / Unclassified
+Ahrefs,1,Other / Unclassified
+Aircrack-ng,1,Other / Unclassified
+Akamai,1,Other / Unclassified
+Akita,1,Other / Unclassified
+Alerta,1,Other / Unclassified
+Alfresco,1,Other / Unclassified
+Algorytmy ML,1,Other / Unclassified
+Algorytmy uczenia maszynowego,1,Other / Unclassified
+Allure TestOps,1,Other / Unclassified
+Altium Designer,1,Other / Unclassified
+Always On,1,Other / Unclassified
+Amazon Aurora,1,Other / Unclassified
+Amazon Web Services (AWS,1,Cloud & Managed Services
+Amazon Web Services or Microsoft Azure,1,Cloud & Managed Services
+Analiza biznesowa,1,Other / Unclassified
+Analog and RF measurement,1,Other / Unclassified
+Anchore,1,Other / Unclassified
+Android Debug,1,Frameworks & Platforms
+Android Emulator,1,Frameworks & Platforms
+Android Open Source Project,1,Frameworks & Platforms
+Android SDK Jetpack,1,Frameworks & Platforms
+Android Views,1,Frameworks & Platforms
+Angular 15,1,Frameworks & Platforms
+Angular CDK,1,Frameworks & Platforms
+Angular Material,1,Frameworks & Platforms
+Anthos,1,Other / Unclassified
+AnyDesk,1,Other / Unclassified
+Apache ActiveMQ,1,Tools & Collaboration
+Apache Commons,1,Tools & Collaboration
+Apache Flink,1,Tools & Collaboration
+Apache Iceberg,1,Tools & Collaboration
+Apache Kafka i,1,Tools & Collaboration
+Apache PULSAR,1,Tools & Collaboration
+Apache Spark on Azure Databricks,1,Cloud & Managed Services
+Apache Web Server,1,Tools & Collaboration
+ApigeeX,1,Other / Unclassified
+Aplikacje Web,1,Other / Unclassified
+App Store Connect,1,Other / Unclassified
+AppKit,1,Other / Unclassified
+AppSync,1,Other / Unclassified
+AppSync GraphQL,1,Libraries
+Application Gateway,1,Other / Unclassified
+Application Insights,1,Other / Unclassified
+Application Security,1,Other / Unclassified
+Application inventory,1,Other / Unclassified
+Apptio,1,Other / Unclassified
+Architektura IT,1,Other / Unclassified
+Architektura MVC,1,Other / Unclassified
+Architektura pluginowa,1,Other / Unclassified
+Aris Architect,1,Other / Unclassified
+Arista Networking,1,Other / Unclassified
+Artifactory Xray,1,Other / Unclassified
+Arvo,1,Other / Unclassified
+Assembla,1,Other / Unclassified
+Asynchronicity,1,Other / Unclassified
+Atlassian JIRA,1,Tools & Collaboration
+Atlassian stack,1,Other / Unclassified
+Audio,1,Other / Unclassified
+Audit-ready documentation,1,Other / Unclassified
+Auth0,1,Other / Unclassified
+AutoGen,1,Other / Unclassified
+Automated tests,1,Other / Unclassified
+Automaten,1,Other / Unclassified
+AutomatenNow,1,Other / Unclassified
+Automation Anywhere,1,Other / Unclassified
+Automic,1,Other / Unclassified
+Autotools,1,Other / Unclassified
+Avalog,1,Other / Unclassified
+Avalonia,1,Other / Unclassified
+Avaya,1,Other / Unclassified
+Aviation,1,Other / Unclassified
+Axence,1,Other / Unclassified
+Azure AD / Microsoft Entra ID,1,Cloud & Managed Services
+Azure AD B2C,1,Cloud & Managed Services
+Azure ADF,1,Cloud & Managed Services
+Azure AI Search,1,Cloud & Managed Services
+Azure API Management,1,Cloud & Managed Services
+Azure Backup,1,Cloud & Managed Services
+Azure Backups,1,Cloud & Managed Services
+Azure Bicep,1,Cloud & Managed Services
+Azure Blob Storage,1,Cloud & Managed Services
+Azure CLI,1,Cloud & Managed Services
+Azure Data Explorer,1,Cloud & Managed Services
+Azure Data Stack,1,Cloud & Managed Services
+Azure Databricks Service,1,Cloud & Managed Services
+Azure DevOps Test Plans,1,Cloud & Managed Services
+Azure DevOps and fully automated CI/CD pipelines with Databricks Asset Bundles,1,Cloud & Managed Services
+Azure Entra ID,1,Cloud & Managed Services
+Azure Fabric,1,Cloud & Managed Services
+Azure Firewall,1,Cloud & Managed Services
+Azure IoT Hub,1,Cloud & Managed Services
+Azure Kubernetes Service,1,Cloud & Managed Services
+Azure Lighthouse,1,Cloud & Managed Services
+Azure Logic Apps,1,Cloud & Managed Services
+Azure Platform,1,Cloud & Managed Services
+Azure Portal,1,Cloud & Managed Services
+Azure Purview,1,Cloud & Managed Services
+Azure SQL Database,1,Cloud & Managed Services
+Azure Service Bus,1,Cloud & Managed Services
+Azure Site Recovery,1,Cloud & Managed Services
+Azure Speech Services,1,Cloud & Managed Services
+Azure Stream Analytics,1,Cloud & Managed Services
+Azure vWAN,1,Cloud & Managed Services
+AzureAI,1,Cloud & Managed Services
+AzureDevops,1,Cloud & Managed Services
+AzureML,1,Cloud & Managed Services
+BACKSTAGE.IO,1,Other / Unclassified
+BADIs,1,Other / Unclassified
+BCBS239,1,Other / Unclassified
+BI Publisher,1,Other / Unclassified
+BIM,1,Other / Unclassified
+BLoC,1,Other / Unclassified
+BMPN,1,Other / Unclassified
+BMS,1,Other / Unclassified
+BOM Management,1,Other / Unclassified
+BRICS,1,Other / Unclassified
+Back-end,1,Other / Unclassified
+Backbone.js,1,Other / Unclassified
+Backlog management,1,Other / Unclassified
+Backup&Disaster Recovery,1,Other / Unclassified
+Balsamiq,1,Other / Unclassified
+Baramundi,1,Other / Unclassified
+Barracuda,1,Other / Unclassified
+Basecamp,1,Other / Unclassified
+Basel,1,Other / Unclassified
+Baselinker,1,Other / Unclassified
+Bash/Shell,1,Other / Unclassified
+Bash/Unix,1,Other / Unclassified
+BeEF,1,Other / Unclassified
+Bill of Materials,1,Other / Unclassified
+Bitrix24,1,Other / Unclassified
+Bizagi BPM Modeler,1,Other / Unclassified
+Blender 3D,1,Other / Unclassified
+BloodHound,1,Other / Unclassified
+Blue Prism,1,Other / Unclassified
+Bluecat,1,Other / Unclassified
+Blueprints,1,Other / Unclassified
+Bluetooth Low Energy,1,Other / Unclassified
+Bootloader,1,Other / Unclassified
+Botify,1,Other / Unclassified
+Branch office Network,1,Other / Unclassified
+Burp suit,1,Other / Unclassified
+Business Analyses,1,Other / Unclassified
+Business Architecture,1,Other / Unclassified
+Business Central,1,Other / Unclassified
+C/AL,1,Other / Unclassified
+C4,1,Other / Unclassified
+CALM,1,Other / Unclassified
+CAN,1,Other / Unclassified
+CCNP Data Center,1,Other / Unclassified
+CCPA,1,Other / Unclassified
+CCSDS,1,Other / Unclassified
+CCSK,1,Other / Unclassified
+CCSP,1,Other / Unclassified
+CDC / Data Replication,1,Other / Unclassified
+CDS Views,1,Other / Unclassified
+CI/CD Security,1,Other / Unclassified
+CICS/MQ,1,Other / Unclassified
+CMS Joomla,1,Other / Unclassified
+CMS Magnolia,1,Other / Unclassified
+COM/COM+,1,Other / Unclassified
+CRAMM,1,Other / Unclassified
+CRTO,1,Other / Unclassified
+CSS / SASS,1,Other / Unclassified
+CSS/SCSS,1,Other / Unclassified
+CSiRT,1,Other / Unclassified
+CUDA,1,Other / Unclassified
+CUDNN,1,Other / Unclassified
+Cain & Abel,1,Other / Unclassified
+CakePHP,1,Other / Unclassified
+Calypso,1,Other / Unclassified
+CameraX,1,Other / Unclassified
+Campaign management tool,1,Other / Unclassified
+Campaign management tools,1,Other / Unclassified
+Camunda Modeler,1,Other / Unclassified
+Canvas,1,Other / Unclassified
+Censys,1,Other / Unclassified
+Cesium,1,Other / Unclassified
+ChaRM,1,Other / Unclassified
+Change Framework,1,Other / Unclassified
+Change Management,1,Other / Unclassified
+Charles,1,Other / Unclassified
+Chart.js,1,Other / Unclassified
+Check Point,1,Other / Unclassified
+CheckMK,1,Other / Unclassified
+Checkmate,1,Other / Unclassified
+Chmura Azure,1,Cloud & Managed Services
+Chmura Google,1,Other / Unclassified
+Chmura: AWS lub Azure,1,Cloud & Managed Services
+Chroma,1,Other / Unclassified
+Cisco ACI infrastructure,1,Other / Unclassified
+Cisco Meraki,1,Other / Unclassified
+Cisco Nexus Dashboard,1,Other / Unclassified
+Citrix / Netscaler,1,Other / Unclassified
+Citrix Client,1,Other / Unclassified
+Claim Center,1,Other / Unclassified
+Classic ASP,1,Other / Unclassified
+Clean Code,1,Other / Unclassified
+ClickUP/ backlog,1,Other / Unclassified
+Closing Cockpit,1,Other / Unclassified
+Cloud (Azure,1,Cloud & Managed Services
+Cloud (GCP / Azure / AWS,1,Cloud & Managed Services
+Cloud Foundry,1,Cloud & Managed Services
+Cloud Functions,1,Cloud & Managed Services
+Cloud Identity Providers,1,Cloud & Managed Services
+Cloud Run,1,Cloud & Managed Services
+Cloud Security,1,Cloud & Managed Services
+CloudGenix,1,Cloud & Managed Services
+CloudOps,1,Cloud & Managed Services
+Cloudera Hadoop stack,1,Cloud & Managed Services
+CodeIgniter,1,Other / Unclassified
+Codebeamer,1,Other / Unclassified
+Coderabbit,1,Other / Unclassified
+CognigyAI,1,Other / Unclassified
+Cognito,1,Other / Unclassified
+Columnstore Indexes,1,Other / Unclassified
+Comach Optima,1,Other / Unclassified
+Comarch ERP Optima,1,Other / Unclassified
+Comarch XL lub Optima,1,Other / Unclassified
+Comarche,1,Other / Unclassified
+Compass,1,Other / Unclassified
+Compose MultiPlatform,1,Other / Unclassified
+Concourse,1,Other / Unclassified
+Consul,1,Other / Unclassified
+Contact Center,1,Other / Unclassified
+Contact Manager,1,Other / Unclassified
+ContainerApp,1,Other / Unclassified
+Context Engineering,1,Other / Unclassified
+Continuous Integration,1,Other / Unclassified
+Copilot for Security,1,Other / Unclassified
+Core Impact,1,Other / Unclassified
+Couchbase,1,Databases & Data Stores
+CrewAI,1,Other / Unclassified
+CubeIDE,1,Other / Unclassified
+Cubesat,1,Other / Unclassified
+CybelAngel,1,Other / Unclassified
+Cypher,1,Other / Unclassified
+Cypres,1,Other / Unclassified
+CypressJS,1,Libraries
+D3.js,1,Other / Unclassified
+DATA LAKES,1,Other / Unclassified
+DBATools,1,Other / Unclassified
+DBMS_ASSERT,1,Other / Unclassified
+DDS,1,Other / Unclassified
+DELL EMC PowerMax,1,Other / Unclassified
+DI Studio,1,Other / Unclassified
+DICOM,1,Other / Unclassified
+DMN,1,Other / Unclassified
+DNP3,1,Other / Unclassified
+DORA,1,Other / Unclassified
+DP-300,1,Other / Unclassified
+DPA,1,Other / Unclassified
+DRP,1,Other / Unclassified
+DRS,1,Other / Unclassified
+DTB,1,Other / Unclassified
+Danis,1,Other / Unclassified
+Dapper,1,Other / Unclassified
+Data Analysis,1,Other / Unclassified
+Data Binding,1,Other / Unclassified
+Data Center Nexus infra,1,Other / Unclassified
+Data Contracts,1,Other / Unclassified
+Data Distribution Service,1,Other / Unclassified
+Data Flow,1,Other / Unclassified
+Data Lake Architecture,1,Other / Unclassified
+Data Loader,1,Other / Unclassified
+Data Platforms,1,Other / Unclassified
+Data Quality,1,Other / Unclassified
+Data Vault,1,Other / Unclassified
+Data Warehouse,1,Other / Unclassified
+Data analyses,1,Other / Unclassified
+Data lineage,1,Other / Unclassified
+Data verse,1,Other / Unclassified
+Data+,1,Other / Unclassified
+DataLayer,1,Other / Unclassified
+DataStage,1,Other / Unclassified
+Databricks Apps,1,Cloud & Managed Services
+Dataform,1,Other / Unclassified
+Datastore,1,Other / Unclassified
+Datastream,1,Other / Unclassified
+DatoCMS,1,Other / Unclassified
+Debezium / Kafka,1,Tools & Collaboration
+Decision Support,1,Other / Unclassified
+Deepcrawl,1,Other / Unclassified
+Delinea,1,Other / Unclassified
+Dell AI Factory,1,Other / Unclassified
+Delphi7,1,Other / Unclassified
+Demand Planning,1,Other / Unclassified
+Demandware Script,1,Other / Unclassified
+Demantra,1,Other / Unclassified
+Design Thinking,1,Other / Unclassified
+Detectron,1,Other / Unclassified
+DevOps / GitOps,1,Tools & Collaboration
+Devexpress,1,Frameworks & Platforms
+Dify,1,Other / Unclassified
+Digital Signage,1,Tools & Collaboration
+Digital.ai,1,Tools & Collaboration
+Disruptor,1,Other / Unclassified
+Distributed SQL,1,Other / Unclassified
+Docker / Kubernetes,1,Frameworks & Platforms
+Docker containers,1,Tools & Collaboration
+Docker/K8s/Nomad,1,Tools & Collaboration
+Docker/Kubernetes,1,Frameworks & Platforms
+Doctrine DBAL,1,Other / Unclassified
+Doctrine ORM,1,Other / Unclassified
+DocuShare,1,Other / Unclassified
+Document Management,1,Other / Unclassified
+DomainTools,1,Other / Unclassified
+Domino,1,Other / Unclassified
+Driud,1,Other / Unclassified
+DuckDB,1,Other / Unclassified
+Dynamics 365 F&O,1,Other / Unclassified
+Dynamics 365 Sales,1,Other / Unclassified
+E-Mail Spam,1,Other / Unclassified
+E-commerce system,1,Other / Unclassified
+E2E,1,Other / Unclassified
+EA Architect,1,Other / Unclassified
+EBA Oracle,1,Databases & Data Stores
+EBIOS,1,Frameworks & Platforms
+EDICOM e-Invoicing,1,Other / Unclassified
+EG,1,Other / Unclassified
+EGS-CC,1,Other / Unclassified
+EJB,1,Other / Unclassified
+ELK/EFK,1,Tools & Collaboration
+EML,1,Other / Unclassified
+ERP IFS,1,Other / Unclassified
+ERP Impuls EVO,1,Other / Unclassified
+ERP systems,1,Other / Unclassified
+ESET PROTECT,1,Other / Unclassified
+ESX Server,1,Other / Unclassified
+ETIM Mapper,1,Other / Unclassified
+ETL Pipelines,1,Tools & Collaboration
+EVPN,1,Other / Unclassified
+EXINO,1,Other / Unclassified
+EZD RP,1,Other / Unclassified
+Eagle,1,Other / Unclassified
+Echo,1,Other / Unclassified
+Elasticearch,1,Other / Unclassified
+Elasticsearch (vector,1,Databases & Data Stores
+Elavon,1,Other / Unclassified
+Eloqua,1,Other / Unclassified
+Endpoint Protection,1,Other / Unclassified
+Energy Logserver,1,Other / Unclassified
+English - B2,1,Other / Unclassified
+Enterprise Architekt,1,Other / Unclassified
+Enterprise Guide,1,Other / Unclassified
+Entiti Framework,1,Other / Unclassified
+Entra AD,1,Other / Unclassified
+Erwin,1,Other / Unclassified
+Ettercap,1,Other / Unclassified
+EuroElixir,1,Other / Unclassified
+Event Sourcing,1,Other / Unclassified
+Evidently AI,1,Other / Unclassified
+Executive Communication,1,Other / Unclassified
+Exim,1,Other / Unclassified
+Express Elixir,1,Frameworks & Platforms
+ExpressRoute,1,Frameworks & Platforms
+F5 BIG-IP,1,Other / Unclassified
+FCT,1,Other / Unclassified
+FIX Dictionary,1,Other / Unclassified
+FIX Protocol,1,Other / Unclassified
+FMEA,1,Other / Unclassified
+Facebook Ads,1,Other / Unclassified
+Falcon,1,Other / Unclassified
+Fastly,1,Other / Unclassified
+Feature Store,1,Other / Unclassified
+FileAid,1,Other / Unclassified
+Filebeat,1,Other / Unclassified
+FinOps,1,Other / Unclassified
+FinTech,1,Other / Unclassified
+Finanse,1,Other / Unclassified
+Firebas,1,Other / Unclassified
+Firebase Crashlytics,1,Other / Unclassified
+Firebase Test Lab,1,Other / Unclassified
+Firebase libs,1,Other / Unclassified
+Firewalls,1,Other / Unclassified
+FitNesse,1,Other / Unclassified
+FlatSat testbeds,1,Other / Unclassified
+FlexNetManagerSuite,1,Other / Unclassified
+Flexera Snow,1,Other / Unclassified
+Flexeras DataPlatform,1,Other / Unclassified
+Flutter SDK,1,Frameworks & Platforms
+FluxCD,1,Other / Unclassified
+Forex,1,Other / Unclassified
+ForgeRock,1,Other / Unclassified
+Framer Website Builder,1,Other / Unclassified
+Framework AI/ ML,1,Other / Unclassified
+Framework MVC,1,Other / Unclassified
+Framework Yii,1,Other / Unclassified
+Front-End,1,Other / Unclassified
+FullStory,1,Other / Unclassified
+Function Modules,1,Other / Unclassified
+GCD,1,Other / Unclassified
+GCP / Openshift,1,Cloud & Managed Services
+GCP BigQuery,1,Databases & Data Stores
+GHS,1,Other / Unclassified
+GMOB,1,Other / Unclassified
+GNSS,1,Other / Unclassified
+GNU,1,Other / Unclassified
+GPC,1,Other / Unclassified
+GPEN,1,Other / Unclassified
+GPFS,1,Other / Unclassified
+GPU acceleration for AI,1,Other / Unclassified
+GSL,1,Other / Unclassified
+GStreamer,1,Other / Unclassified
+GWT,1,Other / Unclassified
+GXPN,1,Other / Unclassified
+Gantt,1,Other / Unclassified
+Gazebo,1,Other / Unclassified
+Genetec,1,Other / Unclassified
+German,1,Other / Unclassified
+Gimp,1,Other / Unclassified
+Gin,1,Other / Unclassified
+Git STL,1,Tools & Collaboration
+GitFlow,1,Tools & Collaboration
+GitHub Action,1,Tools & Collaboration
+GitHub Enterprise,1,Tools & Collaboration
+GitHub VCS,1,Tools & Collaboration
+GitLabYoutrack,1,Tools & Collaboration
+GlassFish,1,Other / Unclassified
+Google Ad Manager,1,Other / Unclassified
+Google Analytic,1,Other / Unclassified
+Google Analytics (GA4,1,Other / Unclassified
+Google Analytics 4,1,Other / Unclassified
+Google Big Query,1,Other / Unclassified
+Google Dataflow,1,Other / Unclassified
+Google Guava,1,Other / Unclassified
+Google Marketing Platform,1,Other / Unclassified
+Google Pay SDK,1,Other / Unclassified
+Google Play Developer Console,1,Other / Unclassified
+Google Play SDK,1,Other / Unclassified
+Google Protocol Buffers,1,Other / Unclassified
+Grafama,1,Other / Unclassified
+GraffitiBuilder,1,Other / Unclassified
+Grafy wiedzy / Neo4j,1,Databases & Data Stores
+Graph Theory,1,Other / Unclassified
+Graphic Design,1,Other / Unclassified
+Graylog,1,Other / Unclassified
+Great Expectations,1,Other / Unclassified
+GreyNoise,1,Other / Unclassified
+Groovy Script,1,Other / Unclassified
+Gsap,1,Other / Unclassified
+Guidewire ClaimCenter 10,1,Other / Unclassified
+Guidwire,1,Other / Unclassified
+HA Hyper-V,1,Other / Unclassified
+HA cluster,1,Other / Unclassified
+HCI,1,Other / Unclassified
+HL7 FHIR,1,Other / Unclassified
+HLS,1,Other / Unclassified
+HPE Aruba,1,Other / Unclassified
+HPSM,1,Other / Unclassified
+HSM,1,Other / Unclassified
+HTML 5,1,Other / Unclassified
+HTML/CSS,1,Other / Unclassified
+HTML5 / CSS3,1,Cloud & Managed Services
+Handlebars,1,Other / Unclassified
+Hanwha,1,Other / Unclassified
+Hardware and cloud-native networking,1,Cloud & Managed Services
+Hashicorp Vault,1,Other / Unclassified
+Heap Analytics,1,Other / Unclassified
+Helm charts,1,Tools & Collaboration
+Heroku,1,Other / Unclassified
+HeyGen,1,Other / Unclassified
+Hierarchical Profiler,1,Other / Unclassified
+High Performance Computing (HPC,1,Other / Unclassified
+Highcharts,1,Other / Unclassified
+Hikvision,1,Other / Unclassified
+Hotjar / Clarity,1,Other / Unclassified
+HudsonRock,1,Other / Unclassified
+Hugging Face Transformers,1,Other / Unclassified
+Human Interface Guidelines,1,Other / Unclassified
+Hybrid Cloud,1,Cloud & Managed Services
+Hypatos,1,Other / Unclassified
+Hyperconverged Infrastructure,1,Other / Unclassified
+Hyva Checkout,1,Other / Unclassified
+Hyva Thems,1,Other / Unclassified
+IAM / RBAC,1,Cloud & Managed Services
+IBM Cloud MQ,1,Cloud & Managed Services
+IBM Cognos,1,Other / Unclassified
+IBM Connections,1,Other / Unclassified
+IBM DB2,1,Databases & Data Stores
+IBM Data Architect,1,Other / Unclassified
+IBM Flow Manager,1,Other / Unclassified
+IBM I5,1,Other / Unclassified
+IBM Infosphere Data Stage,1,Other / Unclassified
+IBM Planning Analytics,1,Other / Unclassified
+IBM Storage,1,Other / Unclassified
+IBM WMQ,1,Other / Unclassified
+ICE Data Service,1,Other / Unclassified
+ICMP,1,Other / Unclassified
+ICOFR,1,Other / Unclassified
+ICSR,1,Other / Unclassified
+IDA Pro,1,Other / Unclassified
+IDz/RDz,1,Other / Unclassified
+IFS Applications 10 lub IFS Cloud,1,Cloud & Managed Services
+IMS/DC,1,Other / Unclassified
+IP CCTV,1,Other / Unclassified
+IPA,1,Other / Unclassified
+IPAM,1,Other / Unclassified
+IPython/Jupyter,1,Other / Unclassified
+IR,1,Other / Unclassified
+IRA Test Manager,1,Other / Unclassified
+ISAAC,1,Other / Unclassified
+ISIS,1,Other / Unclassified
+ISO 22301,1,Other / Unclassified
+ISO/IEC 27001,1,Other / Unclassified
+ISO/OSI,1,Other / Unclassified
+ISPF,1,Other / Unclassified
+ISTQB (Advanced Level,1,Other / Unclassified
+ISTQB Advanced,1,Other / Unclassified
+IT Infastructure,1,Other / Unclassified
+ITIL4,1,Other / Unclassified
+ITSM/ITOM,1,Other / Unclassified
+Icinga2,1,Other / Unclassified
+IdoSell,1,Other / Unclassified
+InVision,1,Other / Unclassified
+Incognito,1,Other / Unclassified
+Infinispan,1,Other / Unclassified
+Infoblox,1,Other / Unclassified
+Informatica Data Governance,1,Other / Unclassified
+Informatica Power Center,1,Other / Unclassified
+Informix,1,Other / Unclassified
+Insight,1,Other / Unclassified
+InstallShield,1,Other / Unclassified
+Intune (Endpoint Manager,1,Other / Unclassified
+IoT Systems,1,Other / Unclassified
+JAD,1,Other / Unclassified
+JAX,1,Other / Unclassified
+JBoss EAP,1,Other / Unclassified
+JFrog,1,Other / Unclassified
+JOLT,1,Other / Unclassified
+JPA/Hibernate,1,Frameworks & Platforms
+JTAG,1,Other / Unclassified
+Jakarta EE,1,Other / Unclassified
+Jasmine/jest/Karma,1,Libraries
+Jasper Reports,1,Other / Unclassified
+Java (17+,1,Other / Unclassified
+Java Generics,1,Other / Unclassified
+Java Native Access/Java Native Interface,1,Other / Unclassified
+Java Swing/Java FX,1,Other / Unclassified
+Java21,1,Other / Unclassified
+JavaScript (ES5+,1,Other / Unclassified
+JavaScript/TypeScript,1,Other / Unclassified
+JavaScriptt,1,Other / Unclassified
+Jazda autonomiczna,1,Other / Unclassified
+Jenkins/GitHub Actions/GitLab,1,Tools & Collaboration
+Jinja2,1,Other / Unclassified
+Jira / Confluence,1,Tools & Collaboration
+Jira Confluence,1,Tools & Collaboration
+Jira Tempo Planning,1,Tools & Collaboration
+Jira i Figma,1,Tools & Collaboration
+John the Ripper,1,Other / Unclassified
+Jotai,1,Other / Unclassified
+Jupyter Notebook,1,Other / Unclassified
+K3s,1,Other / Unclassified
+KNF,1,Other / Unclassified
+KQL,1,Other / Unclassified
+KSC/NIS2,1,Other / Unclassified
+Kafka/RabbiyMQ,1,Tools & Collaboration
+Kaizen,1,Other / Unclassified
+Kandji,1,Other / Unclassified
+Katalon,1,Other / Unclassified
+Keil,1,Other / Unclassified
+Kiali,1,Other / Unclassified
+Kismet,1,Other / Unclassified
+KnockoutJS,1,Other / Unclassified
+Knowledge Engineering,1,Other / Unclassified
+Koin,1,Other / Unclassified
+Korn,1,Other / Unclassified
+Kotest,1,Other / Unclassified
+Kotlin Coroutines,1,Other / Unclassified
+Kotlin DSL,1,Other / Unclassified
+Ktor,1,Other / Unclassified
+Kubernetes (K8S,1,Frameworks & Platforms
+Kubernetes Operators,1,Frameworks & Platforms
+Kudu,1,Other / Unclassified
+Kyma,1,Other / Unclassified
+Kyriba,1,Other / Unclassified
+Kyverno,1,Other / Unclassified
+L2/L3,1,Other / Unclassified
+L2TP,1,Other / Unclassified
+LACP,1,Other / Unclassified
+LCS,1,Other / Unclassified
+LIDAR,1,Other / Unclassified
+LLM Integration,1,Other / Unclassified
+LLM orchestration frameworks,1,Other / Unclassified
+LLP,1,Other / Unclassified
+LMS,1,Other / Unclassified
+LOS,1,Other / Unclassified
+LWC,1,Other / Unclassified
+Landing zone GCP,1,Cloud & Managed Services
+Langraph,1,Other / Unclassified
+Laravel 12+,1,Frameworks & Platforms
+Lean Six Sigma,1,Other / Unclassified
+LeanIX,1,Other / Unclassified
+LendingPad,1,Other / Unclassified
+LibreOffice,1,Other / Unclassified
+Liferay,1,Other / Unclassified
+Linea,1,Other / Unclassified
+Linear,1,Other / Unclassified
+Linux (Debian,1,Other / Unclassified
+Linux (RHEL / Oracle Linux,1,Databases & Data Stores
+Linux Enterprise,1,Other / Unclassified
+Linux IPCs,1,Other / Unclassified
+Linux kernel,1,Other / Unclassified
+Linux-based frameworks,1,Other / Unclassified
+Linux/Unix environment,1,Other / Unclassified
+Linuxm,1,Other / Unclassified
+Liquibase/Flyway,1,Other / Unclassified
+Liquidbase,1,Other / Unclassified
+Live Data,1,Other / Unclassified
+Livespace,1,Other / Unclassified
+LoRA,1,Other / Unclassified
+Log Analytics,1,Other / Unclassified
+Logistics systems,1,Other / Unclassified
+Low-Code Platform,1,Other / Unclassified
+Lub ich odpowiedniki,1,Other / Unclassified
+Lucid App,1,Other / Unclassified
+Luigi,1,Other / Unclassified
+M Language,1,Other / Unclassified
+M365 Security & Compliance,1,Other / Unclassified
+MCAD/ECAD Integration,1,Other / Unclassified
+MFA,1,Other / Unclassified
+MISP,1,Other / Unclassified
+MITRE ATT&CK,1,Other / Unclassified
+MLOps/LLMOps,1,Other / Unclassified
+MS Active Directory,1,Other / Unclassified
+MS Azure DevOps,1,Cloud & Managed Services
+MS Exchange,1,Other / Unclassified
+MS Graph,1,Other / Unclassified
+MS Intune,1,Other / Unclassified
+MS Microsoft Project,1,Other / Unclassified
+MS O365,1,Other / Unclassified
+MS Office Suite,1,Other / Unclassified
+MS Power Apps,1,Other / Unclassified
+MS Power Automate,1,Other / Unclassified
+MS Purview,1,Other / Unclassified
+MS SQL Management Studio,1,Other / Unclassified
+MS SQL Serve,1,Other / Unclassified
+MS SQL Server and NoSQL storages like Elastic Search,1,Databases & Data Stores
+MS Sysinternals Toolkit,1,Other / Unclassified
+MS-356,1,Other / Unclassified
+MS365,1,Cloud & Managed Services
+MSA,1,Other / Unclassified
+MUI framework,1,Other / Unclassified
+MVC.NET,1,Frameworks & Platforms
+MVI,1,Other / Unclassified
+MVVM+C,1,Other / Unclassified
+MX.3 Limits Connector,1,Other / Unclassified
+Mail Security,1,Other / Unclassified
+Make/ Asses/ Release,1,Other / Unclassified
+ManageEngine,1,Other / Unclassified
+Management & Workflow Document,1,Other / Unclassified
+Management / Content Management,1,Other / Unclassified
+Management Change,1,Other / Unclassified
+Mantis,1,Other / Unclassified
+Manual testing,1,Other / Unclassified
+Mapbox,1,Other / Unclassified
+Market Data Interface Tool,1,Other / Unclassified
+Marten,1,Other / Unclassified
+Marvel,1,Other / Unclassified
+Mason,1,Other / Unclassified
+Material Planning,1,Other / Unclassified
+Matillion,1,Other / Unclassified
+Matomo,1,Other / Unclassified
+Matrix42 Empirum,1,Other / Unclassified
+Matrix42 Service Store,1,Other / Unclassified
+Maven/Gradle,1,Tools & Collaboration
+Maya,1,Other / Unclassified
+Maze / Lookback / Useberry,1,Other / Unclassified
+Medallion architecture,1,Other / Unclassified
+Memcache,1,Other / Unclassified
+Memory management,1,Other / Unclassified
+Meru,1,Other / Unclassified
+Metadane,1,Other / Unclassified
+Metricbeat,1,Other / Unclassified
+MicroROS,1,Other / Unclassified
+MicroStrategy (Strategy One,1,Other / Unclassified
+Microservices patterns,1,Other / Unclassified
+Microsoft 365 Business Premium,1,Other / Unclassified
+Microsoft 365 E5,1,Other / Unclassified
+Microsoft 365 Pro Plus,1,Other / Unclassified
+Microsoft Application Servers,1,Other / Unclassified
+Microsoft Azure Environment,1,Cloud & Managed Services
+Microsoft D365,1,Other / Unclassified
+Microsoft Defender for Cloud,1,Cloud & Managed Services
+Microsoft Defender for Cloud Apps,1,Cloud & Managed Services
+Microsoft Defender for Endpoint,1,Other / Unclassified
+Microsoft Defender for Identity,1,Other / Unclassified
+Microsoft Exchange Server,1,Other / Unclassified
+Microsoft Information Protection,1,Other / Unclassified
+Microsoft SCCM,1,Other / Unclassified
+Microsoft SQL-Server,1,Other / Unclassified
+Microsoft Teams / OneDrive / SharePoint,1,Frameworks & Platforms
+Microsoft Windows 11,1,Frameworks & Platforms
+Middleware,1,Other / Unclassified
+Milestone,1,Other / Unclassified
+Mobile testing,1,Other / Unclassified
+Mockk,1,Other / Unclassified
+Modular App Architecture,1,Other / Unclassified
+Moodle,1,Other / Unclassified
+Mouseflow / HotJar,1,Other / Unclassified
+MoveIt Framework,1,Other / Unclassified
+Msbuild,1,Other / Unclassified
+Multi-Factor Authentication,1,Other / Unclassified
+Multi-agent Systems,1,Other / Unclassified
+Multithreading,1,Other / Unclassified
+Murex,1,Other / Unclassified
+MySQL / PostgreSQL,1,Databases & Data Stores
+MySQL 8,1,Databases & Data Stores
+MySQL/PostgreSQL,1,Databases & Data Stores
+NGFW Fortinet,1,Other / Unclassified
+NGS,1,Other / Unclassified
+NHibernate,1,Frameworks & Platforms
+NLTK,1,Other / Unclassified
+NSG,1,Other / Unclassified
+NTFS/NAS,1,Other / Unclassified
+NTP,1,Other / Unclassified
+NVDA,1,Other / Unclassified
+Nadzorowanie i uczestnictwo w procesie NPI,1,Other / Unclassified
+Named Entity Recognition,1,Other / Unclassified
+Netcrunch,1,Other / Unclassified
+Network Engineering,1,Other / Unclassified
+Network Security,1,Other / Unclassified
+Nexus Repository,1,Other / Unclassified
+Nexus Sonatype,1,Other / Unclassified
+NgRx/Flux/Redux,1,Libraries
+NgRx/NGXS,1,Other / Unclassified
+Nieustrukturyzowane dane,1,Other / Unclassified
+Nightwatch.js,1,Other / Unclassified
+Ninja One,1,Other / Unclassified
+NinjaRMM,1,Other / Unclassified
+Nintex K2,1,Other / Unclassified
+NonSQL DB,1,Other / Unclassified
+NuGet,1,Tools & Collaboration
+Nuclei,1,Other / Unclassified
+Nvidia GPUs,1,Other / Unclassified
+OAuth/SAML,1,Libraries
+OAuth2/JWT,1,Libraries
+OEBS,1,Other / Unclassified
+OKD,1,Other / Unclassified
+OLAP,1,Other / Unclassified
+OMOP,1,Other / Unclassified
+OMP,1,Other / Unclassified
+ONNX,1,Other / Unclassified
+OPR,1,Other / Unclassified
+OS MS Win,1,Other / Unclassified
+OT Security,1,Other / Unclassified
+OWASP Dependency-Check,1,Other / Unclassified
+Object Oriented Programming,1,Other / Unclassified
+Object Storage,1,Other / Unclassified
+Object-Oriented Design,1,Other / Unclassified
+Octopus Deploy,1,Other / Unclassified
+Omegamon,1,Other / Unclassified
+One Identity Manager,1,Other / Unclassified
+OneDrive for Business,1,Other / Unclassified
+OneSignal,1,Other / Unclassified
+OneTrust,1,Other / Unclassified
+Onestream,1,Other / Unclassified
+Ontologie,1,Other / Unclassified
+Open Stack,1,Other / Unclassified
+OpenAPI/Swagger,1,Tools & Collaboration
+OpenEdge,1,Other / Unclassified
+OpenGL,1,Other / Unclassified
+OpenPrometheus,1,Tools & Collaboration
+OpenText Exstream,1,Other / Unclassified
+OpenText Fortify,1,Other / Unclassified
+OpenTofu,1,Other / Unclassified
+OpenVPN,1,Other / Unclassified
+OpenWRT,1,Other / Unclassified
+Ophcrack,1,Other / Unclassified
+Oracle ASCP,1,Databases & Data Stores
+Oracle Analytics Server (OAS,1,Databases & Data Stores
+Oracle Application Express (APEX,1,Databases & Data Stores
+Oracle Business Intelligence (OBIEE,1,Databases & Data Stores
+Oracle DB,1,Databases & Data Stores
+Oracle Data Base (DB,1,Databases & Data Stores
+Oracle Data Integrato,1,Databases & Data Stores
+Oracle Data Integrator (ODI,1,Databases & Data Stores
+Oracle GoldenGate,1,Databases & Data Stores
+Oracle SOA Suite,1,Databases & Data Stores
+Oracle Service Bus,1,Databases & Data Stores
+Oracle Weblogic Server,1,Databases & Data Stores
+Oracle hcm,1,Databases & Data Stores
+Orval,1,Other / Unclassified
+Otrs,1,Other / Unclassified
+OutSystems UI,1,Other / Unclassified
+Ovh,1,Other / Unclassified
+PAdES,1,Other / Unclassified
+PC,1,Other / Unclassified
+PCS cluster,1,Other / Unclassified
+PDF Automation,1,Other / Unclassified
+PDF automation / document generation libraries,1,Other / Unclassified
+PEFT,1,Other / Unclassified
+PG dump,1,Other / Unclassified
+PGVector,1,Other / Unclassified
+PHP 7+,1,Other / Unclassified
+PHPUnit,1,Other / Unclassified
+PILAR,1,Other / Unclassified
+PL / SQL,1,Other / Unclassified
+PLSQL,1,Other / Unclassified
+PMG,1,Other / Unclassified
+PMI (PMBOK,1,Other / Unclassified
+PMI/PMBOK,1,Other / Unclassified
+POP,1,Other / Unclassified
+PPAC,1,Other / Unclassified
+PSR-4,1,Other / Unclassified
+PSS Web,1,Other / Unclassified
+PagerDuty,1,Other / Unclassified
+Pakiet Adobe,1,Other / Unclassified
+Palantir,1,Other / Unclassified
+Pantheon,1,Other / Unclassified
+Pascal,1,Other / Unclassified
+Pentaho,1,Other / Unclassified
+PeopleSoft,1,Other / Unclassified
+Percona xtraDB,1,Other / Unclassified
+Photon,1,Other / Unclassified
+Pinecone,1,Other / Unclassified
+Ping Identity,1,Other / Unclassified
+Pipedrive,1,Tools & Collaboration
+Pipenv,1,Tools & Collaboration
+PivotTables,1,Other / Unclassified
+PixiJS,1,Other / Unclassified
+Platforma INTENSE,1,Other / Unclassified
+PlayStation,1,Other / Unclassified
+Plotly,1,Other / Unclassified
+Poczta,1,Other / Unclassified
+Podstawy sieci (LAN/Wi-Fi/VPN,1,Other / Unclassified
+Podstawy sieci: WAN / LAN,1,Other / Unclassified
+Polish - B2,1,Other / Unclassified
+Polybase,1,Other / Unclassified
+Portfolio Review Board (PRB,1,Other / Unclassified
+PostHog,1,Other / Unclassified
+PostgreSQL lub MongoDB,1,Databases & Data Stores
+PostgreSQL/PostGIS,1,Databases & Data Stores
+Postgres,1,Databases & Data Stores
+Postgress,1,Databases & Data Stores
+Postman Professional,1,Tools & Collaboration
+PoweCenter,1,Other / Unclassified
+Power Apps Portals,1,Other / Unclassified
+Power Automate Cloud,1,Cloud & Managed Services
+Power Automate Desk,1,Other / Unclassified
+Power BI Desktop,1,Tools & Collaboration
+Power BI Report Builder,1,Tools & Collaboration
+Power BI Report Server,1,Tools & Collaboration
+Power Fx,1,Other / Unclassified
+Power Point,1,Other / Unclassified
+PowerAutomate,1,Other / Unclassified
+PowerCLI,1,Other / Unclassified
+PowerFX,1,Other / Unclassified
+PowerHA,1,Other / Unclassified
+PowerPlatform,1,Other / Unclassified
+PowerVM,1,Other / Unclassified
+Powerstore,1,Other / Unclassified
+Powertrain,1,Other / Unclassified
+Praca Zdalna,1,Other / Unclassified
+Praca z danymi nieustrukturyzowanymi,1,Other / Unclassified
+Pre-Trade Connectivity (Java SPI,1,Other / Unclassified
+Presta,1,Other / Unclassified
+Presto,1,Other / Unclassified
+PrimeNG,1,Other / Unclassified
+Printer Server,1,Other / Unclassified
+Private DNS,1,Other / Unclassified
+Private Endpoints,1,Other / Unclassified
+Procesy kredytowe,1,Other / Unclassified
+Product Information Management System (PIM,1,Other / Unclassified
+Product Ownership,1,Other / Unclassified
+Product vision,1,Other / Unclassified
+Production Planning,1,Other / Unclassified
+Programowanie obiektowe (OOP,1,Other / Unclassified
+Progress 4GL,1,Other / Unclassified
+Project Management Professional,1,Other / Unclassified
+ProtoPie,1,Other / Unclassified
+Protocol & Performance Fluency,1,Other / Unclassified
+Protractor,1,Other / Unclassified
+Proxmox VE,1,Other / Unclassified
+Proxyman,1,Other / Unclassified
+PyTorch Lightning,1,Libraries
+Python or Typescript or C#,1,Other / Unclassified
+QA,1,Other / Unclassified
+QDG,1,Other / Unclassified
+QDI,1,Other / Unclassified
+QF-Test,1,Other / Unclassified
+QMS,1,Other / Unclassified
+QMetry,1,Other / Unclassified
+QUnit,1,Other / Unclassified
+Qase,1,Other / Unclassified
+Qdrant,1,Other / Unclassified
+Qemu,1,Other / Unclassified
+Qlik Cloud Data Integration,1,Cloud & Managed Services
+Qlik Cloud Data Integration QCDI,1,Cloud & Managed Services
+Qlik GeoAnalytics,1,Other / Unclassified
+Qlik NPrinting,1,Other / Unclassified
+Qnap,1,Other / Unclassified
+QoS Configuration,1,Other / Unclassified
+Qt/QML,1,Other / Unclassified
+Qualtrics,1,Other / Unclassified
+Qualys WAS,1,Other / Unclassified
+Quart,1,Other / Unclassified
+Quick Wins,1,Other / Unclassified
+Quick/Nimble,1,Other / Unclassified
+RAG / LLMOps,1,Other / Unclassified
+RAGs,1,Other / Unclassified
+RDARR,1,Other / Unclassified
+RDF / OWL / SPARQL,1,Other / Unclassified
+REDHAT Cluster,1,Other / Unclassified
+REST API JIRA,1,Tools & Collaboration
+REST-based backends,1,Other / Unclassified
+REXX,1,Other / Unclassified
+RHCOS,1,Other / Unclassified
+RHEL OpenShift,1,Other / Unclassified
+ROS2,1,Other / Unclassified
+RPA Platform,1,Other / Unclassified
+RSpec,1,Other / Unclassified
+RTK Query,1,Other / Unclassified
+RTSP,1,Other / Unclassified
+RabbitMQ / Kafka,1,Tools & Collaboration
+Rack & Stack,1,Other / Unclassified
+Radmin,1,Other / Unclassified
+Rancher/Kubernetes,1,Frameworks & Platforms
+Ranorex,1,Other / Unclassified
+RapidMiner,1,Other / Unclassified
+Raporty Paginowane,1,Other / Unclassified
+Raspberry Pi,1,Other / Unclassified
+React Hooks,1,Frameworks & Platforms
+React Query,1,Frameworks & Platforms
+React Router,1,Frameworks & Platforms
+React hook form,1,Frameworks & Platforms
+ReactFlow,1,Frameworks & Platforms
+Realtime DB,1,Other / Unclassified
+Recorded Future,1,Other / Unclassified
+Redis Cache,1,Databases & Data Stores
+Reltio Cloud MDM,1,Cloud & Managed Services
+Remix,1,Other / Unclassified
+Reporting Services,1,Other / Unclassified
+Reqnroll,1,Other / Unclassified
+Resource Description Framework,1,Other / Unclassified
+Retool,1,Other / Unclassified
+Revit,1,Other / Unclassified
+Ride-by-Wire Systems,1,Other / Unclassified
+Risk Management Confluence,1,Tools & Collaboration
+Roborazzi,1,Other / Unclassified
+Robot automation framework,1,Other / Unclassified
+RobotFramework,1,Other / Unclassified
+Robotyka i automatyzacja,1,Other / Unclassified
+Robotyka mobilna,1,Other / Unclassified
+Route Tables,1,Other / Unclassified
+Rradare2,1,Other / Unclassified
+Ruckus,1,Other / Unclassified
+Rust2,1,Other / Unclassified
+S&OP,1,Other / Unclassified
+S/MIME,1,Other / Unclassified
+SAFe Framework,1,Other / Unclassified
+SAP (zagadnienia operatorskie,1,Other / Unclassified
+SAP APO / IBP,1,Other / Unclassified
+SAP ASE,1,Other / Unclassified
+SAP ATP,1,Other / Unclassified
+SAP Ariba,1,Other / Unclassified
+SAP BAPI,1,Other / Unclassified
+SAP BN4L,1,Other / Unclassified
+SAP Basis,1,Other / Unclassified
+SAP CS/PS,1,Other / Unclassified
+SAP Controlling,1,Other / Unclassified
+SAP EHS,1,Other / Unclassified
+SAP Enhancements,1,Other / Unclassified
+SAP FIAA,1,Other / Unclassified
+SAP Finance,1,Other / Unclassified
+SAP GRC Access Control,1,Other / Unclassified
+SAP Gateway,1,Other / Unclassified
+SAP IBP/SNP,1,Other / Unclassified
+SAP IDM,1,Other / Unclassified
+SAP IDOC,1,Other / Unclassified
+SAP LE/IM,1,Other / Unclassified
+SAP MDG,1,Other / Unclassified
+SAP NetWeaver,1,Other / Unclassified
+SAP PI/PO,1,Other / Unclassified
+SAP PM,1,Other / Unclassified
+SAP PPDS,1,Other / Unclassified
+SAP PS,1,Other / Unclassified
+SAP PUR,1,Other / Unclassified
+SAP RAR,1,Other / Unclassified
+SAP RFC,1,Other / Unclassified
+SAP RFX,1,Other / Unclassified
+SAP Rise,1,Other / Unclassified
+SAP S/4 HANA,1,Other / Unclassified
+SAP S/4HANA Finance,1,Other / Unclassified
+SAP S/4HANA ePPDS,1,Other / Unclassified
+SAP S4 HANA,1,Other / Unclassified
+SAP S4Hana,1,Other / Unclassified
+SAP SD/LE,1,Other / Unclassified
+SAP Sales and Distribution,1,Other / Unclassified
+SAP Signavio,1,Other / Unclassified
+SAP SolMan,1,Other / Unclassified
+SAP Solution Manager,1,Other / Unclassified
+SAP Success Factors,1,Other / Unclassified
+SAP SuccessFactors,1,Other / Unclassified
+SAP VIM,1,Other / Unclassified
+SAP Workflow,1,Other / Unclassified
+SAP data models,1,Other / Unclassified
+SAP ePPDS,1,Other / Unclassified
+SAP-Script,1,Other / Unclassified
+SAS 4GL,1,Other / Unclassified
+SAS Base,1,Other / Unclassified
+SAS DI,1,Other / Unclassified
+SAS Macro Language,1,Other / Unclassified
+SAS Viya,1,Other / Unclassified
+SAS programming,1,Other / Unclassified
+SASE,1,Other / Unclassified
+SAST,1,Other / Unclassified
+SBE,1,Other / Unclassified
+SD WAN,1,Other / Unclassified
+SEO,1,Other / Unclassified
+SEPA,1,Other / Unclassified
+SFTP,1,Other / Unclassified
+SIEM SPLUNK,1,Tools & Collaboration
+SIEM Sentinel,1,Other / Unclassified
+SOP,1,Other / Unclassified
+SPC,1,Other / Unclassified
+SPSS,1,Other / Unclassified
+SQL (MySQL/MariaDB i SQL Server,1,Databases & Data Stores
+SQL (Oracle,1,Databases & Data Stores
+SQL / Oracle,1,Databases & Data Stores
+SQL SERVER ENTERPRISE,1,Databases & Data Stores
+SQL Server Integration Services,1,Databases & Data Stores
+SQL Server Intergation Services,1,Databases & Data Stores
+SQL Server log,1,Databases & Data Stores
+SQL/Oracle,1,Databases & Data Stores
+SQS AWS Lambda,1,Cloud & Managed Services
+SSAS Tabular,1,Other / Unclassified
+SSL VPN,1,Other / Unclassified
+SSLStrip,1,Other / Unclassified
+STP,1,Other / Unclassified
+SUSE Rancher,1,Other / Unclassified
+SWD,1,Other / Unclassified
+SaaS solutions,1,Other / Unclassified
+Sales Cloud,1,Cloud & Managed Services
+Salesforce Certification,1,Other / Unclassified
+Salesforce Commerce Cloud,1,Cloud & Managed Services
+Salt,1,Other / Unclassified
+SaltStack,1,Other / Unclassified
+Samurai Web Testing Framework,1,Other / Unclassified
+SandBox,1,Other / Unclassified
+SauceLabs,1,Other / Unclassified
+Saviynt,1,Other / Unclassified
+ScheduleIN,1,Other / Unclassified
+Screaming Frog,1,Other / Unclassified
+Secure Software Development,1,Other / Unclassified
+Security Automation,1,Other / Unclassified
+Security certifications such as CISM,1,Other / Unclassified
+Sekoia,1,Other / Unclassified
+Seldon,1,Other / Unclassified
+Semantic Kerne,1,Other / Unclassified
+Semantic Kernel,1,Other / Unclassified
+Sementic Kernel,1,Other / Unclassified
+Service Desk / ServiceNow,1,Other / Unclassified
+Service Endpoints,1,Other / Unclassified
+Service Now,1,Other / Unclassified
+Shapely,1,Other / Unclassified
+Shodan,1,Other / Unclassified
+Shoper,1,Other / Unclassified
+Shopware,1,Other / Unclassified
+SignaIR,1,Other / Unclassified
+Signals,1,Other / Unclassified
+Silverpeak,1,Other / Unclassified
+Slack Connect,1,Other / Unclassified
+Smartlook,1,Other / Unclassified
+Smartsheet,1,Other / Unclassified
+Snowpark,1,Other / Unclassified
+SolarWinds,1,Other / Unclassified
+Solvency II,1,Other / Unclassified
+Sonatype NexusIQ,1,Other / Unclassified
+Spacy,1,Other / Unclassified
+Spark SQL,1,Frameworks & Platforms
+Sparx Enterprisse,1,Other / Unclassified
+Spectator,1,Other / Unclassified
+Spotfire,1,Other / Unclassified
+Spring / Spring Boot,1,Frameworks & Platforms
+Spring Batch,1,Frameworks & Platforms
+Spring Cloud Stream,1,Cloud & Managed Services
+Spring Data JPA,1,Frameworks & Platforms
+Spring Framework 4,1,Frameworks & Platforms
+Spring Integration,1,Frameworks & Platforms
+Spring Test,1,Frameworks & Platforms
+Spring/ Spring Boot,1,Frameworks & Platforms
+SpringData/Hibernate/JPA,1,Frameworks & Platforms
+Sqlmap,1,Other / Unclassified
+Stackdriver,1,Other / Unclassified
+Stash,1,Other / Unclassified
+Statistica,1,Other / Unclassified
+Storage Accounts i KeyVault,1,Other / Unclassified
+Storage systems,1,Other / Unclassified
+Stormshield,1,Other / Unclassified
+Streamlit,1,Other / Unclassified
+Stripe,1,Other / Unclassified
+Structure,1,Other / Unclassified
+Studio5000,1,Other / Unclassified
+Sumo Logic,1,Other / Unclassified
+Swagger/OpenAPI,1,Tools & Collaboration
+Swift Concurrency,1,Other / Unclassified
+Swift Package Manager,1,Other / Unclassified
+Swift UI,1,Other / Unclassified
+Switching & Firewalling,1,Other / Unclassified
+Symantec DLP,1,Other / Unclassified
+Symfonia ERP,1,Other / Unclassified
+Symfony 6,1,Frameworks & Platforms
+Syndigo Enterprise Data Suite,1,Other / Unclassified
+Synology,1,Other / Unclassified
+Synopsys Coverity,1,Other / Unclassified
+Syslog-ng,1,Other / Unclassified
+System Center Configuration Manager,1,Other / Unclassified
+System operacyjny Windows,1,Other / Unclassified
+System ticketowy,1,Other / Unclassified
+SystemVerilog,1,Other / Unclassified
+Systemy MDM (Mobile Device Management,1,Other / Unclassified
+Systemy Symfonia,1,Other / Unclassified
+Szkolenia LABView,1,Other / Unclassified
+TCP/IP networks (IPv4,1,Other / Unclassified
+TCP/IP sieci,1,Other / Unclassified
+TCP/IT,1,Other / Unclassified
+TCPWave,1,Other / Unclassified
+TIA Portal,1,Other / Unclassified
+TM/TC,1,Other / Unclassified
+TM1,1,Other / Unclassified
+TMF Open API,1,Other / Unclassified
+TMS,1,Other / Unclassified
+TWS/OPC,1,Other / Unclassified
+Tagetik,1,Other / Unclassified
+Tailscale,1,Other / Unclassified
+Tanium,1,Other / Unclassified
+Target,1,Other / Unclassified
+Team Leadership,1,Other / Unclassified
+Telecommunication,1,Other / Unclassified
+Telerik Fiddler,1,Other / Unclassified
+Tenable,1,Other / Unclassified
+TensorRT,1,Other / Unclassified
+TestComplete,1,Other / Unclassified
+TestFlo,1,Other / Unclassified
+ThreatConnect,1,Other / Unclassified
+Tibco,1,Other / Unclassified
+Ticket System,1,Other / Unclassified
+TikTok Ads,1,Other / Unclassified
+Torch/PyTorch,1,Libraries
+Transfer Agency,1,Other / Unclassified
+Transportation Management System,1,Other / Unclassified
+Trivy,1,Other / Unclassified
+Turbopack,1,Other / Unclassified
+Tworzenie strategii testu,1,Other / Unclassified
+Tyk,1,Other / Unclassified
+TypeORM,1,Other / Unclassified
+TypeScript/JavaScript,1,Other / Unclassified
+UAM,1,Other / Unclassified
+UDP,1,Other / Unclassified
+UI & API automation frameworks,1,Other / Unclassified
+URLScan.io,1,Other / Unclassified
+UTM / NGFW,1,Other / Unclassified
+UWB,1,Other / Unclassified
+UX Design,1,Other / Unclassified
+UX Writer,1,Other / Unclassified
+UXPin,1,Other / Unclassified
+Uczestnictwo w procesach RFQ,1,Other / Unclassified
+Umbraco,1,Other / Unclassified
+UnityPro,1,Other / Unclassified
+Unix / Linux,1,Other / Unclassified
+Upsource,1,Other / Unclassified
+User Stories,1,Other / Unclassified
+User Zoom,1,Other / Unclassified
+VA,1,Other / Unclassified
+VB6,1,Other / Unclassified
+VIPER,1,Other / Unclassified
+VMWare ESXi,1,Other / Unclassified
+VMware Cloud,1,Cloud & Managed Services
+VMware ESX,1,Other / Unclassified
+VMware vCenter,1,Other / Unclassified
+VNC,1,Other / Unclassified
+VNET/Subnets,1,Other / Unclassified
+VPN (IPSec,1,Other / Unclassified
+VPN Client,1,Other / Unclassified
+VPN Gateway,1,Other / Unclassified
+VPS,1,Other / Unclassified
+Vanilla Kubernetes,1,Frameworks & Platforms
+VanillaJS/React,1,Frameworks & Platforms
+Varnish,1,Other / Unclassified
+Vault CRM,1,Other / Unclassified
+Vector CANoe,1,Other / Unclassified
+Vector Databases,1,Other / Unclassified
+Veeva CRM,1,Other / Unclassified
+Velero,1,Other / Unclassified
+VeloCloud,1,Cloud & Managed Services
+Venture,1,Other / Unclassified
+Vertex AI,1,Cloud & Managed Services
+VictoriaLogs,1,Other / Unclassified
+Viptela,1,Other / Unclassified
+Virtual Agents,1,Other / Unclassified
+VirtualBox,1,Other / Unclassified
+Vision Transformers (ViT) / Siamese Networks / Metric Learning,1,Cloud & Managed Services
+VisualStudio (C#,1,Other / Unclassified
+Vizlib,1,Other / Unclassified
+Vmware vSphere,1,Other / Unclassified
+Vue.js/Nuxt,1,Frameworks & Platforms
+Vuetify,1,Frameworks & Platforms
+Vulnerability Management,1,Other / Unclassified
+VyOS,1,Other / Unclassified
+WAL,1,Other / Unclassified
+WAVE,1,Other / Unclassified
+WMI,1,Other / Unclassified
+WSO2,1,Other / Unclassified
+WSS,1,Other / Unclassified
+Watchguard,1,Other / Unclassified
+Weaviate,1,Other / Unclassified
+Web Activity,1,Other / Unclassified
+Web Components,1,Other / Unclassified
+Web Ontology Language,1,Other / Unclassified
+Web/Mobile Applications,1,Other / Unclassified
+WebAPI/REST,1,Other / Unclassified
+WebRTC,1,Other / Unclassified
+Webankieta,1,Other / Unclassified
+Webflow,1,Other / Unclassified
+Webhooks,1,Other / Unclassified
+Webserices,1,Other / Unclassified
+Whiteboard,1,Other / Unclassified
+Wiedza semantyczna,1,Other / Unclassified
+Wildfly,1,Other / Unclassified
+WinDbg,1,Other / Unclassified
+WinUI,1,Other / Unclassified
+Windows 10-11,1,Other / Unclassified
+Windows Servers,1,Other / Unclassified
+WireMock,1,Other / Unclassified
+Wiz API,1,Other / Unclassified
+Wiz Sensor,1,Other / Unclassified
+Workato,1,Other / Unclassified
+Workbench,1,Other / Unclassified
+Workflow Configuration,1,Other / Unclassified
+Workiva,1,Other / Unclassified
+XAdES,1,Other / Unclassified
+XCTest,1,Other / Unclassified
+XCUITest,1,Other / Unclassified
+XDR/EDR,1,Other / Unclassified
+XGBoost,1,Other / Unclassified
+XSS,1,Other / Unclassified
+XWiki,1,Other / Unclassified
+Xbox,1,Other / Unclassified
+Xpediter,1,Other / Unclassified
+Xurent,1,Other / Unclassified
+YARA,1,Other / Unclassified
+YetiCRM,1,Other / Unclassified
+ZScaler,1,Other / Unclassified
+ZTNA,1,Other / Unclassified
+Zagadnienia Cyber Security,1,Other / Unclassified
+Zagadnienia sieciowe,1,Other / Unclassified
+Zed Attack Proxy,1,Other / Unclassified
+Zephyr RTOS,1,Other / Unclassified
+Zeplin,1,Other / Unclassified
+ZeroFox,1,Other / Unclassified
+ZeroMQ,1,Other / Unclassified
+ZeroTrust,1,Other / Unclassified
+Zimbra,1,Other / Unclassified
+Znuny,1,Other / Unclassified
+Zoho Desk,1,Other / Unclassified
+Zuul CI,1,Other / Unclassified
+analiza systemowa,1,Other / Unclassified
+aplikacje webowe,1,Other / Unclassified
+architektura mikroserwisowa,1,Other / Unclassified
+authentication systems,1,Other / Unclassified
+bccm,1,Other / Unclassified
+brak,1,Other / Unclassified
+business analyst,1,Other / Unclassified
+cUrl,1,Other / Unclassified
+camunda7,1,Other / Unclassified
+camunda8,1,Other / Unclassified
+centralny system kopii zapasowych i odtwarzania,1,Other / Unclassified
+character creator 4,1,Other / Unclassified
+clean room solutions,1,Other / Unclassified
+cloud watch,1,Cloud & Managed Services
+corel draw,1,Other / Unclassified
+data engineering,1,Other / Unclassified
+data privacy,1,Other / Unclassified
+data recovery development,1,Other / Unclassified
+data visualization,1,Other / Unclassified
+dbt cloud,1,Cloud & Managed Services
+design and development of web applications in Java,1,Other / Unclassified
+e-mobility,1,Other / Unclassified
+embedded C/C++,1,Other / Unclassified
+embedded Linux,1,Other / Unclassified
+file shares,1,Other / Unclassified
+firewall klasy UTM,1,Other / Unclassified
+firewall/NGFW,1,Other / Unclassified
+firewalle,1,Other / Unclassified
+framework webowy,1,Other / Unclassified
+help-desk,1,Other / Unclassified
+iFlow,1,Other / Unclassified
+iPaas tools,1,Other / Unclassified
+iclone 8,1,Other / Unclassified
+inSite,1,Other / Unclassified
+incremental refresh,1,Other / Unclassified
+infrastruktura Data Center,1,Other / Unclassified
+inne,1,Other / Unclassified
+integracja,1,Other / Unclassified
+integracyjne,1,Other / Unclassified
+itscam,1,Other / Unclassified
+jQuery + kendo,1,Other / Unclassified
+klastry FCI,1,Other / Unclassified
+kolokacja,1,Other / Unclassified
+kryptografia,1,Other / Unclassified
+lasticsearch,1,Other / Unclassified
+looker studio,1,Other / Unclassified
+mcp-server,1,Other / Unclassified
+micro-services,1,Other / Unclassified
+microservices setup,1,Other / Unclassified
+mpmX,1,Other / Unclassified
+multi-tier architecture,1,Other / Unclassified
+nCino,1,Other / Unclassified
+nRF Connect SDK,1,Other / Unclassified
+netcraft,1,Other / Unclassified
+or CREST,1,Other / Unclassified
+other low-code protocols,1,Other / Unclassified
+platformy low-code,1,Other / Unclassified
+podstawy szyfrowania,1,Other / Unclassified
+procesy ETL,1,Other / Unclassified
+programowanie systemowe,1,Other / Unclassified
+pykx,1,Other / Unclassified
+sPrint,1,Other / Unclassified
+schemat elektroniczny,1,Other / Unclassified
+seaborn,1,Other / Unclassified
+secure coding,1,Other / Unclassified
+serverless features w Databricks,1,Cloud & Managed Services
+serwery,1,Other / Unclassified
+sieci LAN/WAN/VPN,1,Other / Unclassified
+software framework,1,Other / Unclassified
+standalone,1,Other / Unclassified
+substance painter,1,Other / Unclassified
+switche,1,Other / Unclassified
+syntax,1,Other / Unclassified
+system administration,1,Other / Unclassified
+system erp enova365,1,Other / Unclassified
+systemy SIEM/SOAR,1,Other / Unclassified
+systemy operacyjne,1,Other / Unclassified
+szyfrowanie danych,1,Other / Unclassified
+testowanie API,1,Other / Unclassified
+testowanie manualne,1,Other / Unclassified
+testy penetracyjne,1,Other / Unclassified
+ticketing systems,1,Other / Unclassified
+uczenie maszynowe,1,Other / Unclassified
+unit tests,1,Other / Unclassified
+vSphere Hardware,1,Other / Unclassified
+varcond,1,Other / Unclassified
+vavr/Scala,1,Other / Unclassified
+web analytics,1,Other / Unclassified
+wiki.js,1,Other / Unclassified
+x86/x64 assembly,1,Other / Unclassified
+z/OS,1,Other / Unclassified
+2. Databases and ORM,0,Other / Unclassified
+AFT (Automated Test Framework)??,0,Other / Unclassified
+Active Directory + GPO,0,Other / Unclassified
+Agilê PM,0,Other / Unclassified
+Amazon),0,Other / Unclassified
+Architektura sieci komórkowych,0,Other / Unclassified
+Attention t,0,Other / Unclassified
+Attention to,0,Other / Unclassified
+Automatyzacja testów (testy jednostkowe,0,Other / Unclassified
+Bankowoæ,0,Other / Unclassified
+Bardzo dobra znajomoæ MS Office (Excel,0,Unmapped
+Bardzo dobra znajomoæ polskich przepisów ksiêgowych i podatkowych,0,Other / Unclassified
+Bardzo dobre zdolnoci organizacyjne i komunikacyjne,0,Other / Unclassified
+Bezpieczeñstwo i architektura systemów,0,Other / Unclassified
+Cechuje siê analitycznym sposobem mylenia,0,Other / Unclassified
+Citrix Certified Professional or Expert  Virtualization,0,Other / Unclassified
+Content przez treæ AI,0,Other / Unclassified
+Cyberbezpieczeñstwo,0,Other / Unclassified
+Czujniki przeciwpo¿arowe,0,Other / Unclassified
+Dok³adno,0,Other / Unclassified
+Dok³adnoæ i odpowiedzialnoæ,0,Other / Unclassified
+Dowiadczenie w realizacji projektów z obszaru bankowoci mobilnej,0,Other / Unclassified
+Dowiadczenie z migracj¹ danych lub wdro¿eniami nowych funkcjonalnoci ERP,0,Cloud & Managed Services
+GIT  podstawowa znajomoæ systemu kontroli wersji,0,Tools & Collaboration
+High level of customer s,0,Other / Unclassified
+Komunikatywnoæ i umie,0,Other / Unclassified
+MS-SQL,0,Other / Unclassified
+Modele uczenia g³êbokiego,0,Other / Unclassified
+Monta¿ rolek wideo,0,Other / Unclassified
+Narzêdzia AI do wspierania pracy projektanckiej,0,Other / Unclassified
+Narzêdzia monitoringu infrastruktury i us³ug,0,Other / Unclassified
+Narzêdzie do zdalnej pomocy,0,Other / Unclassified
+Ogólna wiedza z zakresu teleinformatyki,0,Other / Unclassified
+Oracle E-Business Suite R12.,0,Databases & Data Stores
+Outlook,0,Other / Unclassified
+PWA,0,Other / Unclassified
+Posiada umiejêtnoci takie jak,0,Other / Unclassified
+Praktyczne zastosowanie narzêdzi LEAN Manufacturing,0,Other / Unclassified
+Protoko³y sieci komórkowych,0,Other / Unclassified
+React Native (Expo,0,Frameworks & Platforms
+Rozwi¹zania chmurowe i hybrydowe,0,Other / Unclassified
+SEO i lubi analizowaæ dane,0,Other / Unclassified
+Sieæ IT,0,Other / Unclassified
+Strong analytical and pr,0,Other / Unclassified
+TailwindCSS,0,Other / Unclassified
+Ticontract,0,Other / Unclassified
+TimoCom,0,Other / Unclassified
+Tworzenie rozwi¹zañ automatyzacji bazuj¹cych na AI,0,Other / Unclassified
+Umiejêtnoci merytoryczne,0,Other / Unclassified
+Umiejêtnoæ czytania dokumentacji technicznej bêdzie dodatkowym atutem,0,Other / Unclassified
+Umiejêtnoæ czytania prostych rysunków technicznych,0,Other / Unclassified
+Umiejêtnoæ pracy samodzielnej i zesp,0,Other / Unclassified
+Umiejêtnoæ wykonywania instrukcji,0,Other / Unclassified
+Usprawnienia procesu testu bazuj¹c na danych z systemu Quality Line,0,Other / Unclassified
+Uwaga: Osoby,0,Other / Unclassified
+Virtual Network,0,Other / Unclassified
+Wybór i adaptacja rozwi¹zañ testowych,0,Other / Unclassified
+Wymagania dodatkowe (bêd¹ce przedmiotem oceny),0,Other / Unclassified
+Wysokie standardy etyczne i kultura,0,Other / Unclassified
+Zaanga¿owanie w wykonywanie powierzonych zadañ,0,Other / Unclassified
+Znajomoæ HACCP oraz wymagañ standardów zarz¹dzania jakoci¹ BRCGS,0,Other / Unclassified
+Znajomoæ Microsoft 365,0,Unmapped
+Znajomoæ SQL,0,Other / Unclassified
+Znajomoæ Windows 10/11,0,Other / Unclassified
+Znajomoæ jêzyka angielskiego na poziomie umo¿liwiaj¹cym pracê z dokumentacj¹,0,Other / Unclassified
+Znajomoæ jêzyka angielskiego w stopniu komunikatywnym,0,Other / Unclassified
+Znajomoæ oprogramowania do sterowników Siemens  Step 7 oraz TIA Portal,0,Other / Unclassified
+Znajomoæ systemów Windows i pakietów biurowych,0,Other / Unclassified
+Znajomoæ systemów gie³d transportowych (np. Trans,0,Other / Unclassified
+Zrozumienie technologii medycznych (np. cewniki,0,Other / Unclassified
+a,0,Other / Unclassified
+a nie ekspercka znajomoæ wszystkiego,0,Cloud & Managed Services
+aby w razie potrzeby,0,Other / Unclassified
+audyt bezpieczeñstwa,0,Other / Unclassified
+b,0,Other / Unclassified
+co najmniej podstawow¹ znajomoci¹ zasad konsolidacji sprawozdañ finansowych oraz MSSF,0,Other / Unclassified
+dobra znajomoæ pakietu MS Office oraz AutoCad,0,Other / Unclassified
+dobrze organizuje pracê i potrafi pracowaæ z wieloma zadaniami naraz,0,Cloud & Managed Services
+dokumentacji projektowej,0,Other / Unclassified
+dok³adnoæ,0,Other / Unclassified
+dowiadczenie w pracy w biurze rachunkowym (czyli multitasking level hard,0,Other / Unclassified
+dystrybutorzy,0,Other / Unclassified
+e-Commerce lub projektach sprzeda¿owych,0,Other / Unclassified
+frameworki bezpieczeñstwa,0,Other / Unclassified
+gotowoæ,0,Other / Unclassified
+integralnoæ skóry itp,0,Other / Unclassified
+jest samodzielna i dobrze organizuje pracê w³asn¹ i innych,0,Libraries
+komunikacj¹ i PR,0,Other / Unclassified
+leczenie ran,0,Other / Unclassified
+ma wykszta³cenie co najmniej rednie,0,Other / Unclassified
+narzêdzia AI,0,Other / Unclassified
+narzêdzia CASE,0,Other / Unclassified
+narzêdzia CRM,0,Other / Unclassified
+narzêdzia klasy CSPM,0,Other / Unclassified
+odpowiedzialnoci¹ za podejmowane decyzje i umiejêtnoci¹ efektywnej pracy w ograniczonym czasie,0,Other / Unclassified
+opatrunki,0,Other / Unclassified
+osoby posiadaj¹cej umiejêtnoci negocjacyjne i wysok¹ kulturê komunikacji,0,Other / Unclassified
+portfolio w³asnych treci lub pro,0,Other / Unclassified
+potrafisz przek³adaæ techniczne rozwi¹zania na jêzyk korzyci,0,Other / Unclassified
+poufno,0,Other / Unclassified
+praktyka w negocjacjach handlowych,0,Other / Unclassified
+protoko³y NTLM/Kerberos/SAML/OIDC/OAuth,0,Libraries
+protoko³y i interfejsy,0,Other / Unclassified
+protoko³y sieciowe,0,Other / Unclassified
+protokó³ komunikacyjny ModBus TCP,0,Other / Unclassified
+prowadzenia projektu od pomys³u do realizacji,0,Other / Unclassified
+sumiennoæ,0,Other / Unclassified
+system zarz¹dzania drukiem np.: PaperCut / SafeQ / uniFLOW,0,Other / Unclassified
+ticketowe systemy wsparcia u¿ytkowników (m.in. MantisBT,0,Other / Unclassified
+umiejêtnoæ pracy w zespole oraz koordynowania z³o¿onych projektów,0,Other / Unclassified
+umiejêtnoæ zarz¹dzania informacj¹ oraz pracy z du¿¹ iloci¹ dokumentów,0,Other / Unclassified
+w tym w szczególnoci z zakresu sieci teleinformatycznych i baz danych,0,Other / Unclassified
+w zale¿noci od specjalizacji,0,Other / Unclassified
+wirtualizacja serwerów w rodowisku on-premise,0,Other / Unclassified
+wspó³praca z zespo³ami technicznymi,0,Other / Unclassified
+wykonawczej i powykonawczej,0,Other / Unclassified
+wys,0,Other / Unclassified
+zainteresowanie marketingiem,0,Other / Unclassified
+zna Ads,0,Other / Unclassified
+znajomoæ BPMN,0,Other / Unclassified
+znajomoæ JavaScript,0,Other / Unclassified
+znajomoæ systemów informatycznych obs³ugi kadrowo-p³acowej,0,Other / Unclassified
+znasz jêzyk angielski na poziomie B1,0,Other / Unclassified
+rodowiska Qt,0,Other / Unclassified
+rodowisko on-premise,0,Other / Unclassified

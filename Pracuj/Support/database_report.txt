@@ -1,0 +1,135 @@
+
+================================================================================
+DATABASE: job_database_test.db
+================================================================================
+
+📊 TOTAL RECORDS: 20
+
+📋 COLUMNS (26):
+    1. partition_id                   (TEXT)
+    2. url                            (TEXT)
+    3. title                          (TEXT)
+    4. company                        (TEXT)
+    5. industry                       (TEXT)
+    6. employment_type                (TEXT)
+    7. salary_min                     (INTEGER)
+    8. salary_max                     (INTEGER)
+    9. salary_currency                (TEXT)
+   10. city                           (TEXT)
+   11. region                         (TEXT)
+   12. experience_requirements        (TEXT)
+   13. responsibilities               (TEXT)
+   14. job_benefits                   (TEXT)
+   15. position_levels                (TEXT)
+   16. work_schedules                 (TEXT)
+   17. work_modes                     (TEXT)
+   18. technologies_required          (TEXT)
+   19. technologies_optional          (TEXT)
+   20. job_description                (TEXT)
+   21. requirements                   (TEXT)
+   22. offered                        (TEXT)
+   23. date_posted                    (DATE)
+   24. valid_through                  (DATE)
+   25. scraped_date                   (TIMESTAMP)
+   26. updated_date                   (TIMESTAMP)
+
+================================================================================
+📈 DATA STATISTICS
+================================================================================
+
+   ✅ With Title                    :    0 (  0.0%)
+   ✅ With Company                  :    0 (  0.0%)
+   ✅ With Salary                   :    0 (  0.0%)
+   ✅ With City                     :    0 (  0.0%)
+   ✅ With Technologies             :    7 ( 35.0%)
+   ✅ With Position Levels          :   20 (100.0%)
+   ✅ With Work Modes               :   20 (100.0%)
+   ✅ With Description              :    0 (  0.0%)
+   ✅ With Requirements             :    0 (  0.0%)
+   ✅ With Offered Benefits         :   18 ( 90.0%)
+
+================================================================================
+📝 SAMPLE RECORDS (First 3)
+================================================================================
+
+
+────────────────────────────────────────────────────────────────────────────────
+RECORD 1
+────────────────────────────────────────────────────────────────────────────────
+🔹 ID:          %d0%be%d0%bf%d0%b5%d1%80%d0%b0%d1%82%d0%be%d1%80-walbrzych,oferta,1004601755
+🔹 Title:       None
+🔹 Company:     None
+🔹 City:        None
+💰 Salary:      None - None
+🔧 Technologies: (None)
+💼 Position:    pracownik fizyczny
+📍 Work Mode:   praca stacjonarna
+
+────────────────────────────────────────────────────────────────────────────────
+RECORD 2
+────────────────────────────────────────────────────────────────────────────────
+🔹 ID:          %d1%80%d0%b0%d0%b1%d0%be%d1%82%d0%bd%d0%b8%d0%ba-luban,oferta,1004601772
+🔹 Title:       None
+🔹 Company:     None
+🔹 City:        None
+💰 Salary:      None - None
+🔧 Technologies: (None)
+💼 Position:    pracownik fizyczny
+📍 Work Mode:   praca stacjonarna
+
+────────────────────────────────────────────────────────────────────────────────
+RECORD 3
+────────────────────────────────────────────────────────────────────────────────
+🔹 ID:          %d1%80%d0%b0%d0%b1%d0%be%d1%82%d0%bd%d0%b8%d0%ba-wroclaw,oferta,1004601714
+🔹 Title:       None
+🔹 Company:     None
+🔹 City:        None
+💰 Salary:      None - None
+🔧 Technologies: (None)
+💼 Position:    pracownik fizyczny
+📍 Work Mode:   praca stacjonarna
+
+================================================================================
+🔍 DETAILED VIEW (First Record - ALL FIELDS)
+================================================================================
+
+   partition_id                  : %d0%be%d0%bf%d0%b5%d1%80%d0%b0%d1%82%d0%be%d1%80-walbrzych,oferta,1004601755
+   url                           : https://www.pracuj.pl/praca/%d0%be%d0%bf%d0%b5%d1%80%d0%b0%d1%82%d0%be%d1%80-wal...
+   title                         : None
+   company                       : None
+   industry                      : None
+   employment_type               : None
+   salary_min                    : None
+   salary_max                    : None
+   salary_currency               : None
+   city                          : None
+   region                        : None
+   experience_requirements       : None
+   responsibilities              : None
+   job_benefits                  : None
+   position_levels               : [1 items] ['pracownik fizyczny']...
+   work_schedules                : [1 items] ['pełny etat']...
+   work_modes                    : [1 items] ['praca stacjonarna']...
+   technologies_required         : None
+   technologies_optional         : None
+   job_description               : None
+   requirements                  : None
+   offered                       : [8 items] ['ваша винагорода складатиметься з базового окладу та премії', 'трудов...
+   date_posted                   : None
+   valid_through                 : None
+   scraped_date                  : 2026-02-09 15:43:15
+   updated_date                  : None
+
+================================================================================
+💡 USEFUL SQL QUERIES
+================================================================================
+
+TOP 5 COMPANIES:
+
+TOP 5 CITIES:
+
+SALARY STATISTICS:
+   No salary data
+
+================================================================================
+
