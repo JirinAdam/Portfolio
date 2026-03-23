@@ -18,10 +18,13 @@ def make_skills_bar(
         title=title,
         labels={"x": "Count", "y": "Skill"},
     )
+    total = top.values.sum()
+    pct = top.values / total * 100
+
     fig.update_traces(
         marker_color="#22D3EE",
-        text=top.values,
-        texttemplate="%{text:,}",
+        text=pct,
+        texttemplate="%{text:.1f}%",
         textposition="outside",
     )
     fig.update_layout(
@@ -121,10 +124,13 @@ def make_jobs_bar(
         orientation="h",
         title=title,
     )
+    total = sorted_df[x_col].sum()
+    pct = sorted_df[x_col] / total * 100
+
     fig.update_traces(
         marker_color="#22D3EE",
-        text=sorted_df[x_col],
-        texttemplate="%{text:,}",
+        text=pct,
+        texttemplate="%{text:.1f}%",
         textposition="outside",
         hovertemplate="<b>%{y}</b><br>Jobs: %{x}<extra></extra>",
     )
