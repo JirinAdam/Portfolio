@@ -18,7 +18,12 @@ def make_skills_bar(
         title=title,
         labels={"x": "Count", "y": "Skill"},
     )
-    fig.update_traces(marker_color="#636EFA")
+    fig.update_traces(
+        marker_color="#636EFA",
+        text=top.values,
+        texttemplate="%{text:,}",
+        textposition="outside",
+    )
     fig.update_layout(
         yaxis_title=None,
         xaxis_title="Count",
@@ -47,6 +52,9 @@ def make_salary_bar(
             name="Median",
             orientation="h",
             marker_color="#636EFA",
+            text=sorted_df["median_salary"],
+            texttemplate="%{text:,.0f}",
+            textposition="outside",
             customdata=sorted_df["count"] if "count" in sorted_df.columns else None,
             hovertemplate=(
                 "<b>%{y}</b><br>"
@@ -63,6 +71,9 @@ def make_salary_bar(
             name="Mean",
             orientation="h",
             marker_color="#EF553B",
+            text=sorted_df["mean_salary"],
+            texttemplate="%{text:,.0f}",
+            textposition="outside",
             customdata=sorted_df["count"] if "count" in sorted_df.columns else None,
             hovertemplate=(
                 "<b>%{y}</b><br>"
@@ -110,6 +121,9 @@ def make_jobs_bar(
     )
     fig.update_traces(
         marker_color="#636EFA",
+        text=sorted_df[x_col],
+        texttemplate="%{text:,}",
+        textposition="outside",
         hovertemplate="<b>%{y}</b><br>Jobs: %{x}<extra></extra>",
     )
     fig.update_layout(
