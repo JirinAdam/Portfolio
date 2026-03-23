@@ -51,7 +51,7 @@ def make_salary_bar(
             y=sorted_df[x_col],
             name="Median",
             orientation="h",
-            marker_color="#F8FAFC",
+            marker_color="#E879F9",
             text=sorted_df["median_salary"],
             texttemplate="%{text:,.0f}",
             textposition="outside",
@@ -120,7 +120,7 @@ def make_jobs_bar(
         title=title,
     )
     fig.update_traces(
-        marker_color="#E879F9",
+        marker_color="#22D3EE",
         text=sorted_df[x_col],
         texttemplate="%{text:,}",
         textposition="outside",
