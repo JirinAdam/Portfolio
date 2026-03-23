@@ -1,3 +1,7 @@
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
 import streamlit as st
 from data.loader import load_all_jobs, get_salary_per_kw_title
 from components.charts import make_salary_bar

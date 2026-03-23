@@ -1,3 +1,7 @@
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent))
+
 import streamlit as st
 from data.loader import load_all_jobs, get_kw_title_options, get_skills_counts
 from components.charts import make_skills_bar
