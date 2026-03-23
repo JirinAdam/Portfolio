@@ -29,6 +29,7 @@ def make_skills_bar(
         xaxis_title="Count",
         height=max(400, top_n * 28),
         margin=dict(l=10, r=10, t=40, b=10),
+        font=dict(family="Space Grotesk, sans-serif"),
     )
     return fig
 
@@ -51,7 +52,7 @@ def make_salary_bar(
             y=sorted_df[x_col],
             name="Median",
             orientation="h",
-            marker_color="#E879F9",
+            marker_color="#FD35D7",
             text=sorted_df["median_salary"],
             texttemplate="%{text:,.0f}",
             textposition="outside",
@@ -95,6 +96,7 @@ def make_salary_bar(
         height=max(400, len(sorted_df) * 32),
         margin=dict(l=10, r=10, t=40, b=10),
         legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+        font=dict(family="Space Grotesk, sans-serif"),
     )
 
     # Mezera jako oddělovač tisíců (Plotly používá locale separator přes "," format)
@@ -131,5 +133,6 @@ def make_jobs_bar(
         xaxis_title="Number of Job Postings",
         height=max(400, len(sorted_df) * 32),
         margin=dict(l=10, r=10, t=40, b=10),
+        font=dict(family="Space Grotesk, sans-serif"),
     )
     return fig

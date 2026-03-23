@@ -7,6 +7,11 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded",
 )
+st.markdown(
+    '<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">'
+    "<style>* {font-family: 'Space Grotesk', sans-serif !important;}</style>",
+    unsafe_allow_html=True,
+)
 
 st.title("Salary by Job Role")
 

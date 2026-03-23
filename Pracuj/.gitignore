@@ -2,6 +2,10 @@
 job_database.db
 job_database_original_backup.db
 
+# Local support files
+Support/
+csvCollection/
+
 # Python
 __pycache__/
 *.pyc
