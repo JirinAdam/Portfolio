@@ -5,7 +5,8 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 
-def make_skills_bar(
+def 
+make_skills_bar(
     skills_series: pd.Series, top_n: int = 20, title: str = ""
 ) -> go.Figure:
     """Horizontální bar chart — Top N skills podle počtu výskytů."""
@@ -52,7 +53,7 @@ def make_salary_bar(
             y=sorted_df[x_col],
             name="Median",
             orientation="h",
-            marker_color="#FD35D7",
+            marker_color="#22D3EE",
             text=sorted_df["median_salary"],
             texttemplate="%{text:,.0f}",
             textposition="outside",
