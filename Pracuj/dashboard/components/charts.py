@@ -5,8 +5,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 
-def 
-make_skills_bar(
+def make_skills_bar(
     skills_series: pd.Series, top_n: int = 20, title: str = ""
 ) -> go.Figure:
     """Horizontální bar chart — Top N skills podle počtu výskytů."""
