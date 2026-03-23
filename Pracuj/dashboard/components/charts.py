@@ -19,7 +19,7 @@ def make_skills_bar(
         labels={"x": "Count", "y": "Skill"},
     )
     fig.update_traces(
-        marker_color="#636EFA",
+        marker_color="#22D3EE",
         text=top.values,
         texttemplate="%{text:,}",
         textposition="outside",
@@ -51,7 +51,7 @@ def make_salary_bar(
             y=sorted_df[x_col],
             name="Median",
             orientation="h",
-            marker_color="#636EFA",
+            marker_color="#F8FAFC",
             text=sorted_df["median_salary"],
             texttemplate="%{text:,.0f}",
             textposition="outside",
@@ -70,7 +70,7 @@ def make_salary_bar(
             y=sorted_df[x_col],
             name="Mean",
             orientation="h",
-            marker_color="#EF553B",
+            marker_color="#F43F5E",
             text=sorted_df["mean_salary"],
             texttemplate="%{text:,.0f}",
             textposition="outside",
@@ -120,7 +120,7 @@ def make_jobs_bar(
         title=title,
     )
     fig.update_traces(
-        marker_color="#636EFA",
+        marker_color="#E879F9",
         text=sorted_df[x_col],
         texttemplate="%{text:,}",
         textposition="outside",
