@@ -32,9 +32,9 @@ def make_skills_bar(
         yaxis_title=None,
         xaxis_title="Count",
         yaxis=dict(tickfont=dict(size=16), automargin=True, ticklabelposition="outside left"),
-        title_font_size=18,
+        title_font_size=16,
         height=max(400, top_n * 28),
-        margin=dict(l=10, r=10, t=40, b=10),
+        margin=dict(l=10, r=60, t=40, b=10),
         font=dict(family="Space Grotesk, sans-serif"),
     )
     return fig
@@ -62,6 +62,7 @@ def make_salary_bar(
             text=sorted_df["median_salary"],
             texttemplate="%{text:,.0f}",
             textposition="outside",
+            textfont=dict(size=16),
             customdata=sorted_df["count"] if "count" in sorted_df.columns else None,
             hovertemplate=(
                 "<b>%{y}</b><br>"
@@ -81,6 +82,7 @@ def make_salary_bar(
             text=sorted_df["mean_salary"],
             texttemplate="%{text:,.0f}",
             textposition="outside",
+            textfont=dict(size=16),
             customdata=sorted_df["count"] if "count" in sorted_df.columns else None,
             hovertemplate=(
                 "<b>%{y}</b><br>"
@@ -92,7 +94,7 @@ def make_salary_bar(
 
     fig.update_layout(
         title=title,
-        title_font_size=18,
+        title_font_size=16,
         barmode="group",
         xaxis_title="Monthly Max Salary (PLN)",
         yaxis_title=None,
@@ -102,7 +104,7 @@ def make_salary_bar(
             separatethousands=True,
         ),
         height=max(400, len(sorted_df) * 32),
-        margin=dict(l=10, r=10, t=40, b=10),
+        margin=dict(l=10, r=60, t=40, b=10),
         legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1, font=dict(size=18)),
         font=dict(family="Space Grotesk, sans-serif"),
     )
@@ -144,9 +146,9 @@ def make_jobs_bar(
         yaxis_title=None,
         xaxis_title="Number of Job Postings",
         yaxis=dict(tickfont=dict(size=16), automargin=True, ticklabelposition="outside left"),
-        title_font_size=18,
+        title_font_size=16,
         height=max(400, len(sorted_df) * 32),
-        margin=dict(l=10, r=10, t=40, b=10),
+        margin=dict(l=10, r=60, t=40, b=10),
         font=dict(family="Space Grotesk, sans-serif"),
     )
     return fig

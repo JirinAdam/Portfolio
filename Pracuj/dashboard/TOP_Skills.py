@@ -17,7 +17,7 @@ st.markdown(
     "* {font-family: 'Space Grotesk', sans-serif !important;}"
     "[data-testid='stSidebarNavLink'] span { font-size: 130% !important; }"
     "h1 { font-size: 36px !important; }"
-    "h3 { font-size: 40px !important; }"
+    "h3 { font-size: 80px !important; }"
     "</style>",
     unsafe_allow_html=True,
 )
