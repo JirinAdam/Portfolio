@@ -31,6 +31,8 @@ def make_skills_bar(
     fig.update_layout(
         yaxis_title=None,
         xaxis_title="Count",
+        yaxis=dict(tickfont=dict(size=16), automargin=True),
+        title_font_size=20,
         height=max(400, top_n * 28),
         margin=dict(l=10, r=10, t=40, b=10),
         font=dict(family="Space Grotesk, sans-serif"),
@@ -90,16 +92,18 @@ def make_salary_bar(
 
     fig.update_layout(
         title=title,
+        title_font_size=20,
         barmode="group",
         xaxis_title="Monthly Max Salary (PLN)",
         yaxis_title=None,
+        yaxis=dict(tickfont=dict(size=16), automargin=True),
         xaxis=dict(
             tickformat=",",
             separatethousands=True,
         ),
         height=max(400, len(sorted_df) * 32),
         margin=dict(l=10, r=10, t=40, b=10),
-        legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1, font=dict(size=24)),
+        legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1, font=dict(size=18)),
         font=dict(family="Space Grotesk, sans-serif"),
     )
 
@@ -139,6 +143,8 @@ def make_jobs_bar(
     fig.update_layout(
         yaxis_title=None,
         xaxis_title="Number of Job Postings",
+        yaxis=dict(tickfont=dict(size=16), automargin=True),
+        title_font_size=20,
         height=max(400, len(sorted_df) * 32),
         margin=dict(l=10, r=10, t=40, b=10),
         font=dict(family="Space Grotesk, sans-serif"),

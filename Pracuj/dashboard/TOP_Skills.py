@@ -7,7 +7,7 @@ from data.loader import load_all_jobs, get_kw_title_options, get_skills_counts
 from components.charts import make_skills_bar
 
 st.set_page_config(
-    page_title="PracujPL Data Jobs",
+    page_title="Pracuj.PL Data Jobs",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -15,7 +15,8 @@ st.markdown(
     '<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">'
     "<style>"
     "* {font-family: 'Space Grotesk', sans-serif !important;}"
-    "[data-testid='stSidebarNavLink'] span { font-size: 150% !important; }"
+    "[data-testid='stSidebarNavLink'] span { font-size: 130% !important; }"
+    "h1 { font-size: 36px !important; }"
     "</style>",
     unsafe_allow_html=True,
 )
