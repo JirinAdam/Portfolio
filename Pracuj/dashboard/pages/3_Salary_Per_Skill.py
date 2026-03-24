@@ -17,6 +17,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
+st.markdown("### Pracuj.PL Data Jobs")
 st.title("Salary by Skill")
 
 df = load_all_jobs()
