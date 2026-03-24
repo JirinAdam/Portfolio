@@ -104,7 +104,7 @@ def make_salary_bar(
             tickformat=",",
             separatethousands=True,
         ),
-        height=max(400, len(sorted_df) * 32),
+        height=max(400, len(sorted_df) * 55),
         margin=dict(l=5, r=20, t=40, b=5),
         legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1, font=dict(size=18)),
         uniformtext=dict(minsize=16, mode="show"),
