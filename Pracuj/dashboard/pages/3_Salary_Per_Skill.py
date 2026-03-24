@@ -17,6 +17,8 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
+st.sidebar.markdown("## Pracuj.PL Data Jobs")
+
 st.markdown("### Pracuj.PL Data Jobs")
 st.title("Salary by Skill")
 
