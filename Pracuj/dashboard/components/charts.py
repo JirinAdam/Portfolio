@@ -32,7 +32,7 @@ def make_skills_bar(
         yaxis_title=None,
         xaxis_title="Count",
         yaxis=dict(tickfont=dict(size=16), automargin=True, ticklabelposition="outside left"),
-        xaxis=dict(range=[0, top.values.max() * 1.1]),
+        xaxis=dict(range=[0, top.values.max() * 1]),
         title_font_size=16,
         height=max(400, top_n * 28),
         margin=dict(l=5, r=5, t=30, b=10),
@@ -116,7 +116,7 @@ def make_salary_bar(
 
     # X-axis padding pro textposition="outside"
     max_val = sorted_df[["median_salary", "mean_salary"]].max().max()
-    fig.update_xaxes(range=[0, max_val * 1.2])
+    fig.update_xaxes(range=[0, max_val * 1])
 
     return fig
 
