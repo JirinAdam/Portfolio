@@ -34,7 +34,7 @@ def make_skills_bar(
         yaxis=dict(tickfont=dict(size=16), automargin=True, ticklabelposition="outside left"),
         title_font_size=16,
         height=max(400, top_n * 28),
-        margin=dict(l=10, r=60, t=40, b=10),
+        margin=dict(l=10, r=20, t=40, b=10),
         font=dict(family="Space Grotesk, sans-serif"),
     )
     return fig
@@ -104,7 +104,7 @@ def make_salary_bar(
             separatethousands=True,
         ),
         height=max(400, len(sorted_df) * 32),
-        margin=dict(l=10, r=60, t=40, b=10),
+        margin=dict(l=10, r=20, t=40, b=10),
         legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1, font=dict(size=18)),
         font=dict(family="Space Grotesk, sans-serif"),
     )
@@ -148,7 +148,7 @@ def make_jobs_bar(
         yaxis=dict(tickfont=dict(size=16), automargin=True, ticklabelposition="outside left"),
         title_font_size=16,
         height=max(400, len(sorted_df) * 32),
-        margin=dict(l=10, r=60, t=40, b=10),
+        margin=dict(l=10, r=20, t=40, b=10),
         font=dict(family="Space Grotesk, sans-serif"),
     )
     return fig
