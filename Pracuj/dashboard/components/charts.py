@@ -32,10 +32,10 @@ def make_skills_bar(
         yaxis_title=None,
         xaxis_title="Count",
         yaxis=dict(tickfont=dict(size=16), automargin=True, ticklabelposition="outside left"),
-        xaxis=dict(range=[0, top.values.max() * 1.2]),
+        xaxis=dict(range=[0, top.values.max() * 1.1]),
         title_font_size=16,
         height=max(400, top_n * 28),
-        margin=dict(l=5, r=20, t=40, b=5),
+        margin=dict(l=5, r=5, t=30, b=10),
         font=dict(family="Space Grotesk, sans-serif"),
     )
     return fig
@@ -105,7 +105,7 @@ def make_salary_bar(
             separatethousands=True,
         ),
         height=max(400, len(sorted_df) * 55),
-        margin=dict(l=5, r=20, t=40, b=5),
+        margin=dict(l=5, r=5, t=30, b=10),
         legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1, font=dict(size=18)),
         uniformtext=dict(minsize=16, mode="show"),
         font=dict(family="Space Grotesk, sans-serif"),
@@ -152,10 +152,10 @@ def make_jobs_bar(
         yaxis_title=None,
         xaxis_title="Number of Job Postings",
         yaxis=dict(tickfont=dict(size=16), automargin=True, ticklabelposition="outside left"),
-        xaxis=dict(range=[0, sorted_df[x_col].max() * 1.2]),
+        xaxis=dict(range=[0, sorted_df[x_col].max() * 1.1]),
         title_font_size=16,
         height=max(400, len(sorted_df) * 32),
-        margin=dict(l=5, r=20, t=40, b=5),
+        margin=dict(l=5, r=5, t=30, b=10),
         font=dict(family="Space Grotesk, sans-serif"),
     )
     return fig
