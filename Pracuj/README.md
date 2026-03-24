@@ -56,6 +56,19 @@ Table: `job_offers`
 
 Salary values below 1 000 PLN are treated as hourly rates and converted to monthly equivalents (× 160).
 
+## Dashboard
+
+Interactive Streamlit dashboard deployed on [Streamlit Community Cloud](https://streamlit.io/cloud). Visualises IT job market data from `nerd_jobs.db`.
+
+**Pages:**
+- **Top Skills** — most demanded skills across IT roles (bar chart + full table)
+- **Salary by Job Role** — median/mean monthly salary per role category
+- **Salary by Skill** — median/mean salary per technology/skill (min 5 postings)
+- **Salary by Seniority Level** — salary breakdown by junior/mid/senior/lead
+- **Job Postings by Region** — geographic distribution of IT jobs
+
+All pages include a Job Role filter. Salary pages have a Median/Mean/Both toggle.
+
 ## Project structure
 
 ```
@@ -68,29 +81,42 @@ Pracuj/
 │   ├── database_cleaner.py     # Step 3 — orchestrates all mappers
 │   ├── base_mapper.py          # Abstract base class (Template Method pattern)
 │   └── mappers/
-│       ├── salary.py
-│       ├── region.py
-│       ├── work_modes.py
-│       ├── schedules.py
-│       ├── employment_type.py
-│       ├── position_levels.py
-│       ├── industry.py
-│       └── language.py
-└── job_database.db             # Output database (git-ignored)
+│       ├── salary_mapper.py
+│       ├── region_mapper.py
+│       ├── work_modes_mapper.py
+│       ├── work_schedules_mapper.py
+│       ├── employment_type_mapper.py
+│       ├── position_levels_mapper.py
+│       ├── industry_mapper.py
+│       └── language_mapper.py
+├── dashboard/
+│   ├── TOP_Skills.py           # Main page — Top Skills Overview
+│   ├── .streamlit/config.toml  # Streamlit theme config
+│   ├── data/loader.py          # DB queries & data transforms
+│   ├── components/charts.py    # Plotly chart functions
+│   └── pages/
+│       ├── 2_Salary_Per_Role.py
+│       ├── 3_Salary_Per_Skill.py
+│       ├── 4_Salary_Per_Level.py
+│       └── 5_Jobs_Per_Region.py
+└── job_database.db             # Full database (~230 MB, git-ignored)
 ```
 
 ## Installation
 
 ```bash
+# Scraping pipeline
 pip install cloudscraper
-```
 
-All other dependencies are Python standard library (`sqlite3`, `json`, `re`, `csv`, `pathlib`, `abc`).
+# Dashboard
+pip install -r dashboard/requirements.txt
+```
 
 ## Requirements
 
-- Python 3.8+
+- Python 3.10+
 - `cloudscraper` (handles Cloudflare protection on pracuj.pl)
+- Dashboard: `streamlit`, `pandas`, `plotly`, `sqlalchemy`
 
 ## Notes
 
