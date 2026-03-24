@@ -32,9 +32,10 @@ def make_skills_bar(
         yaxis_title=None,
         xaxis_title="Count",
         yaxis=dict(tickfont=dict(size=16), automargin=True, ticklabelposition="outside left"),
+        xaxis=dict(range=[0, top.values.max() * 1.2]),
         title_font_size=16,
         height=max(400, top_n * 28),
-        margin=dict(l=10, r=20, t=40, b=10),
+        margin=dict(l=5, r=20, t=40, b=5),
         font=dict(family="Space Grotesk, sans-serif"),
     )
     return fig
@@ -104,7 +105,7 @@ def make_salary_bar(
             separatethousands=True,
         ),
         height=max(400, len(sorted_df) * 32),
-        margin=dict(l=10, r=20, t=40, b=10),
+        margin=dict(l=5, r=20, t=40, b=5),
         legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1, font=dict(size=18)),
         uniformtext=dict(minsize=16, mode="show"),
         font=dict(family="Space Grotesk, sans-serif"),
@@ -112,6 +113,10 @@ def make_salary_bar(
 
     # Mezera jako oddělovač tisíců (Plotly používá locale separator přes "," format)
     fig.update_xaxes(tickprefix="", ticksuffix=" PLN")
+
+    # X-axis padding pro textposition="outside"
+    max_val = sorted_df[["median_salary", "mean_salary"]].max().max()
+    fig.update_xaxes(range=[0, max_val * 1.2])
 
     return fig
 
@@ -147,9 +152,10 @@ def make_jobs_bar(
         yaxis_title=None,
         xaxis_title="Number of Job Postings",
         yaxis=dict(tickfont=dict(size=16), automargin=True, ticklabelposition="outside left"),
+        xaxis=dict(range=[0, sorted_df[x_col].max() * 1.2]),
         title_font_size=16,
         height=max(400, len(sorted_df) * 32),
-        margin=dict(l=10, r=20, t=40, b=10),
+        margin=dict(l=5, r=20, t=40, b=5),
         font=dict(family="Space Grotesk, sans-serif"),
     )
     return fig
