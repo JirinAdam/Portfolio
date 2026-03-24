@@ -62,7 +62,7 @@ def make_salary_bar(
             text=sorted_df["median_salary"],
             texttemplate="%{text:,.0f}",
             textposition="outside",
-            textfont=dict(size=24),
+            textfont=dict(size=30),
             customdata=sorted_df["count"] if "count" in sorted_df.columns else None,
             hovertemplate=(
                 "<b>%{y}</b><br>"
