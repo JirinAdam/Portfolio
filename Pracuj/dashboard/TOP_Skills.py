@@ -18,11 +18,10 @@ st.markdown(
     "[data-testid='stSidebarNavLink'] span { font-size: 130% !important; }"
     "h1 { font-size: 36px !important; }"
     "h3 { font-size: 60px !important; }"
+    "[data-testid='stSidebarNav']::before { content: 'Pracuj.PL Data Jobs'; display: block; font-size: 24px; font-weight: 700; padding: 20px 20px 10px; }"
     "</style>",
     unsafe_allow_html=True,
 )
-
-st.sidebar.markdown("## Pracuj.PL Data Jobs")
 
 st.markdown("### Pracuj.PL Data Jobs")
 st.title("Top Skills")
