@@ -1,6 +1,6 @@
 import json
 from typing import Optional, Dict, Any
-from Pracuj.db_cleaner.base_mapper import BaseMapper
+from base_mapper import BaseMapper
 
 WORK_SCHEDULES_MAPPING = [
     {'to_replace': 'pe\u0142ny etat', 'replace_with': 'full-time'},

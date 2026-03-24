@@ -1,6 +1,7 @@
 import sqlite3
 from pathlib import Path
 from mappers.salary_mapper import SalaryMapper
+from mappers.monthly_salary_mapper import MonthlySalaryMapper
 from mappers.region_mapper import RegionMapper
 from mappers.work_modes_mapper import WorkModesMapper
 from mappers.work_schedules_mapper import WorkSchedulesMapper
@@ -43,6 +44,7 @@ class DatabaseCleaner:
         """Inicializuj všechny mappery"""
         self.mappers = [
             SalaryMapper(self.conn),
+            MonthlySalaryMapper(self.conn),
             RegionMapper(self.conn),
             WorkModesMapper(self.conn),
             WorkSchedulesMapper(self.conn),

@@ -1,6 +1,6 @@
 import re
 from typing import Optional, Dict, Any, List, Tuple
-from Pracuj.db_cleaner.base_mapper import BaseMapper
+from base_mapper import BaseMapper
 
 
 class SalaryMapper(BaseMapper):

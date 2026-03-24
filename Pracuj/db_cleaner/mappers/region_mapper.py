@@ -1,5 +1,5 @@
 from typing import Optional, Dict, Any, List
-from Pracuj.db_cleaner.base_mapper import BaseMapper
+from base_mapper import BaseMapper
 
 
 class RegionMapper(BaseMapper):
