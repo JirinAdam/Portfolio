@@ -24,7 +24,7 @@ df = load_all_jobs()
 
 # Sidebar — filtr kw_title
 kw_options = get_kw_title_options(df)
-selected_kw = st.sidebar.selectbox("Job Role (kw_title)", kw_options)
+selected_kw = st.sidebar.selectbox("Job Role ", kw_options)
 
 # Filtrovaný počet
 if selected_kw == "All":
