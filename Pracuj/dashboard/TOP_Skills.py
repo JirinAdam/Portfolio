@@ -21,7 +21,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-st.title("Top Skills in Data Jobs")
+st.title("Pracuj.PL Data Jobs")
 
 df = load_all_jobs()
 
