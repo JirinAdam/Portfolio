@@ -26,7 +26,7 @@ def make_skills_bar(
         text=pct,
         texttemplate="%{text:.1f}%",
         textposition="outside",
-        textfont=dict(size=24),
+        textfont=dict(size=30),
     )
     fig.update_layout(
         yaxis_title=None,
@@ -62,7 +62,7 @@ def make_salary_bar(
             text=sorted_df["median_salary"],
             texttemplate="%{text:,.0f}",
             textposition="outside",
-            textfont=dict(size=30),
+            textfont=dict(size=24),
             customdata=sorted_df["count"] if "count" in sorted_df.columns else None,
             hovertemplate=(
                 "<b>%{y}</b><br>"
@@ -82,7 +82,7 @@ def make_salary_bar(
             text=sorted_df["mean_salary"],
             texttemplate="%{text:,.0f}",
             textposition="outside",
-            textfont=dict(size=24),
+            textfont=dict(size=30),
             customdata=sorted_df["count"] if "count" in sorted_df.columns else None,
             hovertemplate=(
                 "<b>%{y}</b><br>"
@@ -139,7 +139,7 @@ def make_jobs_bar(
         text=pct,
         texttemplate="%{text:.1f}%",
         textposition="outside",
-        textfont=dict(size=24),
+        textfont=dict(size=30),
         hovertemplate="<b>%{y}</b><br>Jobs: %{x}<extra></extra>",
     )
     fig.update_layout(
