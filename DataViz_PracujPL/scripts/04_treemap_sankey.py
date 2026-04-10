@@ -64,6 +64,7 @@ TOP_CITIES = 20              # počet měst pro treemap č. 13
 TOP_INDUSTRIES = 5           # top N odvětví per město / region (treemapy)
 TOP_REGIONS = 16             # top N regionů pro Sankey (méně = čitelnější)
 SANKEY_TOP_INDUSTRIES = 10   # top N odvětví pro Sankey č. 3
+SANKEY_TOP_LANGUAGES = 10    # top N jazyků pro Sankey č. 15
 
 
 def save_png(path: Path):
@@ -86,7 +87,7 @@ def explode_col(df: pd.DataFrame, col: str, id_cols: list[str]) -> pd.DataFrame:
 def load_data(conn) -> pd.DataFrame:
     return pd.read_sql_query(
         """
-        SELECT region, city, mapped_industry, work_modes
+        SELECT region, city, mapped_industry, work_modes, mapped_languages
         FROM job_offers
         WHERE region IS NOT NULL AND region != ''
         """,
@@ -219,13 +220,13 @@ def plot_treemap_city_industry(df: pd.DataFrame):
 # č. 3 — Sankey: Top 10 Industries → 16 Voivodeships
 # ─────────────────────────────────────────────────────────────────────────────
 
-def _sankey_pysankey(flow_df: pd.DataFrame, left_order: list, right_order: list):
-    """Sankey přes pySankey. flow_df má sloupce: industry, region, count.
-    Směr: industry (left) → region (right).
-    left_order/right_order: řazení uzlů shora dolů (od největšího)."""
+def _render_sankey(flow_df: pd.DataFrame, left_col: str, right_col: str,
+                   left_order: list, right_order: list, title: str, filename: str):
+    """Obecný Sankey renderer přes pySankey.
+    flow_df musí mít sloupce: left_col, right_col, count."""
     from pySankey.sankey import sankey
 
-    # Barvy všech uzlů z inferno colormap — rovnoměrně rozložené po škále
+    # Barvy všech uzlů z inferno colormap
     cmap = plt.cm.inferno
     all_labels = left_order + right_order
     n = len(all_labels)
@@ -236,19 +237,17 @@ def _sankey_pysankey(flow_df: pd.DataFrame, left_order: list, right_order: list)
         for i, label in enumerate(all_labels)
     }
 
-    # Seřadit DataFrame — pySankey bere pořadí z first appearance (df.left/right.unique())
-    # leftLabels/rightLabels nepředáváme kvůli bugu v pySankey (check_data_matches_labels)
+    # Seřadit DataFrame — pySankey bere pořadí z first appearance
     left_rank = {l: i for i, l in enumerate(left_order)}
     right_rank = {r: i for i, r in enumerate(right_order)}
     flow_df = flow_df.copy()
-    flow_df["_lr"] = flow_df["industry"].map(left_rank)
-    flow_df["_rr"] = flow_df["region"].map(right_rank)
+    flow_df["_lr"] = flow_df[left_col].map(left_rank)
+    flow_df["_rr"] = flow_df[right_col].map(right_rank)
     flow_df = flow_df.sort_values(["_lr", "_rr"]).drop(columns=["_lr", "_rr"]).reset_index(drop=True)
 
-    # pySankey vytváří vlastní figure interně — nepřijímá ax parametr
     sankey(
-        left=flow_df["industry"],
-        right=flow_df["region"],
+        left=flow_df[left_col],
+        right=flow_df[right_col],
         leftWeight=flow_df["count"],
         rightWeight=flow_df["count"],
         colorDict=color_dict,
@@ -258,19 +257,14 @@ def _sankey_pysankey(flow_df: pd.DataFrame, left_order: list, right_order: list)
     fig = plt.gcf()
     fig.set_size_inches(16, 12)
 
-    # Titulek — Inter SemiBold 600
-    plt.title(
-        f"Top {SANKEY_TOP_INDUSTRIES} Industries → {TOP_REGIONS} Voivodeships",
-        fontsize=22, fontweight=600, fontfamily="Inter", pad=15,
-    )
+    plt.title(title, fontsize=22, fontweight=600, fontfamily="Inter", pad=15)
 
-    # Fonty pro labels uzlů (pySankey generuje Text objekty)
     for text_obj in fig.findobj(plt.Text):
         if text_obj.get_text() and text_obj != fig._suptitle if hasattr(fig, '_suptitle') else True:
             text_obj.set_fontfamily("Inter")
             text_obj.set_fontweight(600)
 
-    path = OUTPUT_DIR / f"{TODAY}_03_sankey_industry_to_region.png"
+    path = OUTPUT_DIR / f"{TODAY}_{filename}.png"
     fig.savefig(path, dpi=150, bbox_inches="tight", facecolor="white")
     plt.close(fig)
     save_png(path)
@@ -302,14 +296,68 @@ def plot_sankey_industry_to_region(df: pd.DataFrame):
     left_order = agg.groupby("industry")["count"].sum().sort_values(ascending=True).index.tolist()
     right_order = agg.groupby("region")["count"].sum().sort_values(ascending=False).index.tolist()
 
-    # Zkusit pySankey, fallback na stacked bar
     try:
         import pySankey  # noqa: F401
-        _sankey_pysankey(agg, left_order, right_order)
+        _render_sankey(
+            agg, "industry", "region", left_order, right_order,
+            f"Top {SANKEY_TOP_INDUSTRIES} Industries → {TOP_REGIONS} Voivodeships",
+            "03_sankey_industry_to_region",
+        )
     except ImportError:
-        warnings.warn("pySankey není nainstalován. Používám stacked bar fallback.")
+        warnings.warn("pySankey not installed.")
     except Exception as e:
-        warnings.warn(f"pySankey selhal ({e}).")
+        warnings.warn(f"pySankey failed ({e}).")
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# č. 15 — Sankey: Languages → Industries
+# ─────────────────────────────────────────────────────────────────────────────
+
+def plot_sankey_language_to_industry(df: pd.DataFrame):
+    """č. 15 — Sankey: Top languages → Top industries."""
+    df_valid = df[
+        df["mapped_languages"].notna() &
+        df["mapped_industry"].notna()
+    ].copy()
+
+    # Explodovat jazyky
+    df_exp = explode_col(df_valid, "mapped_languages", ["mapped_industry"])
+
+    # Top N jazyků dle počtu nabídek
+    top_langs = (
+        df_exp["mapped_languages"].value_counts()
+        .head(SANKEY_TOP_LANGUAGES)
+        .index.tolist()
+    )
+    df_top = df_exp[df_exp["mapped_languages"].isin(top_langs)].copy()
+
+    # Top N odvětví dle počtu nabídek (v rámci filtrovaných dat)
+    top_industries = (
+        df_top["mapped_industry"].value_counts()
+        .head(SANKEY_TOP_INDUSTRIES)
+        .index.tolist()
+    )
+    df_top = df_top[df_top["mapped_industry"].isin(top_industries)].copy()
+
+    # Agregace
+    agg = df_top.groupby(["mapped_languages", "mapped_industry"]).size().reset_index(name="count")
+    agg.columns = ["language", "industry", "count"]
+
+    left_order = agg.groupby("language")["count"].sum().sort_values(ascending=True).index.tolist()
+    right_order = agg.groupby("industry")["count"].sum().sort_values(ascending=False).index.tolist()
+
+    try:
+        import pySankey  # noqa: F401
+        _render_sankey(
+            agg, "language", "industry", left_order, right_order,
+            f"Top {SANKEY_TOP_LANGUAGES} Languages → Top {SANKEY_TOP_INDUSTRIES} Industries",
+            "15_sankey_language_to_industry",
+        )
+    except ImportError:
+        warnings.warn("pySankey not installed.")
+    except Exception as e:
+        warnings.warn(f"pySankey failed ({e}).")
+
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Hlavní funkce
@@ -330,6 +378,9 @@ def run():
 
     print("\n[13] Treemap: top 20 měst → top 5 odvětví")
     plot_treemap_city_industry(df)
+
+    print("\n[15] Sankey: languages → industries")
+    plot_sankey_language_to_industry(df)
 
     print(f"\nVšechny výstupy uloženy do: {OUTPUT_DIR}")
 

@@ -204,6 +204,52 @@ def plot_region_industry_heatmap(df: pd.DataFrame):
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# č. 14 — Heatmapa: mapped_languages × mapped_industry
+# ─────────────────────────────────────────────────────────────────────────────
+
+def plot_language_industry_heatmap(df: pd.DataFrame):
+    """č. 14 — Heatmapa language × mapped_industry, absolutní čísla."""
+    df_valid = df[df["mapped_languages"].notna() & df["mapped_industry"].notna()].copy()
+
+    # Explodovat jazyky
+    langs = explode_col(df_valid, "mapped_languages")
+    df_exp = df_valid.loc[langs.index].assign(language=langs.values)
+
+    pivot = (
+        df_exp.groupby(["language", "mapped_industry"])
+        .size()
+        .unstack(fill_value=0)
+    )
+    # Seřadit: jazyky sestupně dle součtu, odvětví sestupně dle součtu
+    pivot = pivot.loc[pivot.sum(axis=1).sort_values(ascending=False).index]
+    pivot = pivot[pivot.sum(axis=0).sort_values(ascending=False).index]
+
+    fig, ax = plt.subplots(figsize=(max(14, len(pivot.columns)), max(6, len(pivot.index) * 0.55)))
+    sns.heatmap(
+        pivot,
+        ax=ax,
+        cmap=sns.color_palette("mako_r", as_cmap=True),
+        center=1800,
+        annot=True,
+        fmt="d",
+        linewidths=0.3,
+        cbar_kws={"label": "", "shrink": 0.6},
+        annot_kws={"fontsize": 15},
+    )
+    ax.set_title(
+        "Job Offers: Language × Industry",
+        fontsize=28, fontweight=600, pad=12,
+    )
+    ax.set_xlabel("")
+    ax.set_ylabel("")
+    ax.tick_params(axis="x", rotation=45, labelsize=15)
+    ax.tick_params(axis="y", rotation=0, labelsize=15)
+    plt.setp(ax.get_yticklabels(), fontweight=600)
+    fig.tight_layout()
+    save_fig(fig, "14_heatmap_language_industry")
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # č. 5 — Bar chart: position_levels (>1 000 nabídek) + %
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -428,6 +474,9 @@ def run():
 
     print("\n[4] Heatmapa: vojvodství × mapped_industry")
     plot_region_industry_heatmap(df)
+
+    print("\n[14] Heatmapa: language × industry")
+    plot_language_industry_heatmap(df)
 
     print("\n[5] Bar chart: position_levels")
     plot_position_level_bar(df)
