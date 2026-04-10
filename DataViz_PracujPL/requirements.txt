@@ -1,0 +1,27 @@
+# Pracuj_all_viz — Poland Labour Market EDA
+# Výstup: statické PNG vizualizace pro web článek
+# Python 3.11+
+
+# --- Data ---
+pandas>=2.0
+sqlalchemy>=2.0
+
+# --- Vizualizace: bar charty, heatmapy, ridge ploty, distribuce ---
+matplotlib>=3.7
+seaborn>=0.13
+
+# --- Geo vizualizace: choropleth mapa Polska ---
+geopandas>=0.14
+mapclassify>=2.6
+
+# --- Nested Treemap (viz č. 8, 13) + Sankey fallback ---
+# plotly generuje graf, kaleido exportuje jako statické PNG
+plotly>=5.18
+kaleido>=0.2
+
+# --- Sankey diagram (viz č. 3) ---
+pySankey>=0.0.1
+
+# --- Notebooky (explorace ve VSCode) ---
+jupyter>=1.0
+ipykernel>=6.0
