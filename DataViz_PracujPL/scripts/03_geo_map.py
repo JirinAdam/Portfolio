@@ -29,7 +29,6 @@ import pandas as pd
 import seaborn as sns
 import geopandas as gpd
 import matplotlib.pyplot as plt
-import matplotlib.patches as mpatches
 import matplotlib.font_manager as fm
 from pathlib import Path
 from datetime import date
@@ -64,8 +63,7 @@ OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 TODAY = date.today().isoformat()
 
 # --- Styl ---
-CMAP_COUNT   = sns.color_palette("mako_r", as_cmap=True)   # počet nabídek
-CMAP_SALARY  = sns.color_palette("mako_r", as_cmap=True)   # průměrný plat
+CMAP = sns.color_palette("mako_r", as_cmap=True)
 FIG_DPI      = 150
 BORDER_COLOR = "white"
 BORDER_WIDTH = 0.6
@@ -116,15 +114,12 @@ def aggregate(df: pd.DataFrame) -> pd.DataFrame:
     """Agreguje data na úrovni vojvodství."""
     agg = df.groupby("region_key").agg(
         job_count=("region", "count"),
-        salary_min_mean=("salary_min", "mean"),
-        salary_max_mean=("salary_max", "mean"),
     ).reset_index()
-    # Průměrný plat jako střed rozsahu (salary_min + salary_max) / 2
-    # Pouze řádky kde jsou obě hodnoty nenulové
+    # Mediánový plat jako střed rozsahu (salary_min + salary_max) / 2
     salary_df = df[(df["salary_min"] > 0) & (df["salary_max"] > 0)].copy()
     salary_df["salary_mid"] = (salary_df["salary_min"] + salary_df["salary_max"]) / 2
-    salary_agg = salary_df.groupby("region_key")["salary_mid"].agg(["mean", "median"]).reset_index()
-    salary_agg.columns = ["region_key", "salary_mid_mean", "salary_mid_median"]
+    salary_agg = salary_df.groupby("region_key")["salary_mid"].median().reset_index()
+    salary_agg.columns = ["region_key", "salary_mid_median"]
     agg = agg.merge(salary_agg, on="region_key", how="left")
     return agg
 
@@ -247,7 +242,7 @@ def run():
         column="job_count",
         title="Job Offers by Voivodeship\n",
         legend_label=" ",
-        cmap=CMAP_COUNT,
+        cmap=CMAP,
         filename="01_geo_job_count",
         fmt="{:.0f}",
         midpoint=700,
@@ -261,7 +256,7 @@ def run():
         column="salary_mid_median",
         title="Median Salary by Voivodeship",
         legend_label="",
-        cmap=CMAP_SALARY,
+        cmap=CMAP,
         filename="09_geo_salary_median",
         fmt="{:,.0f}",
         midpoint=6700,

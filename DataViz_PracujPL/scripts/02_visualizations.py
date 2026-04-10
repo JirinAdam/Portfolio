@@ -88,11 +88,6 @@ def save_fig(fig: plt.Figure, name: str):
     print(f"  Uloženo: {path.name}")
 
 
-def load_data(conn) -> pd.DataFrame:
-    """Načte celou tabulku job_offers."""
-    return pd.read_sql_query("SELECT * FROM job_offers", conn)
-
-
 def explode_col(df: pd.DataFrame, col: str) -> pd.Series:
     """
     Exploduje sloupec obsahující JSON-encoded listy (např. '["hybrid work", "full office"]')
@@ -150,7 +145,6 @@ def plot_industry_bar(df: pd.DataFrame):
         )
 
     plt.setp(ax.get_yticklabels(), fontweight=800)
-    #ax.set_xlabel("Počet nabídek", fontsize=15)
     ax.set_title(
         "Job Offers by Industry",
         fontsize=28, fontweight=600, pad=12,
@@ -235,7 +229,6 @@ def plot_position_level_bar(df: pd.DataFrame):
         )
 
     plt.setp(ax.get_yticklabels(), fontweight=800)
-    #ax.set_xlabel("Počet nabídek", fontsize=15)
     ax.set_title(
         "Job Offers by Position Level",
         fontsize=28, fontweight=600, pad=12,
@@ -272,7 +265,6 @@ def plot_work_modes_bar(df: pd.DataFrame):
         )
 
     plt.setp(ax.get_yticklabels(), fontweight=800)
-    #ax.set_xlabel("Počet nabídek", fontsize=15)
     ax.set_title(
         "Job Offers by Work Mode",
         fontsize=28, fontweight=600, pad=12,
@@ -353,7 +345,7 @@ def _ridge_plot(
         )
     g.map(_label, value_col)
 
-    g.figure.subplots_adjust(hspace=0.3)
+    g.figure.subplots_adjust(hspace=0.5)
     g.set_titles("")
     g.set(yticks=[], xlabel="", ylabel="")
     g.despine(bottom=True, left=True)

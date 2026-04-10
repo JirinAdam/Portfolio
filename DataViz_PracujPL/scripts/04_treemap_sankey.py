@@ -30,7 +30,6 @@ import pandas as pd
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-import matplotlib.ticker as mticker
 import matplotlib.font_manager as fm
 from pathlib import Path
 from datetime import date
@@ -87,7 +86,7 @@ def explode_col(df: pd.DataFrame, col: str, id_cols: list[str]) -> pd.DataFrame:
 def load_data(conn) -> pd.DataFrame:
     return pd.read_sql_query(
         """
-        SELECT region, city, mapped_industry, work_modes, position_levels
+        SELECT region, city, mapped_industry, work_modes
         FROM job_offers
         WHERE region IS NOT NULL AND region != ''
         """,
@@ -123,7 +122,6 @@ def plot_treemap_city_work_modes(df: pd.DataFrame):
     city_totals = agg.groupby("city")["count"].sum().reset_index(name="total")
     agg = agg.merge(city_totals, on="city")
     agg["pct"] = (agg["count"] / agg["total"] * 100).round(1)
-    agg["label"] = agg["work_modes"] + "<br>" + agg["pct"].astype(str) + " %"
 
     fig = px.treemap(
         agg,
@@ -277,55 +275,6 @@ def _sankey_pysankey(flow_df: pd.DataFrame, left_order: list, right_order: list)
     plt.close(fig)
     save_png(path)
 
-"""
-def _sankey_fallback_stacked_bar(flow_df: pd.DataFrame):
-    
-    #Fallback pro č. 3: stacked bar chart (region × top 10 odvětví).
-    #Použije se pokud pySankey není nainstalován nebo selže.
-    
-    pivot = flow_df.pivot_table(
-        index="region", columns="industry", values="count", fill_value=0
-    )
-    # Seřadit regiony dle celkového počtu
-    pivot = pivot.loc[pivot.sum(axis=1).sort_values(ascending=False).index]
-
-    fig, ax = plt.subplots(figsize=(12, 7))
-    colors = plt.cm.Set2.colors
-    bottom = pd.Series([0] * len(pivot), index=pivot.index)
-
-    for i, col in enumerate(pivot.columns):
-        ax.bar(
-            pivot.index, pivot[col],
-            bottom=bottom,
-            label=col,
-            color=colors[i % len(colors)],
-            width=0.7,
-        )
-        bottom += pivot[col]
-
-    ax.set_xlabel("Vojvodství", fontsize=18)
-    ax.set_ylabel("Počet nabídek", fontsize=18)
-    ax.set_title(
-        f"Top {TOP_INDUSTRIES} odvětví v top {TOP_REGIONS} vojvodstvích\n(stacked bar fallback za Sankey)",
-        fontsize=22, fontweight=600, pad=12,
-    )
-    ax.yaxis.set_major_formatter(mticker.FuncFormatter(lambda x, _: f"{int(x):,}"))
-    ax.legend(title="Odvětví", bbox_to_anchor=(1.01, 1), loc="upper left", fontsize=9)
-    ax.tick_params(axis="x", rotation=45, labelsize=9)
-
-    plt.rcParams["axes.spines.top"] = False
-    plt.rcParams["axes.spines.right"] = False
-    ax.spines["top"].set_visible(False)
-    ax.spines["right"].set_visible(False)
-
-    fig.tight_layout()
-    path = OUTPUT_DIR / f"{TODAY}_03_sankey_fallback_stacked_bar.png"
-    fig.savefig(path, dpi=150, bbox_inches="tight", facecolor="white")
-    plt.close(fig)
-    save_png(path)
-    print("  (Fallback: stacked bar chart — pySankey nedostupný nebo selhal)")
-
-"""
 def plot_sankey_industry_to_region(df: pd.DataFrame):
     """č. 3 — Reverzní Sankey: Top 10 industries → 16 voivodeships."""
     df_pl = df[
