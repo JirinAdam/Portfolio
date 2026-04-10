@@ -1,6 +1,6 @@
 # Poland Labour Market — Data Visualization
 
-Exploratory data analysis of the Polish job market based on 65,000+ job listings scraped from Pracuj.pl. The project produces 13 publication-ready static PNG visualizations for a web article.
+Exploratory data analysis of the Polish job market based on 65,000+ job listings scraped from Pracuj.pl. The project produces 15 publication-ready static PNG visualizations for a web article.
 
 ## Visualizations
 
@@ -19,6 +19,8 @@ Exploratory data analysis of the Polish job market based on 65,000+ job listings
 | 11 | Ridge plot | Salary distribution by position level |
 | 12 | Ridge plot | Salary distribution by industry |
 | 13 | Treemap | Top 20 cities &rarr; top 5 industries |
+| 14 | Heatmap | Language &times; industry |
+| 15 | Sankey diagram | Top 10 languages &rarr; top 10 industries |
 
 ## Tech Stack
 
