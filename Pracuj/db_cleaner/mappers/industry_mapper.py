@@ -1,4 +1,5 @@
 import json
+import re
 from typing import Optional, Dict, Any, List, Tuple
 from base_mapper import BaseMapper
 
@@ -7,207 +8,320 @@ class IndustryMapper(BaseMapper):
     """
     Mapper pro industry data - detekuje industry kategorii z textu
     Mapuje na mapped_industry (kategorie EN) a kw_industry (klíčová slova EN)
+
+    keywords: dict {polsky_keyword: anglicky_preklad}
+      - kazdy par je 1:1, nelze mit nesoulad poctu
+      - matching pouziva word boundaries (regex), ne substring 'in'
     """
 
     INDUSTRY_MAPPING = [
         {
             'priority': 1,
             'category_en': 'IT & Digital Tech',
-            'keywords_pl': [
-                'it', 'programowanie', 'software development', 'testowanie', 'qa',
-                'ux/ui', 'user experience', 'webdesign', 'data science', 'analiza systemowa',
-                'wdrożenia erp', 'bezpieczeństwo it', 'cloud', 'devops', 'administrowanie sieciami',
-                'architektura it', 'zarządzanie projektem it', 'bazy danych', 'storage',
-                'administracja', 'administrowanie systemami', 'wsparcie techniczne', 'helpdesk'
-            ],
-            'keywords_en': [
-                'programming', 'software development', 'testing', 'ux/ui', 'web design',
-                'system analysis', 'erp implementation', 'it security', 'it project management',
-                'architecture it', 'database', 'administration', 'system administration',
-                'technical support', 'helpdesk'
-            ]
+            'keywords': {
+                'it - administracja': 'it administration',
+                'it - rozwój oprogramowania': 'software development',
+                'it-administration': 'it administration',
+                'it software development': 'software development',
+                'programowanie': 'programming',
+                'programming': 'programming',
+                'software development': 'software development',
+                'testowanie': 'testing',
+                'testing': 'testing',
+                'qa': 'qa',
+                'ux/ui': 'ux/ui',
+                'user experience': 'user experience',
+                'webdesign': 'web design',
+                'data science': 'data science',
+                'analiza biznesowa i systemowa': 'system analysis',
+                'business analysis': 'business analysis',
+                'wdrożenia erp': 'erp implementation',
+                'bezpieczeństwo it': 'it security',
+                'cloud': 'cloud',
+                'devops': 'devops',
+                'administrowanie sieciami': 'network administration',
+                'administration of nets': 'network administration',
+                'architektura it': 'it architecture',
+                'zarządzanie projektem it': 'it project management',
+                'project management': 'project management',
+                'bazy danych': 'database',
+                'administration of databases': 'database',
+                'storage': 'storage',
+                'administrowanie systemami': 'system administration',
+                'administration of systems': 'system administration',
+                'wsparcie techniczne': 'technical support',
+                'support / helpdesk': 'helpdesk',
+                'helpdesk': 'helpdesk',
+                'it / telekomunikacja': 'it/telecom',
+            }
         },
         {
             'priority': 2,
             'category_en': 'Medicine & Pharma',
-            'keywords_pl': [
-                'medycyna', 'farmacja', 'apteka', 'lekarz', 'biotechnologia', 'badania kliniczne',
-                'chemia', 'kosmetyky', 'zdrowie', 'biochemi', 'farmaceutyka'
-            ],
-            'keywords_en': [
-                'medicine', 'pharma', 'pharmaceutical', 'clinical research', 'chemistry',
-                'cosmetics', 'health', 'biotech', 'pharmacy'
-            ]
+            'keywords': {
+                'medycyna': 'medicine',
+                'farmacja': 'pharma',
+                'farmaceutyka': 'pharmaceutical',
+                'apteka': 'pharmacy',
+                'lekarz': 'doctor',
+                'lekarze': 'doctors',
+                'biotechnologia': 'biotech',
+                'badania kliniczne': 'clinical research',
+                'chemia': 'chemistry',
+                'kosmetyka': 'cosmetics',
+                'zdrowie': 'health',
+                'biochemi': 'biochemistry',
+                'farmacja / medycyna': 'pharma/medicine',
+            }
         },
         {
             'priority': 3,
             'category_en': 'Finance & Banking',
-            'keywords_pl': [
-                'finanse', 'księgowość', 'audyt', 'podatki', 'ekonomia', 'controlling',
-                'ubezpieczenia', 'ryzyko', 'bankowość', 'aktuariat', 'analiza finansowa',
-                'bookkeeping', 'audyt/podatki', 'analiza'
-            ],
-            'keywords_en': [
-                'finance', 'accounting', 'audit', 'taxes', 'controlling', 'insurance',
-                'risk', 'banking', 'actuary', 'bookkeeping', 'analysis'
-            ]
+            'keywords': {
+                'finanse': 'finance',
+                'finance': 'finance',
+                'księgowość': 'accounting',
+                'bookkeeping': 'bookkeeping',
+                'audyt': 'audit',
+                'audit': 'audit',
+                'podatki': 'taxes',
+                'taxes': 'taxes',
+                'ekonomia': 'economics',
+                'economy': 'economics',
+                'controlling': 'controlling',
+                'kontroling': 'controlling',
+                'ubezpieczenia': 'insurance',
+                'ryzyko': 'risk',
+                'bankowość': 'banking',
+                'banking': 'banking',
+                'aktuariat': 'actuary',
+                'analiza finansowa': 'financial analysis',
+                'pośrednictwo finansowe': 'financial brokerage',
+                'finanse / bankowość / ubezpieczenia': 'finance/banking/insurance',
+            }
         },
         {
             'priority': 4,
             'category_en': 'Engineering & Design',
-            'keywords_pl': [
-                'inżynieria', 'automatyka', 'projektowanie', 'konstrukcja', 'r&d', 'cad',
-                'badania i rozwój', 'zapewnienie jakości', 'technologie', 'energetyka', 'budowa maszyn',
-                'elektronika', 'elektryka'
-            ],
-            'keywords_en': [
-                'engineering', 'automation', 'design', 'r&d', 'cad', 'quality assurance',
-                'technology', 'power engineering', 'electronics', 'electrics'
-            ]
+            'keywords': {
+                'inżynieria': 'engineering',
+                'automatyka': 'automation',
+                'projektowanie': 'design',
+                'konstrukcja': 'construction engineering',
+                'r&d': 'r&d',
+                'cad': 'cad',
+                'badania i rozwój': 'r&d',
+                'zapewnienie jakości': 'quality assurance',
+                'zarządzanie jakością': 'quality management',
+                'technologie': 'technology',
+                'energetyka': 'power engineering',
+                'budowa maszyn': 'mechanical engineering',
+                'elektronika': 'electronics',
+                'elektryka': 'electrics',
+                'mechanika': 'mechanics',
+                'inżynieria / technika / produkcja': 'engineering/production',
+            }
         },
         {
             'priority': 5,
             'category_en': 'Technical Sales & B2B',
-            'keywords_pl': [
-                'sprzedaż', 'sales', 'usługi profesjonalne', 'b2b', 'oze', 'energia',
-                'motoryzacja', 'rolnictwo', 'nieruchomości'
-            ],
-            'keywords_en': [
-                'sales', 'professional services', 'b2b', 'res', 'energy', 'automotive',
-                'agriculture', 'real estate'
-            ]
+            'exclude_keywords': ['nieruchomości'],
+            'keywords': {
+                'sprzedaż': 'sales',
+                'sales': 'sales',
+                'usługi profesjonalne': 'professional services',
+                'b2b': 'b2b',
+                'oze': 'renewable energy',
+                'energia': 'energy',
+                'energia / środowisko / oze': 'energy/environment',
+                'motoryzacja': 'automotive',
+            }
         },
         {
             'priority': 6,
             'category_en': 'Skilled Trades',
-            'keywords_pl': [
-                'elektryk', 'mechanik', 'monter', 'serwisant', 'operator cnc', 'spawacz',
-                'utrzymanie ruchu', 'kontrola jakości', 'technik', 'blacharz', 'lakiernik',
-                'instalacje', 'serwisanci'
-            ],
-            'keywords_en': [
-                'electrician', 'mechanic', 'fitter', 'service technician', 'cnc operator',
-                'welder', 'maintenance', 'quality control', 'installations'
-            ]
+            'keywords': {
+                'elektryk': 'electrician',
+                'mechanik': 'mechanic',
+                'monter': 'fitter',
+                'monterzy': 'fitters',
+                'serwisant': 'service technician',
+                'serwisanci': 'service technicians',
+                'operator cnc': 'cnc operator',
+                'spawacz': 'welder',
+                'utrzymanie ruchu': 'maintenance',
+                'kontrola jakości': 'quality control',
+                'technik': 'technician',
+                'blacharz': 'sheet metal worker',
+                'lakiernik': 'painter',
+                'instalacje': 'installations',
+            }
         },
         {
             'priority': 7,
             'category_en': 'Construction & Real Estate',
-            'keywords_pl': [
-                'budownictwo', 'nieruchomości', 'infrastruktura', 'mieszkaniowe',
-                'zarządzanie nieruchomościami', 'facility management', 'wynajem/wycena',
-                'ekspansja', 'energetyczne'
-            ],
-            'keywords_en': [
-                'construction', 'real estate', 'infrastructure', 'property management',
-                'valuation', 'expansion'
-            ]
+            'keywords': {
+                'budownictwo': 'construction',
+                'nieruchomości': 'real estate',
+                'infrastruktura': 'infrastructure',
+                'infrastrukturalne': 'infrastructure',
+                'mieszkaniowe': 'residential',
+                'zarządzanie nieruchomościami': 'property management',
+                'facility management': 'facility management',
+                'wynajem/wycena': 'valuation',
+                'ekspansja': 'expansion',
+                'energetyczne': 'energy infrastructure',
+                'nieruchomości / budownictwo': 'real estate/construction',
+            }
         },
         {
             'priority': 8,
             'category_en': 'Logistics & Supply Chain',
-            'keywords_pl': [
-                'transport', 'logistyka', 'spedycja', 'łańcuch dostaw', 'kierowca',
-                'magazynowanie', 'zakupy', 'procurement', 'fleet', 'category management'
-            ],
-            'keywords_en': [
-                'logistics', 'forwarding', 'supply chain', 'driver', 'warehousing',
-                'purchasing', 'fleet management'
-            ]
+            'keywords': {
+                'transport': 'transport',
+                'logistyka': 'logistics',
+                'spedycja': 'forwarding',
+                'łańcuch dostaw': 'supply chain',
+                'kierowca': 'driver',
+                'kierowcy': 'drivers',
+                'magazynowanie': 'warehousing',
+                'zakupy': 'purchasing',
+                'procurement': 'procurement',
+                'fleet': 'fleet management',
+                'category management': 'category management',
+                'transport / spedycja / logistyka': 'transport/forwarding/logistics',
+                'kurierzy / dostawcy': 'couriers/delivery',
+            }
         },
         {
             'priority': 9,
             'category_en': 'Legal & Compliance',
-            'keywords_pl': [
-                'prawo', 'prawnik', 'legal', 'compliance', 'kancelaria', 'zamówienia publiczne',
-                'bhp', 'ochrona środowiska', 'urzędnicy'
-            ],
-            'keywords_en': [
-                'law', 'lawyer', 'legal services', 'compliance', 'public procurement',
-                'health and safety', 'public sector'
-            ]
+            'keywords': {
+                'prawo': 'law',
+                'prawnik': 'lawyer',
+                'legal': 'legal services',
+                'compliance': 'compliance',
+                'kancelaria': 'law firm',
+                'zamówienia publiczne': 'public procurement',
+                'bhp': 'health and safety',
+                'ochrona środowiska': 'environmental protection',
+                'urzędnicy': 'public sector',
+            }
         },
         {
             'priority': 10,
             'category_en': 'Marketing & Creative',
-            'keywords_pl': [
-                'marketing', 'e-commerce', 'social media', 'reklama', 'grafika', 'copywriting',
-                'pr', 'eventy', 'seo', 'sem', 'media', 'animacja', 'e-marketing'
-            ],
-            'keywords_en': [
-                'marketing', 'advertising', 'graphic design', 'public relations',
-                'e-marketing', 'social media', 'seo', 'creative'
-            ]
+            'keywords': {
+                'marketing': 'marketing',
+                'e-commerce': 'e-commerce',
+                'social media': 'social media',
+                'reklama': 'advertising',
+                'grafika': 'graphic design',
+                'copywriting': 'copywriting',
+                'public relations': 'public relations',
+                'eventy': 'events',
+                'seo': 'seo',
+                'sem': 'sem',
+                'animacja': 'animation',
+                'e-marketing': 'e-marketing',
+                'e-marketing / sem / seo': 'e-marketing/sem/seo',
+            }
         },
         {
             'priority': 11,
             'category_en': 'HR & Recruitment',
-            'keywords_pl': [
-                'human resources', 'rekrutacja', 'kadry', 'płace', 'employer branding',
-                'zarządzanie hr', 'payroll', 'szkolenia/rozwój'
-            ],
-            'keywords_en': [
-                'hr', 'recruitment', 'personnel', 'payroll', 'people management',
-                'training & development'
-            ]
+            'keywords': {
+                'human resources': 'hr',
+                'zasoby ludzkie': 'hr',
+                'rekrutacja': 'recruitment',
+                'kadry': 'personnel',
+                'płace': 'payroll',
+                'employer branding': 'employer branding',
+                'zarządzanie hr': 'hr management',
+                'payroll': 'payroll',
+                'szkolenia/rozwój': 'training & development',
+                'rekrutacja / employer branding': 'recruitment/employer branding',
+            }
         },
         {
             'priority': 12,
             'category_en': 'Education & Science',
-            'keywords_pl': [
-                'edukacja', 'szkolenia', 'nauka', 'szkolnictwo', 'lektor', 'nauczyciel',
-                'tłumaczenia', 'sport/rekreacja'
-            ],
-            'keywords_en': [
-                'education', 'training', 'science', 'teaching', 'lecturer', 'translations', 'sport'
-            ]
+            'keywords': {
+                'edukacja': 'education',
+                'szkolenia': 'training',
+                'nauka': 'science',
+                'szkolnictwo': 'teaching',
+                'lektor': 'lecturer',
+                'nauczyciel': 'teacher',
+                'tłumaczenia': 'translations',
+                'sport/rekreacja': 'sport',
+                'edukacja / szkolenia': 'education/training',
+            }
         },
         {
             'priority': 13,
             'category_en': 'Retail & Front Office',
-            'keywords_pl': [
-                'sprzedawca', 'kasjer', 'sieci handlowe', 'sklep', 'merchandiser',
-                'odzież', 'produkty spożywcze', 'agd/rtv', 'fmcg'
-            ],
-            'keywords_en': [
-                'retail', 'shop assistant', 'cashier', 'merchandising', 'clothing',
-                'groceries', 'fmcg'
-            ]
+            'keywords': {
+                'sprzedawca': 'retail',
+                'sprzedawcy': 'retail',
+                'kasjer': 'cashier',
+                'kasjerzy': 'cashiers',
+                'sieci handlowe': 'retail chains',
+                'sklep': 'shop',
+                'merchandiser': 'merchandising',
+                'odzież': 'clothing',
+                'produkty spożywcze': 'groceries',
+                'artykuły spożywcze': 'groceries',
+                'agd/rtv': 'electronics retail',
+                'fmcg': 'fmcg',
+            }
         },
         {
             'priority': 14,
             'category_en': 'Customer Service & Admin',
-            'keywords_pl': [
-                'obsługa klienta', 'call center', 'recepcja', 'sekretariat', 'administracja biurowa',
-                'wprowadzanie danych', 'stanowiska asystenckie'
-            ],
-            'keywords_en': [
-                'customer service', 'support', 'reception', 'secretary', 'office admin',
-                'data entry', 'assistant'
-            ]
+            'keywords': {
+                'obsługa klienta': 'customer service',
+                'call center': 'call center',
+                'recepcja': 'reception',
+                'sekretariat': 'secretary',
+                'administracja biurowa': 'office admin',
+                'wprowadzanie danych': 'data entry',
+                'stanowiska asystenckie': 'assistant',
+            }
         },
         {
             'priority': 15,
             'category_en': 'Hospitality & Gastronomy',
-            'keywords_pl': [
-                'hotelarstwo', 'gastronomia', 'turystyka', 'kucharz', 'kelner',
-                'katering', 'pracownicy gastronomii'
-            ],
-            'keywords_en': [
-                'hospitality', 'gastronomy', 'tourism', 'chef', 'waiter', 'catering'
-            ]
+            'keywords': {
+                'hotelarstwo': 'hospitality',
+                'gastronomia': 'gastronomy',
+                'turystyka': 'tourism',
+                'kucharz': 'chef',
+                'kelner': 'waiter',
+                'katering': 'catering',
+                'pracownicy gastronomii': 'gastronomy workers',
+                'hotelarstwo / gastronomia / turystyka': 'hospitality/gastronomy/tourism',
+            }
         },
         {
             'priority': 16,
             'category_en': 'General Labor',
-            'keywords_pl': [
-                'praca fizyczna', 'produkcja', 'pracownik produkcyjny', 'kurier',
-                'dostawca', 'sprzątanie', 'ochrona', 'rolnictwo', 'pracownik ochrony'
-            ],
-            'keywords_en': [
-                'manual labor', 'production worker', 'courier', 'delivery',
-                'cleaning', 'security', 'farming'
-            ]
+            'keywords': {
+                'praca fizyczna': 'manual labor',
+                'produkcja': 'production',
+                'pracownik produkcyjny': 'production worker',
+                'pracownicy produkcji': 'production workers',
+                'pracownicy produkcyjni': 'production workers',
+                'kurier': 'courier',
+                'dostawca': 'delivery',
+                'sprzątanie': 'cleaning',
+                'utrzymanie czystości': 'cleaning',
+                'ochrona': 'security',
+                'pracownik ochrony': 'security guard',
+                'pracownicy ochrony': 'security guards',
+                'pracownicy magazynowi': 'warehouse workers',
+                'pracownicy budowlani': 'construction workers',
+            }
         }
     ]
 
@@ -353,6 +467,15 @@ class IndustryMapper(BaseMapper):
         # Teď volej standardní chování z BaseMapper
         return super().clean_data()
 
+    @staticmethod
+    def _keyword_matches(keyword: str, text: str) -> bool:
+        """Match keyword jako celé slovo/frázi, ne substring.
+
+        Separátory: začátek/konec řetězce, mezera, čárka, lomítko, středník, závorky.
+        """
+        pattern = r'(?:^|[\s,/;()])' + re.escape(keyword) + r'(?:[\s,/;()]|$)'
+        return bool(re.search(pattern, text, re.IGNORECASE))
+
     def _detect_industry_mapping(self, industry_text: str) -> Tuple[Optional[str], Optional[str]]:
         """
         Detekuj kategorii (EN) a klíčová slova z Industry textu
@@ -363,7 +486,7 @@ class IndustryMapper(BaseMapper):
 
         Logika:
         - Projdi INDUSTRY_MAPPING od priority 1 (nejvyšší)
-        - Hledej ANY klíčové slovo z kategorie v textu
+        - Hledej ANY klíčové slovo z kategorie v textu (word boundary match)
         - Vrať první shodu + seznam nalezených klíčových slov
         """
         if not industry_text:
@@ -375,15 +498,18 @@ class IndustryMapper(BaseMapper):
         # Projdi mapování podle priority (od 1 nahoru)
         for mapping in sorted(self.INDUSTRY_MAPPING, key=lambda x: x['priority']):
             category_en = mapping['category_en']
-            keywords_pl = mapping['keywords_pl']
-            keywords_en = mapping['keywords_en']
+            keywords = mapping['keywords']
+
+            # Check exclude keywords — if any match, skip this category
+            exclude_keywords = mapping.get('exclude_keywords', [])
+            if any(self._keyword_matches(kw, industry_text_lower) for kw in exclude_keywords):
+                continue
 
             # Hledej klíčová slova v textu
             found_keywords_en = []
 
-            for keyword_pl, keyword_en in zip(keywords_pl, keywords_en):
-                # Case-insensitive vyhledávání
-                if keyword_pl.lower() in industry_text_lower:
+            for keyword_pl, keyword_en in keywords.items():
+                if self._keyword_matches(keyword_pl, industry_text_lower):
                     found_keywords_en.append(keyword_en)
 
             # Pokud jsme našli nějaké klíčové slovo, vrať kategorii + slova
