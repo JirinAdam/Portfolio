@@ -19,6 +19,9 @@ __pycache__/
 .DS_Store
 *.stackdump
 
+# DBeaver / DataGrip session files
+*.session.sql
+
 # Streamlit secrets (local dev)
 dashboard/.streamlit/secrets.toml
 
