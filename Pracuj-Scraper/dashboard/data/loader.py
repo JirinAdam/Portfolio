@@ -31,7 +31,8 @@ def get_connection():
 def load_all_jobs() -> pd.DataFrame:
     """Načte celou tabulku nerd_jobs a parsuje JSON sloupce."""
     engine = get_connection()
-    df = pd.read_sql("SELECT * FROM nerd_jobs", engine)
+    with engine.connect() as conn:
+        df = pd.read_sql("SELECT * FROM nerd_jobs", conn)
 
     for col in ("technologies_os", "technologies_optional", "position_levels"):
         df[col] = df[col].apply(parse_json_list)
