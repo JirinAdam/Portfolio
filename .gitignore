@@ -145,6 +145,7 @@ logs/
 # Database
 *.db
 *.sqlite
+!Pracuj-Scraper/nerd_jobs.db
 *.sqlite3
 
 # Temporary files
