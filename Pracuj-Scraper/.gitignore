@@ -1,0 +1,29 @@
+# Large databases (over GitHub 100MB limit)
+job_database.db
+job_database_original_backup.db
+
+# Local support files
+Support/
+csvCollection/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+*.stackdump
+
+# DBeaver / DataGrip session files
+*.session.sql
+
+# Streamlit secrets (local dev)
+dashboard/.streamlit/secrets.toml
+
+# Future reports output (track selectively)
+reports/output/*.tmp

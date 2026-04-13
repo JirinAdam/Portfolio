@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mv 2_Salary_Per_Role_tmp.py 2_Salary_Per_Role.py)",
+      "Bash(mv 3_Salary_Per_Skill_tmp.py 3_Salary_Per_Skill.py)",
+      "Bash(mv 4_Salary_Per_Level_tmp.py 4_Salary_Per_Level.py)",
+      "Bash(mv 5_Jobs_Per_Region_tmp.py 5_Jobs_Per_Region.py)",
+      "Bash(python3:*)",
+      "Bash(where python:*)",
+      "Bash(/c/Python314/python.exe:*)",
+      "Bash(PYTHONIOENCODING=utf-8 /c/Python314/python.exe:*)",
+      "Bash(sqlite3:*)",
+      "Bash(python:*)",
+      "Bash(git push:*)",
+      "Bash(git rm:*)",
+      "Read(//c/Users/jaadamov/Desktop/Py/**)",
+      "Bash(powershell -Command \"Rename-Item -Path 'Pracuj' -NewName 'Pracuj-Scraper' -ErrorAction Stop\")"
+    ]
+  }
+}
