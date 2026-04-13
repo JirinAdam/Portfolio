@@ -22,7 +22,7 @@ def get_all_job_urls_complete():
     last_update = 0
     retry_limit = 3
     empty_pages_count = 0
-    empty_pages_limit = 3
+    empty_pages_limit = 10
 
     try:
         page_num = 1
@@ -65,8 +65,42 @@ def get_all_job_urls_complete():
                     next_data = json.loads(json_str)
 
                     queries = next_data['props']['pageProps']['dehydratedState']['queries']
-                    first_query = queries[0]['state']['data']
-                    grouped_offers = first_query.get('groupedOffers', [])
+
+                    grouped_offers = []
+                    used_query_index = None
+
+                    for qi, q in enumerate(queries):
+                        try:
+                            candidate = q.get('state', {}).get('data') or {}
+                            if isinstance(candidate, dict) and candidate.get('groupedOffers'):
+                                grouped_offers = candidate['groupedOffers']
+                                used_query_index = qi
+                                break
+                        except Exception:
+                            continue
+
+                    if not grouped_offers:
+                        def _find_grouped_offers(obj):
+                            if isinstance(obj, dict):
+                                if 'groupedOffers' in obj and obj['groupedOffers']:
+                                    return obj['groupedOffers']
+                                for v in obj.values():
+                                    result = _find_grouped_offers(v)
+                                    if result:
+                                        return result
+                            elif isinstance(obj, list):
+                                for item in obj:
+                                    result = _find_grouped_offers(item)
+                                    if result:
+                                        return result
+                            return None
+
+                        fallback = _find_grouped_offers(next_data)
+                        if fallback:
+                            grouped_offers = fallback
+                            used_query_index = 'recursive-fallback'
+
+                    print(f"[DEBUG] Page {page_num}: groupedOffers from query index={used_query_index}, count={len(grouped_offers)}")
 
                     # ⚠️ If empty, try again
                     if not grouped_offers:

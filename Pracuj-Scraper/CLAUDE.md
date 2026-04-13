@@ -139,6 +139,15 @@ sqlalchemy>=2.0
 
 ---
 
+## Next Steps
+
+Viz [`NEXT_STEPS.md`](NEXT_STEPS.md) — plánované vylepšení:
+
+1. **Paralelizace detail_scraper.py** — ThreadPoolExecutor, konfigurovatelný `--workers N`, z 40-78h na ~10h
+2. **Historická data + trendové grafy** — CSV append logy, `snapshot_history.py`, nová Streamlit stránka `6_Trends.py`
+
+---
+
 ## Visual Customization (TASK 9 — dokončeno)
 
 | Co | Kde |
