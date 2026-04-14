@@ -8,14 +8,17 @@ import random
 import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import argparse
+import subprocess
+import sys
 
 
 class JobDetailsScraper:
     """Complete job scraper for pracuj.pl — parallel version."""
 
-    def __init__(self, db_path='job_database.db', num_workers=1):
+    def __init__(self, db_path='job_database.db', num_workers=1, fresh=True):
         self.db_path = db_path
         self.num_workers = num_workers
+        self.fresh = fresh
         self.failed_urls = []
 
         # Thread-local storage for per-worker cloudscraper sessions
@@ -47,10 +50,14 @@ class JobDetailsScraper:
         return self._local.scraper
 
     def init_database(self):
-        """Initialize SQLite database with WAL mode."""
+        """Initialize SQLite database with WAL mode. DROP table if fresh=True."""
         conn = sqlite3.connect(self.db_path)
         conn.execute('PRAGMA journal_mode=WAL')
         cursor = conn.cursor()
+
+        if self.fresh:
+            cursor.execute('DROP TABLE IF EXISTS job_offers')
+            print("🗑️  Dropped old job_offers table (fresh mode)\n")
 
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS job_offers (
@@ -757,8 +764,10 @@ class JobDetailsScraper:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Parallel job detail scraper for pracuj.pl')
-    parser.add_argument('--workers', type=int, default=8,
-                        help='Number of parallel workers (default: 8, use 1 for sequential)')
+    parser.add_argument('--workers', type=int, default=32,
+                        help='Number of parallel workers (default: 32, use 1 for sequential)')
+    parser.add_argument('--no-fresh', action='store_true',
+                        help='Keep existing data in DB (default: drop and rebuild)')
     args = parser.parse_args()
 
     url_file = Path(__file__).parent.absolute() / 'job_urls_complete.json'
@@ -772,9 +781,16 @@ if __name__ == "__main__":
 
     print(f"✅ Loaded {len(urls)} URLs\n")
 
-    scraper = JobDetailsScraper(db_path='job_database.db', num_workers=args.workers)
+    fresh = not args.no_fresh
+    scraper = JobDetailsScraper(db_path='job_database.db', num_workers=args.workers, fresh=fresh)
 
     if args.workers <= 1:
         scraper.scrape_all_urls(urls)
     else:
         scraper.scrape_all_urls_parallel(urls)
+
+    # Snapshot fresh data to CSV after scrape completes
+    snapshot_script = Path(__file__).parent.absolute() / 'snapshot_history.py'
+    if snapshot_script.exists():
+        print("📸 Running snapshot_history.py...\n")
+        subprocess.run([sys.executable, str(snapshot_script)], check=False)

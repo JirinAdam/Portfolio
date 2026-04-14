@@ -19,10 +19,13 @@ Run the steps in order:
 # 1. Collect listing URLs
 python url_list_search2.0.py
 
-# 2. Scrape each listing → job_database.db (parallel, 8 workers by default)
+# 2. Scrape each listing → job_database.db (parallel, 32 workers by default)
+#    Drops and rebuilds the table, then auto-snapshots history CSVs
 python detail_scraper2.0.py
 # Or with custom worker count:
 python detail_scraper2.0.py --workers 4
+# Keep existing data (no drop):
+python detail_scraper2.0.py --no-fresh
 
 # 3. Clean & normalise data (run from db_cleaner directory)
 cd db_cleaner
@@ -31,14 +34,11 @@ python database_cleaner.py
 # 4. Filter IT roles → nerd_jobs.db
 cd ..
 python nerds_db_filter.py
-
-# 5. Snapshot historical data → CSV trend files
-python snapshot_history.py
 ```
 
 > **Note:** `database_cleaner.py` must be run from the `db_cleaner/` directory due to relative imports.
 > Each cleaning step prompts for confirmation before writing to the database.
-> `snapshot_history.py` is idempotent — running it twice on the same month has no effect.
+> `snapshot_history.py` runs automatically after each scrape (idempotent per month).
 
 ## Output
 
@@ -56,13 +56,14 @@ Table: `job_offers`
 
 | Column group | Columns |
 |-------------|---------|
-| Identity | `id`, `url`, `title` |
-| Company | `company_name`, `company_size` |
-| Salary | `salary_raw`, `salary_min`, `salary_max`, `salary_currency`, `salary_period`, `monthly_min_salary`, `monthly_max_salary` |
-| Location | `region`, `city`, `mapped_region` |
-| Work conditions | `work_modes`, `schedules`, `employment_type`, `position_levels` |
-| Content | `technologies`, `description` |
-| Added by cleaner | `mapped_industry`, `kw_industry`, `mapped_languages` |
+| Identity | `partition_id` (PK), `url`, `title` |
+| Company | `company` |
+| Salary | `salary_min`, `salary_max`, `salary_currency` |
+| Location | `region`, `city`, `postal_code` |
+| Work conditions | `work_modes`, `work_schedules`, `employment_type`, `position_levels` |
+| Content | `industry`, `description`, `technologies_os`, `technologies_optional`, `requirements_expected`, `we_offer`, `benefits` |
+| Dates | `date_posted`, `valid_through` |
+| Added by cleaner | `monthly_max_salary`, `mapped_industry`, `kw_industry`, `mapped_languages` |
 
 Salary values below 1 000 PLN are treated as hourly rates and converted to monthly equivalents (× 160).
 
@@ -85,10 +86,9 @@ All pages include a Job Role filter. Salary pages have a Median/Mean/Both toggle
 ```
 Pracuj/
 ├── url_list_search2.0.py       # Step 1 — collect listing URLs
-├── detail_scraper.py           # Step 2 — scrape listing details (sequential)
-├── detail_scraper2.0.py        # Step 2 — parallel version (ThreadPoolExecutor, --workers N)
+├── detail_scraper2.0.py        # Step 2 — parallel scraper (--workers 32, fresh mode, auto-snapshot)
 ├── nerds_db_filter.py          # Step 4 — IT role filter
-├── snapshot_history.py         # Step 5 — append monthly job-count snapshots to CSV
+├── snapshot_history.py         # Auto-called by scraper — append monthly snapshots to CSV
 ├── Nerd_mapped.csv             # Keyword → mapped title mapping for IT roles
 ├── db_cleaner/
 │   ├── database_cleaner.py     # Step 3 — orchestrates all mappers
@@ -137,5 +137,4 @@ pip install -r dashboard/requirements.txt
 
 ## Notes
 
-- `nerds_database.py` is an **older** version of the IT filter — use `nerds_db_filter.py` instead.
-- A backup of the original raw database is kept as `job_database_original_backup.db`.
+- Old scripts (`detail_scraper.py`, `nerds_database.py`, `url_scraper.py`) are archived in `ARCH/`.

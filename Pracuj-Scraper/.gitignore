@@ -1,6 +1,11 @@
 # Large databases (over GitHub 100MB limit)
 job_database.db
 job_database_original_backup.db
+*.db-shm
+*.db-wal
+
+# Archive (old scripts, backups)
+ARCH/
 
 # Local support files
 Support/
