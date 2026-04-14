@@ -13,31 +13,46 @@ A Python scraper for **[pracuj.pl](https://pracuj.pl)** — the largest Polish j
 
 ## Pipeline
 
-Run the steps in order:
+Run the full pipeline with a single command:
+
+```bash
+python main_trigger.py
+```
+
+Or skip scraping and re-run cleanup/filter/snapshot only:
+
+```bash
+python main_trigger.py --skip-scrape
+```
+
+Custom worker count:
+
+```bash
+python main_trigger.py --workers 64
+```
+
+### Individual steps (manual)
 
 ```bash
 # 1. Collect listing URLs
 python url_list_search2.0.py
 
 # 2. Scrape each listing → job_database.db (parallel, 32 workers by default)
-#    Drops and rebuilds the table, then auto-snapshots history CSVs
 python detail_scraper2.0.py
-# Or with custom worker count:
-python detail_scraper2.0.py --workers 4
-# Keep existing data (no drop):
-python detail_scraper2.0.py --no-fresh
+python detail_scraper2.0.py --workers 4    # custom worker count
+python detail_scraper2.0.py --no-fresh     # keep existing data
 
-# 3. Clean & normalise data (run from db_cleaner directory)
-cd db_cleaner
-python database_cleaner.py
+# 3. Clean & normalise data
+python db_cleaner/database_cleaner.py
 
 # 4. Filter IT roles → nerd_jobs.db
-cd ..
 python nerds_db_filter.py
+
+# 5. Append monthly CSV snapshots
+python snapshot_history.py
 ```
 
-> **Note:** `database_cleaner.py` must be run from the `db_cleaner/` directory due to relative imports.
-> Each cleaning step prompts for confirmation before writing to the database.
+> **Note:** Each cleaning step prompts for confirmation before writing to the database.
 > `snapshot_history.py` runs automatically after each scrape (idempotent per month).
 
 ## Output
@@ -86,9 +101,10 @@ All pages include a Job Role filter. Salary pages have a Median/Mean/Both toggle
 ```
 Pracuj/
 ├── url_list_search2.0.py       # Step 1 — collect listing URLs
-├── detail_scraper2.0.py        # Step 2 — parallel scraper (--workers 32, fresh mode, auto-snapshot)
+├── main_trigger.py             # Pipeline orchestrator (runs all steps, --skip-scrape, --workers)
+├── detail_scraper2.0.py        # Step 2 — parallel scraper (--workers 32, fresh mode)
 ├── nerds_db_filter.py          # Step 4 — IT role filter
-├── snapshot_history.py         # Auto-called by scraper — append monthly snapshots to CSV
+├── snapshot_history.py         # Step 5 — append monthly snapshots to CSV
 ├── Nerd_mapped.csv             # Keyword → mapped title mapping for IT roles
 ├── db_cleaner/
 │   ├── database_cleaner.py     # Step 3 — orchestrates all mappers

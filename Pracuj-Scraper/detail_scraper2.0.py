@@ -8,8 +8,6 @@ import random
 import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import argparse
-import subprocess
-import sys
 
 
 class JobDetailsScraper:
@@ -789,8 +787,3 @@ if __name__ == "__main__":
     else:
         scraper.scrape_all_urls_parallel(urls)
 
-    # Snapshot fresh data to CSV after scrape completes
-    snapshot_script = Path(__file__).parent.absolute() / 'snapshot_history.py'
-    if snapshot_script.exists():
-        print("📸 Running snapshot_history.py...\n")
-        subprocess.run([sys.executable, str(snapshot_script)], check=False)

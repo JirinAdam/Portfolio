@@ -14,7 +14,8 @@
       "Bash(git push:*)",
       "Bash(git rm:*)",
       "Read(//c/Users/jaadamov/Desktop/Py/**)",
-      "Bash(powershell -Command \"Rename-Item -Path 'Pracuj' -NewName 'Pracuj-Scraper' -ErrorAction Stop\")"
+      "Bash(powershell -Command \"Rename-Item -Path 'Pracuj' -NewName 'Pracuj-Scraper' -ErrorAction Stop\")",
+      "Bash(PYTHONIOENCODING=utf-8 python database_cleaner.py)"
     ]
   }
 }

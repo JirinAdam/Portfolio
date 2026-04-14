@@ -83,6 +83,14 @@ def snapshot_industries(today: str) -> None:
         return
 
     conn = sqlite3.connect(JOB_DB)
+
+    # mapped_industry column only exists after db_cleaner runs
+    columns = [row[1] for row in conn.execute("PRAGMA table_info(job_offers)")]
+    if "mapped_industry" not in columns:
+        conn.close()
+        print(f"Skipping {HISTORY_INDUSTRIES_CSV} — mapped_industry column not yet created (run db_cleaner first).")
+        return
+
     cursor = conn.execute(
         "SELECT mapped_industry, COUNT(*) AS job_count "
         "FROM job_offers "
