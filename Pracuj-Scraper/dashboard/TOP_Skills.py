@@ -19,6 +19,7 @@ st.markdown(
     "h1 { font-size: 36px !important; }"
     "h3 { font-size: 60px !important; }"
     "[data-testid='stSidebarNav']::before { content: 'Pracuj.PL Data Jobs'; display: block; font-size: 45px; font-weight: 700; padding: 5px 0px 20px; }"
+    ".material-symbols-rounded {font-family: 'Material Symbols Rounded' !important;}"
     "</style>",
     unsafe_allow_html=True,
 )
