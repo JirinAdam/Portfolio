@@ -5,9 +5,11 @@ A Python scraper for **[pracuj.pl](https://pracuj.pl)** — the largest Polish j
 ## What it does
 
 1. Scrapes job listing URLs from search result pages
-2. Visits each listing and stores structured data in SQLite
+2. Visits each listing and stores structured data in SQLite (parallel scraping supported)
 3. Cleans and normalises the raw data (salary, region, languages, …)
 4. Exports a filtered database of IT-related roles
+5. Tracks historical trends via CSV snapshots
+6. Visualises everything in an interactive Streamlit dashboard
 
 ## Pipeline
 
@@ -17,8 +19,10 @@ Run the steps in order:
 # 1. Collect listing URLs
 python url_list_search2.0.py
 
-# 2. Scrape each listing → job_database.db
-python detail_scraper.py
+# 2. Scrape each listing → job_database.db (parallel, 8 workers by default)
+python detail_scraper2.0.py
+# Or with custom worker count:
+python detail_scraper2.0.py --workers 4
 
 # 3. Clean & normalise data (run from db_cleaner directory)
 cd db_cleaner
@@ -27,10 +31,14 @@ python database_cleaner.py
 # 4. Filter IT roles → nerd_jobs.db
 cd ..
 python nerds_db_filter.py
+
+# 5. Snapshot historical data → CSV trend files
+python snapshot_history.py
 ```
 
 > **Note:** `database_cleaner.py` must be run from the `db_cleaner/` directory due to relative imports.
 > Each cleaning step prompts for confirmation before writing to the database.
+> `snapshot_history.py` is idempotent — running it twice on the same month has no effect.
 
 ## Output
 
@@ -39,6 +47,8 @@ python nerds_db_filter.py
 | `job_urls_complete.json` | Raw list of scraped listing URLs |
 | `job_database.db` | All job offers (~230 MB after full scrape) |
 | `nerd_jobs.db` | Filtered IT roles only |
+| `dashboard/data/history_roles.csv` | Monthly job count per IT role (trend data) |
+| `dashboard/data/history_industries.csv` | Monthly job count per industry (trend data) |
 
 ## Database schema
 
@@ -66,6 +76,7 @@ Interactive Streamlit dashboard deployed on [Streamlit Community Cloud](https://
 - **Salary by Skill** — median/mean salary per technology/skill (min 5 postings)
 - **Salary by Seniority Level** — salary breakdown by junior/mid/senior/lead
 - **Job Postings by Region** — geographic distribution of IT jobs
+- **Historical Trends** — line chart tracking job counts over time (IT roles / all industries)
 
 All pages include a Job Role filter. Salary pages have a Median/Mean/Both toggle.
 
@@ -74,8 +85,10 @@ All pages include a Job Role filter. Salary pages have a Median/Mean/Both toggle
 ```
 Pracuj/
 ├── url_list_search2.0.py       # Step 1 — collect listing URLs
-├── detail_scraper.py           # Step 2 — scrape listing details
-├── nerds_db_filter.py          # Step 4 — IT role filter (current version)
+├── detail_scraper.py           # Step 2 — scrape listing details (sequential)
+├── detail_scraper2.0.py        # Step 2 — parallel version (ThreadPoolExecutor, --workers N)
+├── nerds_db_filter.py          # Step 4 — IT role filter
+├── snapshot_history.py         # Step 5 — append monthly job-count snapshots to CSV
 ├── Nerd_mapped.csv             # Keyword → mapped title mapping for IT roles
 ├── db_cleaner/
 │   ├── database_cleaner.py     # Step 3 — orchestrates all mappers
@@ -92,13 +105,17 @@ Pracuj/
 ├── dashboard/
 │   ├── TOP_Skills.py           # Main page — Top Skills Overview
 │   ├── .streamlit/config.toml  # Streamlit theme config
-│   ├── data/loader.py          # DB queries & data transforms
 │   ├── components/charts.py    # Plotly chart functions
+│   ├── data/
+│   │   ├── loader.py              # DB queries & data transforms
+│   │   ├── history_roles.csv      # Monthly IT role trend data
+│   │   └── history_industries.csv # Monthly industry trend data
 │   └── pages/
 │       ├── 2_Salary_Per_Role.py
 │       ├── 3_Salary_Per_Skill.py
 │       ├── 4_Salary_Per_Level.py
-│       └── 5_Jobs_Per_Region.py
+│       ├── 5_Jobs_Per_Region.py
+│       └── 6_Trends.py            # Historical trend line charts
 └── job_database.db             # Full database (~230 MB, git-ignored)
 ```
 

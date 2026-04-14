@@ -6,6 +6,9 @@ job_database_original_backup.db
 Support/
 csvCollection/
 
+# Internal docs
+NEXT_STEPS.md
+
 # Python
 __pycache__/
 *.pyc
