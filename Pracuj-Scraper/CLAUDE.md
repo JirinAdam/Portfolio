@@ -38,7 +38,7 @@ Web scraper pro **pracuj.pl** (polský job board). Stahuje pracovní nabídky, �
 
 | Soubor | Role |
 |--------|------|
-| `ARCH/` | Staré verze skriptů (`url_scraper.py`, `nerds_database.py`, `url_list_search2.0.py`) |
+| `ARCH/` | Staré verze skriptů (`url_scraper.py`, `nerds_database.py`) |
 | `ARCH/csvCollection/` | Starší CSV exporty |
 | `ARCH/Support/` | Pomocné soubory |
 

@@ -121,6 +121,55 @@ def make_salary_bar(
     return fig
 
 
+def make_trend_line(
+    df: pd.DataFrame,
+    date_col: str = "date",
+    value_col: str = "job_count",
+    category_col: str | None = None,
+    title: str = "",
+) -> go.Figure:
+    """Plotly line chart pro historické trendové data."""
+    if category_col:
+        fig = px.line(
+            df,
+            x=date_col,
+            y=value_col,
+            color=category_col,
+            title=title,
+            markers=True,
+        )
+    else:
+        fig = px.line(
+            df,
+            x=date_col,
+            y=value_col,
+            title=title,
+            markers=True,
+        )
+        fig.update_traces(line_color="#22D3EE")
+
+    fig.update_layout(
+        title_font_size=16,
+        xaxis_title="Date",
+        yaxis_title="Job Count",
+        xaxis=dict(tickformat="%Y-%m"),
+        yaxis=dict(tickfont=dict(size=14)),
+        height=500,
+        margin=dict(l=5, r=5, t=30, b=10),
+        hovermode="x unified",
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.005,
+            xanchor="right",
+            x=1,
+            font=dict(size=14),
+        ),
+        font=dict(family="Space Grotesk, sans-serif"),
+    )
+    return fig
+
+
 def make_jobs_bar(
     df: pd.DataFrame,
     x_col: str = "job_count",

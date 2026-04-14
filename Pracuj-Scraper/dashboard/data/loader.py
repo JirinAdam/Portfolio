@@ -154,6 +154,38 @@ def get_jobs_per_region(
     return grouped.sort_values("job_count", ascending=False)
 
 
+HISTORY_ROLES_CSV = Path(__file__).resolve().parent / "history_roles.csv"
+HISTORY_INDUSTRIES_CSV = Path(__file__).resolve().parent / "history_industries.csv"
+
+
+@st.cache_data(ttl=3600)
+def load_history_roles() -> pd.DataFrame | None:
+    """Načte history_roles.csv. Vrátí None pokud soubor neexistuje."""
+    if not HISTORY_ROLES_CSV.exists():
+        return None
+    return pd.read_csv(HISTORY_ROLES_CSV, parse_dates=["date"])
+
+
+@st.cache_data(ttl=3600)
+def load_history_industries() -> pd.DataFrame | None:
+    """Načte history_industries.csv. Vrátí None pokud soubor neexistuje."""
+    if not HISTORY_INDUSTRIES_CSV.exists():
+        return None
+    return pd.read_csv(HISTORY_INDUSTRIES_CSV, parse_dates=["date"])
+
+
+def get_history_role_options(df: pd.DataFrame) -> list[str]:
+    """Vrátí sorted list unikátních kw_title z history + 'All' na začátku."""
+    options = sorted(df["kw_title"].dropna().unique())
+    return ["All"] + options
+
+
+def get_history_industry_options(df: pd.DataFrame) -> list[str]:
+    """Vrátí sorted list unikátních mapped_industry z history + 'All' na začátku."""
+    options = sorted(df["mapped_industry"].dropna().unique())
+    return ["All"] + options
+
+
 if __name__ == "__main__":
     # Standalone test — mock streamlit before re-importing
     import sys

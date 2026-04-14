@@ -15,7 +15,7 @@ Run the steps in order:
 
 ```bash
 # 1. Collect listing URLs
-python url_scraper.py
+python url_list_search2.0.py
 
 # 2. Scrape each listing → job_database.db
 python detail_scraper.py
@@ -73,7 +73,7 @@ All pages include a Job Role filter. Salary pages have a Median/Mean/Both toggle
 
 ```
 Pracuj/
-├── url_scraper.py              # Step 1 — collect listing URLs
+├── url_list_search2.0.py       # Step 1 — collect listing URLs
 ├── detail_scraper.py           # Step 2 — scrape listing details
 ├── nerds_db_filter.py          # Step 4 — IT role filter (current version)
 ├── Nerd_mapped.csv             # Keyword → mapped title mapping for IT roles
@@ -121,5 +121,4 @@ pip install -r dashboard/requirements.txt
 ## Notes
 
 - `nerds_database.py` is an **older** version of the IT filter — use `nerds_db_filter.py` instead.
-- `url_list_search2.0.py` is a duplicate of `url_scraper.py` — use `url_scraper.py`.
 - A backup of the original raw database is kept as `job_database_original_backup.db`.
