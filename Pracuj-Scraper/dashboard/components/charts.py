@@ -1,5 +1,7 @@
 """Znovupoužitelné Plotly Express chart funkce pro dashboard."""
 
+from typing import Optional
+
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
@@ -125,7 +127,7 @@ def make_trend_line(
     df: pd.DataFrame,
     date_col: str = "date",
     value_col: str = "job_count",
-    category_col: str | None = None,
+    category_col: Optional[str] = None,
     title: str = "",
 ) -> go.Figure:
     """Plotly line chart pro historické trendové data."""

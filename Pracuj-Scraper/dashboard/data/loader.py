@@ -2,6 +2,7 @@
 
 import json
 from pathlib import Path
+from typing import Optional
 
 import pandas as pd
 import streamlit as st
@@ -159,7 +160,7 @@ HISTORY_INDUSTRIES_CSV = Path(__file__).resolve().parent / "history_industries.c
 
 
 @st.cache_data(ttl=3600)
-def load_history_roles() -> pd.DataFrame | None:
+def load_history_roles() -> Optional[pd.DataFrame]:
     """Načte history_roles.csv. Vrátí None pokud soubor neexistuje."""
     if not HISTORY_ROLES_CSV.exists():
         return None
@@ -167,7 +168,7 @@ def load_history_roles() -> pd.DataFrame | None:
 
 
 @st.cache_data(ttl=3600)
-def load_history_industries() -> pd.DataFrame | None:
+def load_history_industries() -> Optional[pd.DataFrame]:
     """Načte history_industries.csv. Vrátí None pokud soubor neexistuje."""
     if not HISTORY_INDUSTRIES_CSV.exists():
         return None
