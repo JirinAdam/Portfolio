@@ -4,14 +4,15 @@
 Explorativní analýza dat polského pracovního trhu. Výstupem jsou statické PNG vizualizace pro web článek — žádná interaktivita, žádný dashboard, žádný deployment.
 
 ## Cíl
-12 publikovatelných PNG grafů (bar charty, geo choropleth, heatmapy, ridge ploty, treemapy, sankey) doplněných textovým narativem na webu (`domena.com/data-analyst/`).
+15 publikovatelných PNG grafů (bar charty, geo choropleth, heatmapy, ridge ploty, treemapy, sankey) doplněných textovým narativem na webu (`domena.com/data-analyst/`).
 Graf č. 6 (position_level choropleth sety) byl odstraněn jako redundantní.
 
 ## Data
 - Zdroj: SQLite databáze s nabídkami práce z polského trhu
 - Umístění: `data/job_database.db`
 - Rozsah: 65 401 řádků, tabulka `job_offers`, 27 sloupců
-- Klíčové sloupce: `salary_min`, `salary_max`, `monthly_max_salary`, `city`, `region`, `mapped_industry`, `employment_type`, `work_modes`, `position_levels`, `date_posted`
+- Klíčové sloupce: `salary_min`, `salary_max`, `monthly_max_salary`, `city`, `region`, `mapped_industry`, `mapped_languages`, `employment_type`, `work_modes`, `position_levels`, `date_posted`
+- `mapped_languages` má 71 % null hodnot (19 001 non-null), 10 unikátních jazyků, English dominuje (82 %)
 - `monthly_max_salary` má 66 % null hodnot — používat jen pro ridge ploty (distribuce), ne pro průměry
 - Regiony: 16 vojvodství (`mazowieckie`, `śląskie`…) + `zagranica` — filtrovat při geo vizualizacích
 
@@ -19,10 +20,10 @@ Graf č. 6 (position_level choropleth sety) byl odstraněn jako redundantní.
 | Knihovna | Účel | Vizuály |
 |---|---|---|
 | `pandas`, `sqlite3` | Data | — |
-| `matplotlib`, `seaborn` | Bar charty, heatmapy, ridge ploty | č. 2, 4, 5, 7, 9–12 |
+| `matplotlib`, `seaborn` | Bar charty, heatmapy, ridge ploty | č. 2, 4, 5, 7, 9–12, 14 |
 | `geopandas`, `mapclassify` | Choropleth mapa Polska | č. 1 |
-| `plotly` + `kaleido` | Nested treemapy → export PNG | č. 8, 13 |
-| `pySankey` | Sankey diagram → PNG | č. 3 |
+| `plotly` + `kaleido` | Nested treemapy → static PNG export | č. 8, 13 |
+| `pySankey` | Sankey diagram → PNG | č. 3, 15 |
 
 ## Struktura projektu
 ```
@@ -62,7 +63,14 @@ Pracuj_all_viz/
 - [x] č. 4 Heatmapa: midpoint `center=1800`
 - [x] Title format "Voivodeship" — `.str.title()` ve všech figures (č. 3, 4, 9 ridge)
 - [x] č. 2 Bar chart: přidán pct (jako č. 5, 7)
-- [x] Kompletní reforma Ridge plotů (mako, sharey=False, linewidth=0, hspace=0.0)
+- [x] Kompletní reforma Ridge plotů (mako, sharey=False, linewidth=0, hspace=0.5)
+- [x] Titulky všech vizualizací přeloženy do angličtiny
+- [x] Heatmapa č. 4: smazány xlabel, ylabel, colorbar label
+- [x] Code cleanup: smazán mrtvý kód, unused importy, redundantní konstanty (-73 řádků)
+- [x] Projekt pushnut na GitHub: `JirinAdam/Portfolio/DataViz_PracujPL/`
+- [x] č. 14 Heatmapa: language × industry (center=1800)
+- [x] č. 15 Sankey: Top 10 Languages → Top 10 Industries
+- [x] Sankey refaktor: obecný `_render_sankey()` helper (č. 3 i č. 15)
 
 ## Klíčové proměnné
 | Název | Typ | Popis |

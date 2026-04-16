@@ -81,7 +81,7 @@ Pracuj_all_viz/
 |---|---|---|---|---|
 | 1 | Geo choropleth | Počet nabídek / vojvodství + % z celku | geopandas | |
 | 2 | Bar chart | Počet nabídek podle mapped_industry | seaborn | |
-| 3 | Sankey diagram | Top 5 mapped_industry ve vojvodství (levo → pravo) | pySankey | **Emergency fallback:** stacked bar chart (bez nové lib) |
+| 3 | Sankey diagram | Top 10 Industries → 16 Voivodeships | pySankey | industry → region |
 | 4 | Tabulková heatmapa | Vojvodství × mapped_industry, absolutní čísla | seaborn | pivot tabulka |
 | 5 | Bar chart | position_level (>1000 nabídek), s % | seaborn | |
 | 7 | Bar chart | work_modes | seaborn | |
@@ -92,6 +92,8 @@ Pracuj_all_viz/
 | 11 | Ridge Plot | monthly_max_salary podle position_level | seaborn FacetGrid | overlapping, mako styl |
 | 12 | Ridge Plot | monthly_max_salary podle mapped_industry | seaborn FacetGrid | overlapping, mako styl |
 | 13 | Nested Treemap | Top 20 Cities → top 5 mapped_industry (% nabídek) | plotly + kaleido | export jako PNG |
+| 14 | Tabulková heatmapa | Language × mapped_industry, absolutní čísla | seaborn | center=1800 |
+| 15 | Sankey diagram | Top 10 Languages → Top 10 Industries | pySankey | language → industry |
 
 ### Fáze implementace
 
@@ -125,7 +127,7 @@ Pracuj_all_viz/
 - [x] GeoJSON stažen do `data/geo/` — napojení 16/16 regionů ověřeno
 - [x] EDA skripty otestovány na reálných datech
 - [x] Geo mapa vojvodství funkční
-- [x] Všech 13 PNG grafů vygenerováno do `outputs/figures/`
+- [x] Všech 15 PNG grafů vygenerováno do `outputs/figures/`
 
 ---
 
@@ -234,8 +236,39 @@ Pracuj_all_viz/
 - Bílá ohraničovací linka zachována (`lw=2`)
 - Baseline (`axhline`) odstraněn — způsoboval viditelné čáry přes celou šířku
 - Label pozice: `y=0.05` (blíž k baseline distribuce)
-- `hspace=0.0` (bez překrytí — nejlepší vizuální výsledek)
+- `hspace=0.5` (oddělené, bez překrytí)
 - Titulek: `fontweight=600` (Inter SemiBold)
+
+### Session 6 — 2026-04-10
+
+**Titulky přeloženy do angličtiny:**
+- Všechny české titulky ve skriptech 02, 04 přepsány do EN
+- Geo mapy (03) a Sankey (04) už měly anglické titulky
+
+**Heatmapa č. 4 — labely smazány:**
+- `ax.set_xlabel("")`, `ax.set_ylabel("")` — odstranění auto-generated labelů z pivot sloupců
+- Colorbar label vyprázdněn
+
+**Code cleanup (-73 řádků):**
+- `02`: smazána nepoužívaná `load_data()`, 3× zakomentovaný `ax.set_xlabel`
+- `03`: smazán unused `import mpatches`, sloučeny `CMAP_COUNT`/`CMAP_SALARY` → `CMAP`, vyčištěn `aggregate()` (smazány unused `salary_min_mean`, `salary_max_mean`, `salary_mid_mean`)
+- `04`: smazán unused `import mticker`, unused SQL sloupec `position_levels`, unused `agg["label"]`, 48 řádků zakomentovaného fallback kódu
+- `db_connection.py`: smazán zbytečný `row_factory = sqlite3.Row`
+
+**Dokumentace opravena:**
+- brief.md: handoff checklist zaškrtnut, struktura projektu aktualizována, duplicitní č. 9 přečíslován na 9a/9b, omezení Plotly upřesněno
+- CLAUDE.md: aktuální stav doplněn
+
+**Nové vizualizace — mapped_languages:**
+- č. 14 Heatmapa: language × industry (center=1800, formát shodný s č. 4)
+- č. 15 Sankey: Top 10 Languages → Top 10 Industries (formát shodný s č. 3)
+- `_sankey_pysankey()` refaktorován na obecný `_render_sankey()` — sdílený pro č. 3 i č. 15
+- `mapped_languages`: 29 % non-null, 10 jazyků, English 82 %, German 12 %
+
+**GitHub push:**
+- Projekt přidán do `JirinAdam/Portfolio` jako složka `DataViz_PracujPL/`
+- DB (221 MB) vyloučena přes existující `.gitignore` (`*.db`)
+- README.md vytvořen v angličtině
 
 ---
 
