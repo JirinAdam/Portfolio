@@ -10,7 +10,20 @@ class PositionLevelsMapper(BaseMapper):
     """
 
     POSITION_LEVELS_MAPPING = [
-        # POLSKÉ VERZE
+        # NOVÉ GENDER-DIFERENCOVANÉ POLSKÉ VARIANTY (formát pracuj.pl 2026)
+        {'to_replace': 'praktykant / praktykantka - stażysta / stażystka', 'replace_with': 'trainee'},
+        {'to_replace': 'asystent / asystentka', 'replace_with': 'assistant'},
+        {'to_replace': 'młodszy specjalista / młodsza specjalistka (Junior)', 'replace_with': 'junior specialist'},
+        {'to_replace': 'specjalista / specjalistka (Mid / Regular)', 'replace_with': 'specialist'},
+        {'to_replace': 'starszy specjalista / starsza specjalistka (Senior)', 'replace_with': 'senior specialist'},
+        {'to_replace': 'ekspert / ekspertka', 'replace_with': 'expert'},
+        {'to_replace': 'kierownik / kierowniczka - koordynator / koordynatorka', 'replace_with': 'team manager'},
+        {'to_replace': 'menedżer / menedżerka', 'replace_with': 'manager'},
+        {'to_replace': 'dyrektor / dyrektorka', 'replace_with': 'director'},
+        {'to_replace': 'prezes / prezeska', 'replace_with': 'president'},
+        {'to_replace': 'pracownik fizyczny / pracowniczka fizyczna', 'replace_with': 'manual worker'},
+
+        # STARŠÍ POLSKÉ VERZE (maskulinní forma — pro zpětnou kompatibilitu)
         {'to_replace': 'praktykant / stażysta', 'replace_with': 'trainee'},
         {'to_replace': 'asystent', 'replace_with': 'assistant'},
         {'to_replace': 'młodszy specjalista (Junior)', 'replace_with': 'junior specialist'},
@@ -20,6 +33,7 @@ class PositionLevelsMapper(BaseMapper):
         {'to_replace': 'kierownik / koordynator', 'replace_with': 'team manager'},
         {'to_replace': 'menedżer', 'replace_with': 'manager'},
         {'to_replace': 'dyrektor', 'replace_with': 'director'},
+        {'to_replace': 'prezes zarządu', 'replace_with': 'CEO'},
         {'to_replace': 'prezes', 'replace_with': 'president'},
         {'to_replace': 'pracownik fizyczny', 'replace_with': 'manual worker'},
 
@@ -32,9 +46,11 @@ class PositionLevelsMapper(BaseMapper):
         {'to_replace': 'manager', 'replace_with': 'manager'},
         {'to_replace': 'director', 'replace_with': 'director'},
         {'to_replace': 'president', 'replace_with': 'president'},
+        {'to_replace': 'CEO', 'replace_with': 'CEO'},
         {'to_replace': 'trainee', 'replace_with': 'trainee'},
         {'to_replace': 'assistant', 'replace_with': 'assistant'},
         {'to_replace': 'expert', 'replace_with': 'expert'},
+        {'to_replace': 'executive', 'replace_with': 'director'},
         {'to_replace': 'entry level & blue collar', 'replace_with': 'manual worker'},
     ]
 
@@ -148,6 +164,15 @@ class PositionLevelsMapper(BaseMapper):
                     break
 
             translated_list.append(translated)
+
+        # Deduplikace (zachová pořadí) + sort pro konzistentní výstup
+        seen = set()
+        deduped = []
+        for lvl in translated_list:
+            if lvl not in seen:
+                seen.add(lvl)
+                deduped.append(lvl)
+        translated_list = sorted(deduped)
 
         try:
             result = json.dumps(translated_list, ensure_ascii=False)

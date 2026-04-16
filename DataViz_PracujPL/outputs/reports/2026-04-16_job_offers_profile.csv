@@ -1,12 +1,12 @@
 ,partition_id,url,industry,company,title,description,employment_type,salary_min,salary_max,salary_currency,city,region,postal_code,position_levels,work_schedules,work_modes,technologies_os,technologies_optional,requirements_expected,we_offer,benefits,date_posted,valid_through,monthly_max_salary,mapped_industry,kw_industry,mapped_languages
-count,62598,62598,62597,62597,62597,62597,62597,22976.0,20642.0,62597,61477,62597,27950,62590,60929,62587,5814,2676,62594,58440,62597,62597,62597,21204.0,61776,61776,18015
-unique,62598,62598,6124,18735,31341,42617,84,,,3,2803,17,4847,25,7,12,2798,1345,43118,34332,13114,46475,75,,16,568,130
+count,63883,63883,63882,63882,63882,63882,63882,23476.0,21119.0,63882,62731,63882,28560,63876,62215,63873,5869,2689,63879,59653,63882,63882,63882,21701.0,63056,63056,18370
+unique,63883,63883,6196,19058,31990,43551,87,,,3,2838,17,4907,20,7,12,2831,1351,44052,35082,13317,47580,73,,16,574,132
 top,"%23azstaz-w-marketingu-zespol-category-management-f-m-warszawa-krakowiakow-48,oferta,1004710495","https://www.pracuj.pl/praca/%23azstaz-w-marketingu-zespol-category-management-f-m-warszawa-krakowiakow-48,oferta,1004710495","Obsługa klienta, Sprzedaż, Sprzedawcy, Sieci handlowe",Sii Sp. z o.o.,Przedstawiciel handlowy / Przedstawicielka handlowa,"Mistrz/Mistrzyni smaku: Przygotowywanie pysznych produktów., Ambasador/Ambasadorka gościnności: Kompletowanie i serwowanie zamówień., Strażnik/Strażniczka jakości: Pielęgnacja sprzętu i utrzymanie krystalicznej czystości przy Twoim stanowisku pracy.",employment contract,,,PLN,Warszawa,mazowieckie,80-309,"[""specialist""]","[""full-time""]","[""full office work""]","[""SQL""]","[""SQL""]","Twoja energia i chęć do nauki., Współpraca jako klucz do sukcesu., Pozytywne nastawienie i dużo uśmiechu.","What we offer, Great Place to Work since 2015 - it’s thanks to feedback from our workers that we get this special title and constantly implement new ideas, Employment stability - revenue of PLN 2.1BN, no debts, since 2006 on the market, We share the profit with Workers - over PLN 76M has already been allocated for this aim since 2022, Attractive benefits package - private healthcare, benefits cafeteria platform, car discounts and more, Comfortable workplace – class A offices or remote work, Dozens of fascinating projects for prestigious brands from all over the world – you can change them thanks to Job Changer application, PLN 1 000 000 per year for your ideas - with this amount, we support the passions and voluntary actions of our workers, Investment in your growth – meetups, webinars, training platform and technology blog – you choose, Fantastic atmosphere created by all Sii Power People",,2026-03-27T23:00:00Z,2026-05-13T21:59:59Z,,Engineering & Design,sales,"[""English""]"
-freq,1,1,976,1631,316,192,36896,,,62399,11879,16620,235,21925,54113,34903,124,28,192,1154,21427,341,3302,,10892,3672,14627
-mean,,,,,,,,5925.771006267409,10144.034603236121,,,,,,,,,,,,,,,12659.800410299942,,,
-std,,,,,,,,4735.8105649636545,9967.58339682954,,,,,,,,,,,,,,,12720.138764491036,,,
+freq,1,1,1003,1628,317,196,37682,,,63679,12117,16960,235,22387,55269,35727,123,31,196,1165,21951,341,3289,,11104,3753,14898
+mean,,,,,,,,5941.21645425115,10137.792447085563,,,,,,,,,,,,,,,12646.194056955901,,,
+std,,,,,,,,4758.981570335808,9957.15696271253,,,,,,,,,,,,,,,12747.927627310064,,,
 min,,,,,,,,0.0,1.0,,,,,,,,,,,,,,,160.0,,,
-25%,,,,,,,,3975.0,5800.0,,,,,,,,,,,,,,,6500.0,,,
+25%,,,,,,,,4000.0,5800.0,,,,,,,,,,,,,,,6500.0,,,
 50%,,,,,,,,5600.0,8200.0,,,,,,,,,,,,,,,9000.0,,,
 75%,,,,,,,,7500.0,12000.0,,,,,,,,,,,,,,,14000.0,,,
 max,,,,,,,,90000.0,300000.0,,,,,,,,,,,,,,,300000.0,,,
