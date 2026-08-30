@@ -2,6 +2,7 @@ import cloudscraper
 import sqlite3
 import json
 import time
+
 from pathlib import Path
 import re
 import random
@@ -762,8 +763,8 @@ class JobDetailsScraper:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Parallel job detail scraper for pracuj.pl')
-    parser.add_argument('--workers', type=int, default=32,
-                        help='Number of parallel workers (default: 32, use 1 for sequential)')
+    parser.add_argument('--workers', type=int, default=64,
+                        help='Number of parallel workers (default: 64, use 1 for sequential)')
     parser.add_argument('--no-fresh', action='store_true',
                         help='Keep existing data in DB (default: drop and rebuild)')
     args = parser.parse_args()
