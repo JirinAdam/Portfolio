@@ -10,15 +10,22 @@
 # HTTP library for HIBP API integration
 requests
 
+# GUI framework (gui.py)
+customtkinter>=5.2
+
+# --------------------------------------------
+# BUILD DEPENDENCIES (only for the standalone .exe, see README)
+# --------------------------------------------
+
+# Packages gui.py into dist\PASSMAN\PASSMAN.exe
+pyinstaller
+
 # --------------------------------------------
 # TESTING DEPENDENCIES
 # --------------------------------------------
 
 # Testing framework
 pytest
-
-# Path Handling
-pathlib
 
 # --------------------------------------------
 # STANDARD LIBRARY (Built-in, no install needed)
@@ -30,5 +37,6 @@ pathlib
 # hashlib       - SHA-1 hashing for HIBP
 # time          - rate limiting delays
 # collections   - defaultdict for grouping
+# pathlib       - file paths (standard library - do NOT pip install)
 # unittest.mock - test mocking (included with pytest)
 # io            - StringIO for output capture

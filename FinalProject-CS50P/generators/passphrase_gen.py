@@ -24,11 +24,13 @@ class DicewareGenerator:
     WORDLIST_SIZE = 7776  # 6^5
     ENTROPY_PER_WORD = math.log2(7776)  # ~12.925 bits
 
-    def __init__(self, wordlist_file: str = 'eff_largelist.csv'):
+    def __init__(self, wordlist_file: str = None):
         """
         Initialize generator and load wordlist.
-
+        Default path is resolved relative to the project folder (not the CWD).
         """
+        if wordlist_file is None:
+            wordlist_file = Path(__file__).parent.parent / 'eff_largelist.csv'
         self.wordlist_file = Path(wordlist_file)
         self.wordlist = {}
         self._load_wordlist()

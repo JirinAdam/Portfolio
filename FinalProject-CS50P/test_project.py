@@ -3,8 +3,10 @@ Test suite for password security toolkit core functions.
 Focuses on mathematical functions and user input handling.
 """
 
+import math
 import pytest
-from FinalProject.project import (
+from project import (
+    check_length_policy,
     evaluate_entropy,
     rate_strength,
     calculate_crack_time,
@@ -163,35 +165,35 @@ def test_calculate_quantum_crack_time():
 
     # Test 3: Seconds range (50 bits)
     result = calculate_quantum_crack_time(50, 1e7)
-    # 2^(50/2) / 1e7 = 2^25 / 1e7 ≈ 3.4 sec
+    # (pi/4) * 2^(50/2) / 1e7 = (pi/4) * 2^25 / 1e7 ≈ 2.6 sec
     assert "sec" in result and "min" not in result, f"Expected seconds, got '{result}'"
 
     # Test 4: Minutes range (60 bits)
     result = calculate_quantum_crack_time(60, 1e7)
-    # 2^(60/2) / 1e7 = 2^30 / 1e7 ≈ 107 sec ≈ 1.8 min
+    # (pi/4) * 2^30 / 1e7 ≈ 84 sec ≈ 1.4 min
     assert "min" in result, f"Expected minutes, got '{result}'"
 
     # Test 5: Medium entropy (64 bits)
     result = calculate_quantum_crack_time(64, 1e7)
-    # 2^(64/2) / 1e7 = 2^32 / 1e7 ≈ 429.5 sec ≈ 7.2 min
+    # (pi/4) * 2^32 / 1e7 ≈ 337.3 sec ≈ 5.6 min
     assert "min" in result, f"Expected minutes, got '{result}'"
-    assert result.startswith("7."), f"Expected ~7 minutes, got '{result}'"
+    assert result.startswith("5."), f"Expected ~5.6 minutes, got '{result}'"
 
     # Test 6: Hours/days range (80 bits)
     result = calculate_quantum_crack_time(80, 1e7)
-    # 2^(80/2) / 1e7 = 2^40 / 1e7 ≈ 109951 sec ≈ 1.3 days
+    # (pi/4) * 2^40 / 1e7 ≈ 86356 sec ≈ 24 hours
     assert "days" in result or "hours" in result, f"Expected hours/days, got '{result}'"
 
     # Test 7: Years range (100 bits)
     result = calculate_quantum_crack_time(100, 1e7)
-    # 2^(100/2) / 1e7 = 2^50 / 1e7 ≈ 35.7 years
+    # (pi/4) * 2^50 / 1e7 ≈ 28 years
     assert "years" in result, f"Expected years, got '{result}'"
 
     # Test 8: High entropy (128 bits - AES level)
     result = calculate_quantum_crack_time(128, 1e7)
-    # 2^(128/2) / 1e7 = 2^64 / 1e7 ≈ 58494 years
+    # (pi/4) * 2^64 / 1e7 ≈ 45941 years
     assert "years" in result, f"Expected years, got '{result}'"
-    assert "58494" in result or "58.5k" in result, f"Expected ~58494 years, got '{result}'"
+    assert "45.9k" in result, f"Expected ~45.9k years, got '{result}'"
 
     # Test 9: Very high entropy (256 bits - quantum resistant)
     result = calculate_quantum_crack_time(256, 1e7)
@@ -211,12 +213,12 @@ def test_calculate_quantum_crack_time():
     # Test 11: Verify Grover's algorithm formula (manual calculation)
     entropy = 64
     quantum_speed = 1e7
-    expected_seconds = (2 ** (entropy / 2)) / quantum_speed
-    # 2^32 / 1e7 = 4294967296 / 10000000 ≈ 429.5 seconds
-    assert abs(expected_seconds - 429.4967296) < 0.001, f"Formula check failed: {expected_seconds}"
+    expected_seconds = (math.pi / 4) * (2 ** (entropy / 2)) / quantum_speed
+    # (pi/4) * 4294967296 / 10000000 ≈ 337.3 seconds
+    assert abs(expected_seconds - (math.pi / 4) * 429.4967296) < 0.001, f"Formula check failed: {expected_seconds}"
 
     result = calculate_quantum_crack_time(entropy, quantum_speed)
-    assert "7." in result and "min" in result, f"Expected ~7.2 minutes, got '{result}'"
+    assert result == f"{expected_seconds / 60:.1f} min", f"Expected ~5.6 minutes, got '{result}'"
 
     # Test 12: Default speed parameter
     result_with_default = calculate_quantum_crack_time(64)  # No speed specified
@@ -233,6 +235,27 @@ def test_calculate_quantum_crack_time():
     # Test 14: Very high speed (should give very short time)
     result = calculate_quantum_crack_time(100, 1e20)
     assert "sec" in result or "< 1 sec" in result, f"Expected seconds for very high speed, got '{result}'"
+
+
+
+# ============================================
+# TEST: check_length_policy (NIST SP 800-63B-4 / OWASP ASVS 5.0)
+# ============================================
+
+def test_check_length_policy():
+    """Length thresholds 8 and 15 from NIST SP 800-63B-4 and OWASP ASVS 5.0 (6.2.1)"""
+    assert check_length_policy(7)[0].startswith('❌')
+    assert len(check_length_policy(7)) == 1
+
+    # 8-14: OK for MFA only
+    for length in (8, 14):
+        result = check_length_policy(length)
+        assert result[0].startswith('⚠️') and 'MFA' in result[0]
+        assert result[1].startswith('✓')
+
+    # 15+: single-factor minimum met
+    for length in (15, 64):
+        assert all(line.startswith('✓') for line in check_length_policy(length))
 
 
 if __name__ == '__main__':

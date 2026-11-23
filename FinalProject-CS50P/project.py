@@ -5,8 +5,8 @@ Import from generators/classes
 """
 
 import math
-from FinalProject.generators import PasswordGenerator
-from FinalProject.generators import DicewareGenerator
+from generators import PasswordGenerator
+from generators import DicewareGenerator
 
 
 
@@ -52,7 +52,7 @@ def rate_strength(entropy: float) -> dict:
             return "beyond geological timescales (>1M years)"
 
     # Calculate GPU farm crack time
-    gpu_farm_rate = 1e15  # 1 PetaFLOPS
+    gpu_farm_rate = 1e15  # 10^15 guesses/s (fast hash, e.g. MD5 on ~4,500 RTX 5090)
     total_combinations = 2 ** entropy
     seconds = (total_combinations / 2) / gpu_farm_rate
     time_desc = _get_time_description(seconds)
@@ -76,8 +76,7 @@ def rate_strength(entropy: float) -> dict:
             'warning': '⚠️  WARNING: Trivially crackable by automated tools',
             'recommendation': 'Not safe for any real use',
             'standards': [
-                '⚠️  Below NIST AAL1 minimum',
-                '✓ OWASP ASVS Level 1 (opportunistic only)'
+                '⚠️  Far below a 4-word EFF Diceware passphrase (~51.7 bits)'
             ]
         }
 
@@ -89,8 +88,7 @@ def rate_strength(entropy: float) -> dict:
             'warning': '⚠️  Vulnerable to professional attackers with GPU resources',
             'recommendation': 'Use only for low-value, non-sensitive accounts',
             'standards': [
-                '✓ NIST SP 800-63B AAL1 (basic authentication)',
-                '⚠️  Below OWASP Level 2 minimum'
+                '⚠️  Below a 4-word EFF Diceware passphrase (~51.7 bits)'
             ]
         }
 
@@ -99,11 +97,11 @@ def rate_strength(entropy: float) -> dict:
             'rating': 'MODERATE',
             'emoji': '✓',
             'description': f'Crackable by GPU farms {time_desc}',
-            'warning': '💡 Minimal protection - meets basic standards only',
-            'recommendation': 'Consider increasing password length or character types',
+            'warning': '💡 Minimal protection against offline (leaked database) attacks',
+            'recommendation': 'Increase length (15+ characters or 6+ Diceware words)',
             'standards': [
-                '✓ NIST SP 800-63B AAL2 (lower bound)',
-                '✓ OWASP ASVS Level 2 (minimum)'
+                'ℹ️  Comparable to a 4-word EFF Diceware passphrase (~51.7 bits)',
+                '⚠️  Below the EFF recommendation of 6+ words (~77.5 bits)'
             ]
         }
 
@@ -113,16 +111,13 @@ def rate_strength(entropy: float) -> dict:
             rating_level = 'GOOD'
             emoji = '✅'
             standards = [
-                '✓ NIST SP 800-63B AAL2 (recommended)',
-                '✓ OWASP ASVS Level 2 (compliant)'
+                '⚠️  Below the EFF recommendation of 6+ words (~77.5 bits)'
             ]
         else:
             rating_level = 'STRONG'
             emoji = '🔒'
             standards = [
-                '✓ NIST SP 800-63B AAL2 (exceeds)',
-                '✓ OWASP ASVS Level 2 (exceeds)',
-                '✓ Approaching AAL3 threshold'
+                'ℹ️  Around the EFF 6-word passphrase recommendation (~77.5 bits)'
             ]
 
         return {
@@ -142,8 +137,7 @@ def rate_strength(entropy: float) -> dict:
             'warning': '✓ Excellent protection - enterprise grade security',
             'recommendation': 'Excellent for sensitive/critical data',
             'standards': [
-                '✓ NIST SP 800-63B AAL3 (high security)',
-                '✓ OWASP ASVS Level 3 (high-security apps)',
+                '✓ Exceeds the EFF 6-word passphrase recommendation (~77.5 bits)',
                 '✓ Beyond practical brute-force attacks'
             ]
         }
@@ -154,12 +148,10 @@ def rate_strength(entropy: float) -> dict:
             'emoji': '🏆',
             'description': f'Resistant to GPU farms for {time_desc.replace("in ", "")}',
             'warning': '✓ Maximum practical security for current threats',
-            'recommendation': 'Exceeds all current standards',
+            'recommendation': 'Exceeds common password guidance',
             'standards': [
-                '✓ NIST SP 800-63B AAL3 (far exceeds)',
-                '✓ OWASP ASVS Level 3 (far exceeds)',
-                '✓ Nation-state attack resistant',
-                '⚠️  Still vulnerable to future quantum attacks'
+                '✓ Exceeds the EFF 6-word passphrase recommendation (~77.5 bits)',
+                'ℹ️  Below AES-128 key strength (NIST post-quantum security category 1 baseline)'
             ]
         }
 
@@ -171,10 +163,8 @@ def rate_strength(entropy: float) -> dict:
             'warning': '✓ Quantum-resistant level - future-proof security',
             'recommendation': 'Ultimate security level',
             'standards': [
-                '✓ NIST SP 800-63B AAL3 (far exceeds)',
-                '✓ OWASP ASVS Level 3 (far exceeds)',
-                '✓ Post-quantum cryptography ready',
-                '✓ Protected against Grover\'s algorithm'
+                '✓ At least AES-128 key strength (NIST post-quantum security category 1)',
+                '✓ NIST: Grover\'s algorithm gives little or no practical advantage at this level'
             ]
         }
 
@@ -183,7 +173,7 @@ def calculate_crack_time(entropy: float, attempts_per_second: float = 1e15) -> s
     """
     Calculate time required to crack password via brute force.
     Uses average case (50% of combinations need to be tried).
-    Default GPU farm rate: 1 PetaFLOPS (1×10^15 attempts/sec) (Futureproof rate calculation.
+    Default GPU farm rate: 10^15 guesses/sec (fast hash such as MD5) (Futureproof rate calculation.
     Nowadays only state actors do operate such high computing power : ~5000 RTX 5090)
     """
     total_combinations = 2 ** entropy
@@ -212,13 +202,14 @@ def calculate_quantum_crack_time(entropy: float, quantum_speed: float = 1e7) -> 
     """
     Calculate time to crack password using quantum computer with Grover's algorithm.
 
-    Formula: T = 2^(E/2) / S
-    Uses existing calculate_crack_time() for formatting with Grover's algorithm applied.
+    Formula: T = (pi/4) * 2^(E/2) / S
+    Grover's algorithm needs ~(pi/4)*sqrt(N) iterations to succeed with high probability.
+    Unlike classical brute force there is no "on average half of the space" shortcut:
+    the full iteration count must run before measuring.
+    Note: Grover parallelizes poorly (p machines give only sqrt(p) speed-up),
+    so a single fast quantum computer is assumed.
     """
-    # Apply Grover's algorithm: entropy is halved (2^(E/2) instead of 2^E)
-    # Then use existing formatting function
-
-    seconds = (2 ** (entropy / 2)) / quantum_speed
+    seconds = (math.pi / 4) * (2 ** (entropy / 2)) / quantum_speed
 
     if seconds < 1:
         return "< 1 sec"
@@ -239,11 +230,31 @@ def calculate_quantum_crack_time(entropy: float, quantum_speed: float = 1e7) -> 
 
 
 
-def _print_strength_table(entropy: float, credential_type: str = "password") -> None:
+def check_length_policy(length: int) -> list[str]:
+    """
+    Check length against public standards.
+    Length is the only password property NIST SP 800-63B-4 and OWASP ASVS 5.0 (6.2.1)
+    regulate - they define no entropy levels and forbid composition rules.
+    """
+    if length >= 15:
+        return [
+            '✓ NIST SP 800-63B-4: 15+ characters (single-factor minimum)',
+            '✓ OWASP ASVS 5.0 (6.2.1): meets the recommended 15 characters'
+        ]
+    elif length >= 8:
+        return [
+            '⚠️  NIST SP 800-63B-4: 8-14 characters allowed only as part of MFA (single-factor needs 15+)',
+            '✓ OWASP ASVS 5.0 (6.2.1): meets the 8-character minimum (15+ strongly recommended)'
+        ]
+    else:
+        return ['❌ NIST SP 800-63B-4 / OWASP ASVS 5.0: below the 8-character minimum']
+
+
+def _print_strength_table(entropy: float, credential_type: str = "password", length: int = None) -> None:
     """
     Print security analysis table (internal helper function).
-    Quantum crack time calculation
-        Formula: T = 2^(E/2) / S
+    Quantum crack time calculation (see calculate_quantum_crack_time)
+        Formula: T = (pi/4) * 2^(E/2) / S
     where:
         T = time in seconds
         E = entropy in bits
@@ -254,19 +265,19 @@ def _print_strength_table(entropy: float, credential_type: str = "password") -> 
 
     # Calculate times for different scenarios
     online_rate = 7200 / 86400  # 7.2k attempts per day converted to per second
-    gpu_farm_rate = 1e15  # 1 PetaFLOPS
+    gpu_farm_rate = 1e15  # 10^15 guesses/s
     quantum_speed = 1e7
 
     online_time = calculate_crack_time(entropy, online_rate)
     gpu_time = calculate_crack_time(entropy, gpu_farm_rate)
-    quantum_time = calculate_crack_time(entropy / 2, quantum_speed)
+    quantum_time = calculate_quantum_crack_time(entropy, quantum_speed)
 
     # Table header
     print("\n" + "=" * 90)
     print(f"{" ":<12} ⚠️  SECURITY ANALYSIS - Crack Time Estimates (50% probability)")
     print("=" * 90)
     print(f"{'Strength':<20} {'Online Attack':<25} {'GPU Farm Attack':<25} {'Quantum (Future)':<25}")
-    print(f"{'(Rating)':<20} {'(Rate: 7.2k/day)':<25} {'(1 PetaFLOPS)':<25} {'(Grover\'s Algo.)':<25}")
+    print(f"{'(Rating)':<20} {'(Rate: 7.2k/day)':<25} {'(10^15 guesses/s)':<25} {'(Grover\'s Algo.)':<25}")
     print("-" * 117)
 
     # Main data row
@@ -285,22 +296,28 @@ def _print_strength_table(entropy: float, credential_type: str = "password") -> 
         print(f"\n🚨 CRITICAL SECURITY WARNING:")
         print(f"   - This {credential_type} can be cracked in SECONDS by modern GPU farms!")
         print(f"   - If your database leaks, attackers will break it instantly")
-        print(f"   - Minimum recommendation: Increase length or character types")
+        print(f"   - Minimum recommendation: Increase length (15+ characters or 6+ Diceware words)")
     elif entropy < 70:
         print(f"\n⚠️  SECURITY NOTICE:")
-        print(f"   - This {credential_type} meets minimum standards but could be stronger")
+        print(f"   - This {credential_type} offers only moderate protection against offline attacks")
         print(f"   - GPU farms can still crack it in hours/days if database is leaked")
-        print(f"   - Consider: Increase length or add character types")
+        print(f"   - Consider: Increase length (length matters more than character types)")
     elif entropy < 80:
         print(f"\n💡 SECURITY TIP:")
         print(f"   - Good {credential_type} strength for most uses")
         print(f"   - For critical accounts, consider even stronger credentials")
 
-    # Standards (if any)
+    # Reference points (entropy based)
     if strength['standards']:
-        print(f"\n🏆 Compliance Status:")
+        print(f"\n📚 Reference points:")
         for standard in strength['standards']:
             print(f"   {standard}")
+
+    # Length policy (NIST SP 800-63B-4 / OWASP ASVS 5.0)
+    if length is not None:
+        print(f"\n🏛️  Standards (length {length} characters):")
+        for line in check_length_policy(length):
+            print(f"   {line}")
 
     print("=" * 117 + "\n")
 
@@ -308,7 +325,8 @@ def _print_strength_table(entropy: float, credential_type: str = "password") -> 
 def _get_password_preferences() -> tuple[bool, bool, bool, bool]:
     """
     Prompt user for password character type preferences.
-    Requires at least 2 character types (industry standard).
+    Requires at least 2 character types (tool design choice - NIST SP 800-63B-4
+    and OWASP ASVS 5.0 set no composition rules; length matters more).
     """
     MIN_CHARSET_TYPES = 2
 
@@ -324,7 +342,7 @@ def _get_password_preferences() -> tuple[bool, bool, bool, bool]:
         if selected_count >= MIN_CHARSET_TYPES:
             return use_uppercase, use_lowercase, use_digits, use_special
         else:
-            print(f"\n❌ You must select at least {MIN_CHARSET_TYPES} character types (industry standard)!")
+            print(f"\n❌ You must select at least {MIN_CHARSET_TYPES} character types!")
             print(f"   Currently selected: {selected_count}")
             print("   Please try again...\n")
 
@@ -398,7 +416,7 @@ def _run_password_generator() -> None:
         print(f"Charset size: {charset_size} characters")
 
         # Display strength table
-        _print_strength_table(entropy, "password")
+        _print_strength_table(entropy, "password", length)
 
         text_line = f"✨ 🔐     YOUR PASSWORD:   {password}     🔐 ✨"
         line_length = len(text_line)
@@ -424,7 +442,7 @@ def _run_passphrase_generator() -> None:
 
     # Initialize generator and generate passphrase
     try:
-        generator = DicewareGenerator('eff_largelist.csv')
+        generator = DicewareGenerator()
         passphrase = generator.generate(num_words)
 
         # Calculate entropy
@@ -435,7 +453,7 @@ def _run_passphrase_generator() -> None:
         print(f"Entropy per word: ~12.925 bits")
 
         # Display strength table
-        _print_strength_table(entropy, "passphrase")
+        _print_strength_table(entropy, "passphrase", len(passphrase))
 
         # Display Passphrase
         text_line = f"✨ 📚     YOUR PASSPHRASE:   {passphrase}     📚 ✨"
@@ -455,7 +473,7 @@ def _run_passphrase_generator() -> None:
 def _run_password_checker() -> None:
     """Run password security analysis mode."""
     # ✅ IMPORTUJ AŽ TADY (v runtime, nikoliv na startu)
-    from FinalProject.generators import PasswordChecker
+    from generators import PasswordChecker
 
     print("\n" + "🛡️" * 20)
     print(f"{" ":<10}PASSWORD SECURITY CHECKER")
